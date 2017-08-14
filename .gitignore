@@ -1,0 +1,24 @@
+# Files and directories created by pub
+.packages
+.pub/
+build/
+# Remove the following pattern if you wish to check in your lock file
+pubspec.lock
+
+# Directory created by dartdoc
+doc/api/
+!/.idea/
+.idea/dictionaries/
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/libraries/
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/
+.idea/misc.xml
+.idea/modules.xml
+.idea/string.iml
+.idea/workspace.xml
+example/
+test/
+!/test/transfer_syntax_test.dart
+!/test/
