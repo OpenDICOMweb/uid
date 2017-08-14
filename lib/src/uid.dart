@@ -13,16 +13,15 @@ import 'well_known_uids.dart';
 
 //TODO: test for performance
 //TODO: cleanup documentation
-
+//TODO: add link in next line
 /// A class that implements *DICOM Unique Identifiers* (UID) <*add link*>,
 /// also known as OSI *Object Identifiers* (OID), in accordance with
 /// Rec. ITU-T X.667 | ISO/IEC 9834-8. See <http://www.oid-info.com/get/2.25>
 ///
 /// [Uid]s are immutable.  They can be created as:
-///   1. as compile time constants,
+///   1. compile time constants,
 ///   2. from Strings, or
 ///   3. generated from random [Uuid]s. See <http://www.oid-info.com/get/2.25>
-///
 
 /// A UID constructed from a [String] or from a root and leaf.  This
 /// class is the super class for all Well Known UIDs.
@@ -89,9 +88,6 @@ abstract class Uid {
     return wellKnownUids[s];
   }
 
-  static bool isValidString(String uidString) =>
-      util.isValidUidString(uidString);
-
   // static bool _isValidLength(int length) =>
   //     kMinLength <= length && length <= kMaxLength;
 
@@ -110,9 +106,13 @@ abstract class Uid {
 
   static final RegExp uidPattern = new RegExp(r"[012]((\.0)|(\.[1-9]\d*))+");
 
+
+  static bool isValidString(String uidString) =>
+      util.isValidUidString(uidString);
+
   /// Returns true if [sList] is empty, i.e. [sList].length == 0, or if each
   /// [String] in the [List] is a valid [Uid].
-  static bool validateStrings(List<String> sList) {
+  static bool isValidStringList(List<String> sList) {
     if (sList == null) return false;
     if (sList.length == 0) return true;
     for (String s in sList) if (!isValidString(s)) return false;

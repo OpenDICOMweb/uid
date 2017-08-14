@@ -5,6 +5,7 @@
 // See the AUTHORS file for other contributors.
 
 export 'package:uid/src/constants.dart';
+export 'package:uid/src/errors.dart';
 export 'package:uid/src/uid.dart';
 export 'package:uid/src/uid_type.dart';
 export 'package:uid/src/uid_utils.dart';

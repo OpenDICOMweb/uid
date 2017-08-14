@@ -13,7 +13,10 @@ dependencies:
   path: any
   common:
     path: C:/odw/sdk/common
-    version: ^0.5.6
+    version: ^0.6.0
+  system:
+     path: C:/odw/sdk/system
+     version: ^0.6.0
   uuid:
     path: C:/odw/sdk/uuid
     version: ^0.6.0

@@ -5,6 +5,8 @@
 
 import 'package:common/ascii.dart';
 
+import 'errors.dart';
+
 const int uidMinLength = 6;
 const int uidMaxLength = 64;
 const int uidMaxRootLength = 24;
@@ -39,7 +41,8 @@ bool _isValidLength(int length) =>
     uidMinLength <= length && length <= uidMaxLength;
 
 /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
-String checkUid(String s) => (isValidUidString(s)) ? s : null;
+String checkUid(String s) =>
+    (isValidUidString(s)) ? s : invalidUidStringError(s);
 
 String uidRootType(String uidString) => _rootType[uidString.codeUnitAt(0)];
 

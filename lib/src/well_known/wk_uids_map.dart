@@ -7,7 +7,8 @@
 import 'wk_uid.dart';
 
 //TODO: doc
-//TODO: change entries to proper type
+//TODO: before V0.9.1 change entries to proper type
+
 const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.1.1": WKUid.kVerificationSOPClass,
   "1.2.840.10008.1.2": WKUid.kImplicitVRLittleEndian,
@@ -15,8 +16,7 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.1.2.1.99": WKUid.kDeflatedExplicitVRLittleEndian,
   "1.2.840.10008.1.2.2": WKUid.kExplicitVRBigEndian_Retired,
   "1.2.840.10008.1.2.4.50": WKUid.kJPEGBaseline_1,
-  "1.2.840.10008.1.2.4.51": WKUid
-      .kJPEGExtended_2_4DefaultTransferSyntaxforLossyJPEG12BitImageCompression_4,
+  "1.2.840.10008.1.2.4.51": WKUid.kJPEGExtended_2_4,
   "1.2.840.10008.1.2.4.52": WKUid.kJPEGExtended_3_5_Retired,
   "1.2.840.10008.1.2.4.53":
       WKUid.kJPEGSpectralSelectionNon_Hierarchical_6_8_Retired,
@@ -40,8 +40,8 @@ const Map<String, WKUid> wellKnownUids = const {
       WKUid.kJPEGFullProgressionHierarchical_25_27_Retired,
   "1.2.840.10008.1.2.4.65": WKUid.kJPEGLosslessHierarchical_28_Retired,
   "1.2.840.10008.1.2.4.66": WKUid.kJPEGLosslessHierarchical_29_Retired,
-  "1.2.840.10008.1.2.4.70": WKUid
-      .kJPEGLosslessNon_HierarchicalFirst_OrderPrediction_14_1DefaultTransferSyntaxforLosslessJPEGImageCompression,
+  "1.2.840.10008.1.2.4.70":
+      WKUid.kJPEGLosslessNon_HierarchicalFirst_OrderPrediction_14_1,
   "1.2.840.10008.1.2.4.80": WKUid.kJPEG_LSLosslessImageCompression,
   "1.2.840.10008.1.2.4.81": WKUid.kJPEG_LSLossyImageCompression,
   "1.2.840.10008.1.2.4.90": WKUid.kJPEG2000ImageCompressionLosslessOnly,

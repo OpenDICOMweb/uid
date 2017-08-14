@@ -6,19 +6,20 @@
 
 import 'wk_uid.dart';
 
-/// This library contains compile time constant definitions of "Well Known" [WKUid]s
-/// and there corresponding [String] values.
+/// This library contains compile time constant definitions of
+/// "Well Known" [WKUid]s and there corresponding [String] values.
 const List<WKUid> wkUids = const [
   WKUid.kVerificationSOPClass,
   WKUid.kImplicitVRLittleEndian,
   WKUid.kDefaultTransferSyntaxForDICOM,
   WKUid.kExplicitVRLittleEndian,
-  WKUid.kDefaultTransferSyntaxForDicomWeb,
+  WKUid.kDefaultTransferSyntaxForDICOMWeb,
   WKUid.kDeflatedExplicitVRLittleEndian,
   WKUid.kExplicitVRBigEndian_Retired,
   WKUid.kJPEGBaseline_1,
-  WKUid
-      .kJPEGExtended_2_4DefaultTransferSyntaxforLossyJPEG12BitImageCompression_4,
+  WKUid.kDefaultTransferSyntaxForLossyJPEG8BitImageCompression,
+  WKUid.kJPEGExtended_2_4,
+  WKUid.kDefaultTransferSyntaxForLossyJPEG12BitImageCompression,
   WKUid.kJPEGExtended_3_5_Retired,
   WKUid.kJPEGSpectralSelectionNon_Hierarchical_6_8_Retired,
   WKUid.kJPEGSpectralSelectionNon_Hierarchical_7_9_Retired,
@@ -34,8 +35,8 @@ const List<WKUid> wkUids = const [
   WKUid.kJPEGFullProgressionHierarchical_25_27_Retired,
   WKUid.kJPEGLosslessHierarchical_28_Retired,
   WKUid.kJPEGLosslessHierarchical_29_Retired,
-  WKUid
-      .kJPEGLosslessNon_HierarchicalFirst_OrderPrediction_14_1DefaultTransferSyntaxforLosslessJPEGImageCompression,
+  WKUid.kJPEGLosslessNon_HierarchicalFirst_OrderPrediction_14_1,
+  WKUid.kDefaultTransferSyntaxForLosslessJPEGImageCompression,
   WKUid.kJPEG_LSLosslessImageCompression,
   WKUid.kJPEG_LSLossyImageCompression,
   WKUid.kJPEG2000ImageCompressionLosslessOnly,

@@ -10,6 +10,8 @@ import 'package:test/test.dart';
 
 final Logger log = new Logger('Uid2_Test', Level.info);
 
+// TODO: add tests for all three errors in errors.dart.
+
 void main() {
   uidTest();
 }
@@ -27,6 +29,7 @@ List<String> badUids = const <String>[
   "1.02.840.10008.1.2", // ".02": "0" can only be followed by "."
   "1.2.840.10008.0.1.2." // ".2.": uid can't end with dot
 ];
+
 void uidTest() {
   group('Uid Tests', () {
     //TODO: create a list of well known strings, Uids, and the corresponding
