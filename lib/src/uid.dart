@@ -26,8 +26,11 @@ import 'well_known_uids.dart';
 /// A UID constructed from a [String] or from a root and leaf.  This
 /// class is the super class for all Well Known UIDs.
 abstract class Uid {
+  //TODO: should these static const become getters?
+  //TODO: determine the correct number
   static const int kMinLength = 6;
   static const int kMaxLength = 64;
+  //TODO: determine the correct number
   static const int maxRootLength = 24;
   static const String dicomRoot = "1.2.840.10008";
 
@@ -53,8 +56,7 @@ abstract class Uid {
   /// Returns the [UidType].
   UidType get type => UidType.kConstructed;
 
-  /// Return true if this UidBase] identifies an
-  /// encapsulated [Transfer Syntax].
+  /// Returns [true] if [this] is an encapsulated [TransferSyntax].
   bool get isEncapsulated => false;
 
   /// Returns [true] if [this] is a [Uid] defined by the DICOM Standard.
@@ -87,9 +89,6 @@ abstract class Uid {
     if (uid is String) s = uid;
     return wellKnownUids[s];
   }
-
-  // static bool _isValidLength(int length) =>
-  //     kMinLength <= length && length <= kMaxLength;
 
   /// ASCII constants for '0', '1', and '2'. No other roots are valid.
   static const List<int> uidRoots = util.uidRoots;
