@@ -4,11 +4,9 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-import 'package:common/logger.dart';
+import 'package:system/system.dart';
 import 'package:uid/uid.dart';
 import 'package:test/test.dart';
-
-final Logger log = new Logger('Uid2_Test', Level.info);
 
 void main() {
   uidTest2();

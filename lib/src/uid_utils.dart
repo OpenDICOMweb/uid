@@ -3,7 +3,7 @@
 // that can be found in the LICENSE file.
 // See the AUTHORS file for contributors.
 
-import 'package:common/ascii.dart';
+import 'package:string/ascii.dart';
 
 import 'errors.dart';
 
