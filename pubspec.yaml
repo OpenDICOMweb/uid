@@ -20,6 +20,7 @@ dependencies:
     version: ^0.6.0
 
 dev_dependencies:
+# TODO: remove this dependency
   common:
     path: C:/odw/sdk/common
     version: ^0.6.0
