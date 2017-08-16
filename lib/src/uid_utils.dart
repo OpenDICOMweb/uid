@@ -5,14 +5,12 @@
 
 import 'package:string/ascii.dart';
 
-import 'errors.dart';
-
 const int uidMinLength = 6;
 const int uidMaxLength = 64;
 const int uidMaxRootLength = 24;
 
 /// ASCII constants for '0', '1', and '2'. No other roots are valid.
-const List<int> uidRoots = const [k0, k1, k2];
+const List<int> uidRoots = const <int>[k0, k1, k2];
 
 final RegExp uidRegex = new RegExp(r"[012]((\.0)|(\.[1-9]+\d*))+");
 
@@ -40,9 +38,11 @@ bool isValidUidString(String s) {
 bool _isValidLength(int length) =>
     uidMinLength <= length && length <= uidMaxLength;
 
+/* Flush if not needed
 /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
 String checkUid(String s) =>
     (isValidUidString(s)) ? s : invalidUidStringError(s);
+*/
 
 String uidRootType(String uidString) => _rootType[uidString.codeUnitAt(0)];
 

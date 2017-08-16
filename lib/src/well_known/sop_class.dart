@@ -1549,6 +1549,9 @@ class SopClassUid extends WKUid {
           false,
           "Implant Template Group Information Model - GET");
 
+  static const WKUid kdicomSOPClass = const WKUid("1.2.840.10008.15.0.3.14",
+      "dicomSOPClass", UidType.kLdapOid, false, "dicomSOPClass");
+
 //TODO: finish Map
 
   static const Map<String, SopClassUid> members = const <String, SopClassUid>{};

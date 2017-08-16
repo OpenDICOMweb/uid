@@ -4,6 +4,8 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
+//Urgent: add classes to well_known for all these types.  Use transfer_systax
+//   as example.
 //TODO: this class might disappear when all the types are implemented as classes.
 /// Uid Types
 class UidType {
