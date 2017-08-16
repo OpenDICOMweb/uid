@@ -34,16 +34,16 @@ void uidTest() {
     //TODO: create a list of well known strings, Uids, and the corresponding
     //      WKUids and test equivalence.
     test('Well Known UIDs', () {
-      Uid uid = Uid.parse("1.2.840.10008.1.2");
+      Uid uid = UidString.parse("1.2.840.10008.1.2");
       expect(uid == WKUid.kImplicitVRLittleEndian, true);
       expect(uid.asString, equals("1.2.840.10008.1.2"));
-      uid = Uid.parse("1.2.840.10008.1.2.1");
+      uid = UidString.parse("1.2.840.10008.1.2.1");
       expect(uid == WKUid.kExplicitVRLittleEndian, true);
     });
 
     test('Good UIDs', () {
       for (String s in goodUids) {
-        Uid uid = Uid.parse(s);
+        Uid uid = UidString.parse(s);
         expect(uid, isNotNull);
         expect(uid is Uid, true);
         expect(uid.asString, equals(s));
@@ -52,10 +52,13 @@ void uidTest() {
 
     test('Bad String to UID should fail', () {
       // Bad letter 'Z'
-      Uid uid = Uid.parse("1.2.8z0.10008.1.2");
+      String s0 = "1.2.8z0.10008.1.2";
+      Uid uid = UidString.parse(s0, onError: (s) => null);
+      print('uid: $uid');
       expect(uid == null, true);
       //TODO: this should return null or
-      uid = Uid.parse("4.2.840.10008.1.2");
+      String s1 = "4.2.840.10008.1.2";
+      uid = UidString.parse(s1, onError: (s) => null);
       log.debug('uid: $uid');
       expect(uid == null, true);
     });
@@ -63,7 +66,7 @@ void uidTest() {
     test('Bad UIDs', () {
       for (String s in badUids) {
         expect(Uid.isValidString(s), false);
-        Uid uid = Uid.parse(s);
+        Uid uid = UidString.parse(s, onError: (s) => null);
         expect(uid, isNull);
         expect(uid is Uid, false);
       }
