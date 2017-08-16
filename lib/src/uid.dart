@@ -4,7 +4,6 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-
 import 'package:uuid/uuid.dart';
 
 import 'uid_type.dart';
@@ -33,10 +32,9 @@ abstract class Uid {
   //TODO: determine the correct number
   static const int maxRootLength = 24;
   static const String dicomRoot = "1.2.840.10008";
+  static final V4Generator v4generator = new V4Generator(isSecure: true);
 
   factory Uid([String s]) => (s == null) ? random : parse(s);
-
-  factory Uid.fromString(String s) => parse(s);
 
   factory Uid.withRoot(String root, String leaf) =>
       new UidString.withRoot(root, leaf);
@@ -64,17 +62,11 @@ abstract class Uid {
 
   /// Returns a [String] containing a random UID as per the
   /// See Dart sdk/math/Random.
-  static Uid get random => new UidRandom._(isSecure: false);
+  static Uid get random => new UidRandom._();
 
   /// Returns a [String] containing a _secure_ random UID.
   /// See Dart sdk/math/Random.
-  static Uid get secure => new UidRandom._(isSecure: true);
-
-  static List<String> randomList(int length) {
-    List<String> uList = new List(length);
-    for (int i = 0; i < length; i++) uList[i] = Uuid.generator.string;
-    return uList;
-  }
+  static Uid get secure => new UidRandom._();
 
   /// Return a [String] that includes the [runtimeType].
   String get info => '$runtimeType: $asString';
@@ -105,7 +97,6 @@ abstract class Uid {
 
   static final RegExp uidPattern = new RegExp(r"[012]((\.0)|(\.[1-9]\d*))+");
 
-
   static bool isValidString(String uidString) =>
       util.isValidUidString(uidString);
 
@@ -125,8 +116,7 @@ abstract class Uid {
   static Uid parse(String s) {
     var s0 = s.trim();
     if (!isValidString(s0)) return null;
-    var uid = wellKnownUids[s0];
-    return (uid != null) ? uid : new UidString(s0);
+    return new UidString(s0);
   }
 
   static List<Uid> parseList(List<String> values) {
@@ -157,13 +147,14 @@ class UidString extends Uid {
   String get asString => s;
 }
 
+/// IETF Version 4 UUIDs.
 class UidRandom extends Uid {
   /// The UID Root for UIDs created from random (V4) UUIDs.
   static const String uidRoot = "2.25.";
   final Uuid uuid;
 
-  UidRandom._({bool isSecure = false})
-      : uuid = new Uuid(isSecure: isSecure),
+  UidRandom._()
+      : uuid = new Uuid(),
         super._();
 
   @override
@@ -174,6 +165,14 @@ class UidRandom extends Uid {
 
   @override
   String toString() => asString;
+
+  static List<Uid> randomList(int length) {
+    List<Uid> uList = new List<Uid>(length);
+    for (int i = 0; i < length; i++)
+      uList[i] = new UidRandom._();
+
+    return uList;
+  }
 }
 
 const Map<String, String> oidRoots = const <String, String>{
