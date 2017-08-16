@@ -7,8 +7,7 @@
 
 import 'package:uid/src/uid.dart';
 import 'package:uid/src/uid_type.dart';
-
-import 'wk_uids_map.dart';
+import 'package:uid/src/well_known/wk_uids_map.dart';
 
 /// Compile time constant definitions for the "Well Known" UIDs from PS 3.6
 class WKUid extends UidString {
@@ -2350,6 +2349,7 @@ class WKUid extends UidString {
       false,
       "Abstract Multi-Dimensional Image Model");
 
+  //Urgent: change constant name from kdicom to kDicom.
   static const WKUid kdicomDeviceName = const WKUid("1.2.840.10008.15.0.3.1",
       "dicomDeviceName", UidType.kLdapOid, false, "dicomDeviceName");
 

@@ -6,8 +6,7 @@
 
 import 'package:uid/src/uid.dart';
 import 'package:uid/src/uid_type.dart';
-
-import 'wk_uid.dart';
+import 'package:uid/src/well_known/wk_uid.dart';
 
 //TODO: document
 class TransferSyntaxUid extends WKUid {

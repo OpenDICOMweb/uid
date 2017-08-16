@@ -5,8 +5,7 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:uid/src/uid_type.dart';
-
-import 'wk_uid.dart';
+import 'package:uid/src/well_known/wk_uid.dart';
 
 //TODO: Move all definitions from PS3.6 Table A-2 Well Known Frames of Reference
 

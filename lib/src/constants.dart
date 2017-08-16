@@ -11,6 +11,7 @@
 /// Note: These constants names use the ODW convention of starting with
 /// the letter "k" with followed by the DICOM keyword.
 
+// TODO: before V0.9.0 maybe move to dcm_constants package.
 const String kVerificationSOPClass = "1.2.840.10008.1.1";
 
 const String kImplicitVRLittleEndian = "1.2.840.10008.1.2";

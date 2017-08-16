@@ -4,7 +4,7 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu>
 // See the AUTHORS file for other contributors.
 
-import 'wk_uid.dart';
+import 'package:uid/src/well_known/wk_uid.dart';
 
 /// This library contains compile time constant definitions of
 /// "Well Known" [WKUid]s and there corresponding [String] values.

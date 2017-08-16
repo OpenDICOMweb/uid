@@ -4,15 +4,31 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
+import 'package:string/ascii.dart';
 import 'package:uuid/uuid.dart';
 
 import 'uid_type.dart';
-import 'uid_utils.dart' as util;
 import 'well_known_uids.dart';
 
 //TODO: test for performance
-//TODO: cleanup documentation
+//TODO: Jim: cleanup documentation
 //TODO: add link in next line
+
+const int kUidMinLength = 6;
+const int kUidMaxLength = 64;
+const int kUidMaxRootLength = 24;
+
+const Map<int, String> kUidRootType = const <int, String>{
+  0: "ITU-T",
+  1: "ISO",
+  2: "joint-iso-itu-t"
+};
+
+/// ASCII constants for '0', '1', and '2'. No other roots are valid.
+const List<int> kUidRoots = const <int>[k0, k1, k2];
+
+final RegExp uidRegex = new RegExp(r"[012]((\.0)|(\.[1-9]+\d*))+");
+
 /// A class that implements *DICOM Unique Identifiers* (UID) <*add link*>,
 /// also known as OSI *Object Identifiers* (OID), in accordance with
 /// Rec. ITU-T X.667 | ISO/IEC 9834-8. See <http://www.oid-info.com/get/2.25>
@@ -25,13 +41,6 @@ import 'well_known_uids.dart';
 /// A UID constructed from a [String] or from a root and leaf.  This
 /// class is the super class for all Well Known UIDs.
 abstract class Uid {
-  //TODO: should these static const become getters?
-  //TODO: determine the correct number
-  static const int kMinLength = 6;
-  static const int kMaxLength = 64;
-  //TODO: determine the correct number
-  static const int maxRootLength = 24;
-  static const String dicomRoot = "1.2.840.10008";
   static final V4Generator v4generator = new V4Generator(isSecure: true);
 
   factory Uid([String s]) => (s == null) ? random : parse(s);
@@ -45,6 +54,13 @@ abstract class Uid {
   bool operator ==(Object other) =>
       (other is Uid) && (asString == other.asString);
 
+  //TODO: determine the correct number
+  int get minLength => kUidMinLength;
+  int get maxLength => kUidMaxLength;
+
+  //TODO: determine the correct number
+  int get maxRootLength => kUidMaxRootLength;
+  String get dicomRoot => "1.2.840.10008";
   @override
   int get hashCode => asString.hashCode;
 
@@ -83,7 +99,7 @@ abstract class Uid {
   }
 
   /// ASCII constants for '0', '1', and '2'. No other roots are valid.
-  static const List<int> uidRoots = util.uidRoots;
+  static const List<int> uidRoots = kUidRoots;
 
   /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
   static String check(String s) => isValidString(s) ? s : null;
@@ -93,12 +109,34 @@ abstract class Uid {
 
   /// Returns a [String] containing the name of the organization associated
   /// with the root.
-  static String rootType(String uidString) => util.uidRootType(uidString);
+  static String rootType(String uidString) => uidRootType(uidString);
 
   static final RegExp uidPattern = new RegExp(r"[012]((\.0)|(\.[1-9]\d*))+");
 
-  static bool isValidString(String uidString) =>
-      util.isValidUidString(uidString);
+  /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
+  static bool isValidString(String s) {
+    if (s == null ||
+        !isValidLength(s.length) ||
+        !uidRoots.contains(s.codeUnitAt(0))) return false;
+    for (int i = 0; i < s.length - 1; i++) {
+      //  print('  $i: ${uidString[i]}, ${i+1}: ${uidString[i+1]}');
+      int char0 = s.codeUnitAt(i);
+      if (char0 == kDot) {
+        if (s.codeUnitAt(i + 1) == k0) {
+          if (i + 2 >= s.length) return true;
+          if (s.codeUnitAt(i + 2) != kDot) return false;
+        }
+      } else {
+        if (!isHexChar(char0)) return false;
+      }
+    }
+    if (!isHexChar(s.codeUnitAt(s.length - 1))) return false;
+    return true;
+  }
+
+  static bool isValidLength(int length) =>
+      kUidMinLength <= length && length <= kUidMaxLength;
+
 
   /// Returns true if [sList] is empty, i.e. [sList].length == 0, or if each
   /// [String] in the [List] is a valid [Uid].
@@ -124,6 +162,10 @@ abstract class Uid {
     for (int i = 0; i < values.length; i++) uids[i] = Uid.parse(values[i]);
     return uids;
   }
+
+ static String uidRootType(String uidString) =>
+     kUidRootType[uidString.codeUnitAt(0)];
+
 }
 
 class UidString extends Uid {
@@ -168,8 +210,7 @@ class UidRandom extends Uid {
 
   static List<Uid> randomList(int length) {
     List<Uid> uList = new List<Uid>(length);
-    for (int i = 0; i < length; i++)
-      uList[i] = new UidRandom._();
+    for (int i = 0; i < length; i++) uList[i] = new UidRandom._();
 
     return uList;
   }

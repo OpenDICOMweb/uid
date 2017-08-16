@@ -4,7 +4,7 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu>
 // See the AUTHORS file for other contributors.
 
-import 'wk_uid.dart';
+import 'package:uid/src/well_known/wk_uid.dart';
 
 //TODO: doc
 //TODO: before V0.9.1 change entries to proper type
