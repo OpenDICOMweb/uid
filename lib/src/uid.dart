@@ -120,10 +120,10 @@ class Uid {
           if (s.codeUnitAt(i + 2) != kDot) return false;
         }
       } else {
-        if (!isHexChar(char0)) return false;
+        if (!isDigitChar(char0)) return false;
       }
     }
-    if (!isHexChar(s.codeUnitAt(s.length - 1))) return false;
+    if (!isDigitChar(s.codeUnitAt(s.length - 1))) return false;
     return true;
   }
 
