@@ -53,7 +53,7 @@ class Uid {
 
   //TODO: determine the correct number
   int get maxRootLength => kUidMaxRootLength;
-  String get dicomRoot => "1.2.840.10008";
+
   @override
   int get hashCode => asString.hashCode;
 
@@ -84,6 +84,7 @@ class Uid {
   @override
   String toString() => asString;
 
+  static String get dicomRoot => "1.2.840.10008";
   static WKUid lookup(dynamic uid) {
     var s;
     if (uid is Uid) s = uid.asString;
