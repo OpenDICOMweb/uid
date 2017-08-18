@@ -10,7 +10,7 @@ import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uids_map.dart';
 
 /// Compile time constant definitions for the "Well Known" UIDs from PS 3.6
-class WKUid extends UidString {
+class WKUid extends Uid {
   final String keyword;
   @override
   final UidType type;

@@ -5,6 +5,7 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:string/ascii.dart';
+import 'package:uuid/uuid.dart';
 
 import 'errors.dart';
 import 'uid_type.dart';
@@ -41,7 +42,20 @@ final RegExp uidRegex = new RegExp(r"[012]((\.0)|(\.[1-9]+\d*))+");
 /// A UID constructed from a [String] or from a root and leaf.  This
 /// class is the super class for all Well Known UIDs.
 class Uid {
-  const Uid();
+  static const String randomUidRoot = "2.25.";
+
+  final String value;
+
+  //Urgent: s is not validated.
+  Uid([String s]) : this.value = (s == null) ? generateUid() : s;
+
+  const Uid.wellKnown(this.value);
+
+  int get hashCode => value.hashCode;
+
+  /// Returns the [Uid] [String].
+  @override
+  String get asString => value;
 
   @override
   bool operator ==(Object other) =>
@@ -53,15 +67,10 @@ class Uid {
 
   //TODO: determine the correct number
   int get maxRootLength => kUidMaxRootLength;
-  String get dicomRoot => "1.2.840.10008";
-  @override
-  int get hashCode => asString.hashCode;
 
-  /// Returns the [Uid] [String].
-  String get asString;
-
+  //Fix:
   /// Returns the [UidType].
-  UidType get type => UidType.kConstructed;
+//  UidType get type => UidType.kConstructed;
 
   /// Returns [true] if [this] is an encapsulated [TransferSyntax].
   bool get isEncapsulated => false;
@@ -71,7 +80,7 @@ class Uid {
 
   /// Returns a [String] containing a random UID as per the
   /// See Dart sdk/math/Random.
-  static Uid get random => new UidRandom();
+//  static Uid get random => new UidRandom();
 
   /// Returns a [String] containing a _secure_ random UID.
   /// See Dart sdk/math/Random.
@@ -84,6 +93,7 @@ class Uid {
   @override
   String toString() => asString;
 
+  static String get dicomRoot => "1.2.840.10008";
   static WKUid lookup(dynamic uid) {
     var s;
     if (uid is Uid) s = uid.asString;
@@ -138,33 +148,15 @@ class Uid {
     for (String s in sList) if (!isValidString(s)) return false;
     return true;
   }
-}
-
-class UidString extends Uid {
-  final String s;
-
-  UidString(String s) : s = parse(s);
-
-  factory UidString.withRoot(String root, String leaf) {
-    var s = root + leaf;
-    return new UidString(s);
-  }
-
-  UidString._(this.s);
-
-  const UidString.wellKnown(this.s) : super();
-
-  @override
-  String get asString => s;
 
   //TODO: redoc before V0.9.0
-  /// Returns a [UidString] if [s] is a valid [Uid][String];
+  /// Returns a [Uid] if [s] is a valid [Uid][String];
   /// otherwise, returns null.
   ///
   /// Leading and trailing spaces are first removed, then [s] is parsed. If [s]
   /// is valid and a WellKnownUid([WKUid]), the canonical WellKnownUid([WKUid])
   /// is returned; otherwise, a new Uid is created and returned.
-  static UidString parse(String s, {UidString Function(String) onError}) {
+  static Uid parse(String s, {Uid Function(String) onError}) {
     var v = s.trim();
     if (!Uid.isValidString(v)) {
       if (onError != null) {
@@ -174,46 +166,26 @@ class UidString extends Uid {
       }
     }
     WKUid wk = wellKnownUids[s];
-    return (wk != null) ? wk : new UidString._(s);
+    return (wk != null) ? wk : new Uid(s);
   }
 
-  static List<UidString> parseList(List<String> values) {
-    List<UidString> uids = new List<UidString>(values.length);
+  static List<Uid> parseList(List<String> values) {
+    List<Uid> uids = new List<Uid>(values.length);
     for (int i = 0; i < values.length; i++)
-      uids[i] = UidString.parse(values[i]);
+      uids[i] = Uid.parse(values[i]);
     return uids;
   }
 
   static String uidRootType(String uidString) =>
       kUidRootType[uidString.codeUnitAt(0)];
-}
-
-/// IETF Version 4 UUIDs.
-class UidRandom extends Uid {
-  /// The UID Root for UIDs created from random (V4) UUIDs.
-  static const String uidRoot = "2.25.";
-  final Uint8List uuidData;
-
-  UidRandom()
-      : uuidData = V4Generator.secure.next,
-        super.random();
-
-  Uuid get uuid => new Uuid.fromList(uuidData);
-  @override
-  String get asString => uidRoot + uuid.toString();
-
-  @override
-  UidType get type => UidType.kUidRandom;
-
-  @override
-  String toString() => asString;
 
   static List<Uid> randomList(int length) {
     List<Uid> uList = new List<Uid>(length);
     for (int i = 0; i < length; i++) uList[i] = new UidRandom._();
-
     return uList;
   }
+
+  static Uid generateUid() => new Uuid(Uuid.generate().asString);
 }
 
 const Map<String, String> oidRoots = const <String, String>{

@@ -5,8 +5,8 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:system/system.dart';
-import 'package:uid/uid.dart';
 import 'package:test/test.dart';
+import 'package:uid/uid.dart';
 
 
 // TODO: add tests for all three errors in errors.dart.
@@ -39,6 +39,7 @@ List<String> badUids = const <String>[
   "1.4.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64",
   "0.0.000.00000.0.0.00",
   "1.2.a840.1b0008.1.2.4.64" // Uid can't have letters
+  "1.2.840.10a08.0.1.2"  // letters can't be used
 ];
 
 // well known Uids
@@ -54,10 +55,10 @@ List<String> WKUids = const <String>[
 void uidTest() {
   group('Uid Tests', () {
     test('Well Known UIDs', () {
-      Uid uid = UidString.parse("1.2.840.10008.1.2");
+      Uid uid = Uid.parse("1.2.840.10008.1.2");
       expect(uid == WKUid.kImplicitVRLittleEndian, true);
       expect(uid.asString, equals("1.2.840.10008.1.2"));
-      uid = UidString.parse("1.2.840.10008.1.2.1");
+      uid = Uid.parse("1.2.840.10008.1.2.1");
       expect(uid == WKUid.kExplicitVRLittleEndian, true);
       expect(uid.asString, equals(WKUids[1]));
 
@@ -80,7 +81,7 @@ void uidTest() {
 
     test('Good UIDs', () {
       for (String s in goodUids) {
-        Uid uid = UidString.parse(s);
+        Uid uid = Uid.parse(s);
         expect(uid, isNotNull);
         expect(uid is Uid, true);
         expect(uid.asString, equals(s));
@@ -90,12 +91,12 @@ void uidTest() {
     test('Bad String to UID should fail', () {
       // Bad letter 'Z'
       String s0 = "1.2.8z0.10008.1.2";
-      Uid uid = UidString.parse(s0, onError: (s) => null);
+      Uid uid = Uid.parse(s0, onError: (s) => null);
       print('uid: $uid');
       expect(uid == null, true);
       //TODO: this should return null or
       String s1 = "4.2.840.10008.1.2";
-      uid = UidString.parse(s1, onError: (s) => null);
+      uid = Uid.parse(s1, onError: (s) => null);
       log.debug('uid: $uid');
       expect(uid == null, true);
     });
@@ -103,7 +104,7 @@ void uidTest() {
     test('Bad UIDs', () {
       for (String s in badUids) {
         expect(Uid.isValidString(s), false);
-        Uid uid = UidString.parse(s, onError: (s) => null);
+        Uid uid = Uid.parse(s, onError: (s) => null);
         expect(uid, isNull);
         expect(uid is Uid, false);
       }
