@@ -93,7 +93,15 @@ class Uid {
   @override
   String toString() => asString;
 
+
+  /// Returns a [Uid] created from a random [Uuid].
+  static String generateUid() => '2.25.${Uuid.generateDcmString}';
+
+  /// Returns the DICOM UID root [String]
   static String get dicomRoot => "1.2.840.10008";
+
+  static bool isDicom(Uid uid) => uid.asString.indexOf(dicomRoot) == 0;
+
   static WKUid lookup(dynamic uid) {
     var s;
     if (uid is Uid) s = uid.asString;
@@ -183,14 +191,6 @@ class Uid {
     List<Uid> uList = new List<Uid>(length);
     for (int i = 0; i < length; i++) uList[i] = new UidRandom._();
     return uList;
-  }
-
-  // Urgent: clean this
-  static String generateUid() {
-    var s = Uuid.generateDcmString;
-    s = "2.25.$s";
-    print('s: $s');
-    return s;
   }
 }
 

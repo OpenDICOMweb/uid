@@ -62,19 +62,19 @@ void uidTest() {
       expect(uid == WKUid.kExplicitVRLittleEndian, true);
       expect(uid.asString, equals(WKUids[1]));
 
-      uid = UidString.parse(WKUids[2]);
+      uid = Uid.parse(WKUids[2]);
       expect(uid == WKUid.kDeflatedExplicitVRLittleEndian, true);
       expect(uid.asString, equals(WKUids[2]));
 
-      uid = UidString.parse(WKUids[3]);
+      uid = Uid.parse(WKUids[3]);
       expect(uid == WKUid.kJPEG_LSLossyImageCompression, true);
       expect(uid.asString, equals(WKUids[3]));
 
-      uid = UidString.parse(WKUids[4]);
+      uid = Uid.parse(WKUids[4]);
       expect(uid == WKUid.kJPEG2000ImageCompression, true);
       expect(uid.asString, equals(WKUids[4]));
 
-      uid = UidString.parse(WKUids[5]);
+      uid = Uid.parse(WKUids[5]);
       expect(uid == WKUid.kJPIPReferenced, true);
       expect(uid.asString, equals(WKUids[5]));
     });
