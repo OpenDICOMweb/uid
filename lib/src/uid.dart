@@ -9,26 +9,10 @@ import 'package:uuid/uuid.dart';
 
 import 'errors.dart';
 import 'uid_type.dart';
+import 'uid_utils.dart';
 import 'well_known_uids.dart';
 
-//TODO: test for performance
-//TODO: Jim: cleanup documentation
 //TODO: add link in next line
-
-const int kUidMinLength = 6;
-const int kUidMaxLength = 64;
-const int kUidMaxRootLength = 24;
-
-const Map<int, String> kUidRootType = const <int, String>{
-  0: "ITU-T",
-  1: "ISO",
-  2: "joint-iso-itu-t"
-};
-
-/// ASCII constants for '0', '1', and '2'. No other roots are valid.
-const List<int> kUidRoots = const <int>[k0, k1, k2];
-
-final RegExp uidRegex = new RegExp(r"[012]((\.0)|(\.[1-9]+\d*))+");
 
 /// A class that implements *DICOM Unique Identifiers* (UID) <*add link*>,
 /// also known as OSI *Object Identifiers* (OID), in accordance with
@@ -42,8 +26,6 @@ final RegExp uidRegex = new RegExp(r"[012]((\.0)|(\.[1-9]+\d*))+");
 /// A UID constructed from a [String] or from a root and leaf.  This
 /// class is the super class for all Well Known UIDs.
 class Uid {
-  static const String randomUidRoot = "2.25.";
-
   final String value;
 
   //Urgent: s is not validated.
@@ -51,15 +33,10 @@ class Uid {
 
   const Uid.wellKnown(this.value);
 
+  @override
+  bool operator ==(Object other) => (other is Uid) && (asString == other.asString);
+
   int get hashCode => value.hashCode;
-
-  /// Returns the [Uid] [String].
-  @override
-  String get asString => value;
-
-  @override
-  bool operator ==(Object other) =>
-      (other is Uid) && (asString == other.asString);
 
   //TODO: determine the correct number
   int get minLength => kUidMinLength;
@@ -68,102 +45,80 @@ class Uid {
   //TODO: determine the correct number
   int get maxRootLength => kUidMaxRootLength;
 
-  //Fix:
-  /// Returns the [UidType].
-//  UidType get type => UidType.kConstructed;
-
   /// Returns [true] if [this] is an encapsulated [TransferSyntax].
   bool get isEncapsulated => false;
 
   /// Returns [true] if [this] is a [Uid] defined by the DICOM Standard.
   bool get isWellKnown => false;
 
-  /// Returns a [String] containing a random UID as per the
-  /// See Dart sdk/math/Random.
-//  static Uid get random => new UidRandom();
-
-  /// Returns a [String] containing a _secure_ random UID.
-  /// See Dart sdk/math/Random.
-  static Uid get secure => new UidRandom();
-
   /// Return a [String] that includes the [runtimeType].
   String get info => '$runtimeType: $asString';
 
   /// Returns the [Uid] [String].
   @override
+  String get asString => value;
+
+  /// Returns the [Uid] [String].
+  @override
   String toString() => asString;
 
+  // **** Static Getters and Methods
 
-  /// Returns a [Uid] created from a random [Uuid].
-  static String generateUid() => '2.25.${Uuid.generateDcmString}';
+  /// ASCII constants for '0', '1', and '2'. No other roots are valid.
+  static const List<String> uidRoots = kUidRoots;
+
+  /// Returns a [String] containing a random UID as per the
+  /// See Dart sdk/math/Random.
+  static Uid get pseudo => generatePseudoUid();
+
+  /// Returns a [String] containing a _secure_ random UID.
+  /// See Dart sdk/math/Random.
+  static Uid get secure => generateSecureUid();
 
   /// Returns the DICOM UID root [String]
   static String get dicomRoot => "1.2.840.10008";
 
+  /// Returns the Well Known (DICOM) [Uid] corresponding to [s],
+  /// or [null] if none.
+  static WKUid lookup(String s) => wellKnownUids[s];
+
+  /// Returns a [Uid] created from a pseudo random [Uuid].
+  static String generatePseudoUid() => '2.25.${Uuid.generateDcmString}';
+
+  /// Returns a [Uid] created from a secure random [Uuid].
+  static String generateSecureUid() => '2.25.${Uuid.generateSecureDcmString}';
+
   static bool isDicom(Uid uid) => uid.asString.indexOf(dicomRoot) == 0;
-
-  static WKUid lookup(dynamic uid) {
-    var s;
-    if (uid is Uid) s = uid.asString;
-    if (uid is String) s = uid;
-    return wellKnownUids[s];
-  }
-
-  /// ASCII constants for '0', '1', and '2'. No other roots are valid.
-  static const List<int> uidRoots = kUidRoots;
 
   /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
   static String check(String s) => isValidString(s) ? s : null;
 
-  static String test(String s) =>
-      isValidString(s) ? s : throw "Invalid Uid String: $s";
+  static String test(String s) => isValidString(s) ? s : throw "Invalid Uid String: $s";
 
   /// Returns a [String] containing the name of the organization associated
   /// with the root.
   static String rootType(String uidString) => uidRootType(uidString);
 
-  static final RegExp uidPattern = new RegExp(r"[012]((\.0)|(\.[1-9]\d*))+");
+  /// Returns
+  static bool isValidString(String s) => isValidUidString(s);
 
-  /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
-  static bool isValidString(String s) {
-    if (s == null ||
-        !isValidLength(s.length) ||
-        !uidRoots.contains(s.codeUnitAt(0))) return false;
-    for (int i = 0; i < s.length - 1; i++) {
-      //  print('  $i: ${uidString[i]}, ${i+1}: ${uidString[i+1]}');
-      int char0 = s.codeUnitAt(i);
-      if (char0 == kDot) {
-        if (s.codeUnitAt(i + 1) == k0) {
-          if (i + 2 >= s.length) return true;
-          if (s.codeUnitAt(i + 2) != kDot) return false;
-        }
-      } else {
-        if (!isDigitChar(char0)) return false;
-      }
-    }
-    if (!isDigitChar(s.codeUnitAt(s.length - 1))) return false;
-    return true;
-  }
-
-  static bool isValidLength(int length) =>
-      kUidMinLength <= length && length <= kUidMaxLength;
-
-  /// Returns true if [sList] is empty, i.e. [sList].length == 0, or if each
+  /// Returns [true] if [sList] is empty, i.e. [sList].length == 0, or if each
   /// [String] in the [List] is a valid [Uid].
-  static bool isValidStringList(List<String> sList) {
-    if (sList == null) return false;
-    if (sList.length == 0) return true;
-    for (String s in sList) if (!isValidString(s)) return false;
-    return true;
-  }
+  static bool isValidStringList(List<String> sList) =>
+      sList != null && (sList.length == 0 || isValidUidStringList(sList));
 
-  //TODO: redoc before V0.9.0
-  /// Returns a [Uid] if [s] is a valid [Uid][String];
-  /// otherwise, returns null.
+  /// Parse [s] as [Uid] and return its value.
   ///
-  /// Leading and trailing spaces are first removed, then [s] is parsed. If [s]
-  /// is valid and a WellKnownUid([WKUid]), the canonical WellKnownUid([WKUid])
-  /// is returned; otherwise, a new Uid is created and returned.
+  /// If [s] is valid and a WellKnownUid([WKUid]), the canonical
+  /// WellKnownUid([WKUid]) is returned; otherwise, a new [Uid] is
+  /// created and returned.
+  ///
+  /// If [s] is not a valid [Uid] [String], [onError] is called with [s] as
+  /// its argument, and its value is returned as the value of the [parse]
+  /// expression. If no [OnError] is provided, an [InvalidUidStringError] is thrown.
+  ///
+  /// The onError handler can be chosen to return null. This is preferable
+  /// to to throwing and then immediately catching the FormatException.
   static Uid parse(String s, {Uid Function(String) onError}) {
     var v = s.trim();
     if (!Uid.isValidString(v)) {
@@ -177,29 +132,26 @@ class Uid {
     return (wk != null) ? wk : new Uid(s);
   }
 
-  static List<Uid> parseList(List<String> values) {
+  /// Parses a [List] of [String]s as [Uid]s and returns a new
+  /// [List] containing the corresponding [Uid]s.
+  ///
+  /// If any member of [sList] is not valid, [onError] is called and
+  /// its values is stored in the  result. If no [OnError] is provided,
+  /// an [InvalidUidStringError] is thrown.
+  static List<Uid> parseList(List<String> sList, {Uid Function(String) onError}) {
     List<Uid> uids = new List<Uid>(values.length);
     for (int i = 0; i < values.length; i++)
-      uids[i] = Uid.parse(values[i]);
+      uids[i] = Uid.parse(values[i], onError: onError);
     return uids;
   }
 
-  static String uidRootType(String uidString) =>
-      kUidRootType[uidString.codeUnitAt(0)];
+  /// Return the first character of the [Uid] [String].
+  static String uidRootType(String uidString) => kUidRootType[uidString.codeUnitAt(0)];
 
+  /// Returns a [list] of [Uid] generated from random [Uuid]s.
   static List<Uid> randomList(int length) {
     List<Uid> uList = new List<Uid>(length);
     for (int i = 0; i < length; i++) uList[i] = new UidRandom._();
     return uList;
   }
 }
-
-const Map<String, String> oidRoots = const <String, String>{
-  "1.2.840": "United States of America",
-  "1.16.840": "United States of America",
-  "1.2.840.": "United States of America",
-  '1.2.840.10008': "DICOM Standard",
-  "1.3.6.1": "Internet",
-  "1.3.6.1.4.1": "IANA assigned company OIDs",
-  "2.25": "itu-iso UUID"
-};
