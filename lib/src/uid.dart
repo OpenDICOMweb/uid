@@ -185,7 +185,13 @@ class Uid {
     return uList;
   }
 
-  static Uid generateUid() => new Uuid(Uuid.generate().asString);
+  // Urgent: clean this
+  static String generateUid() {
+    var s = Uuid.generateDcmString;
+    s = "2.25.$s";
+    print('s: $s');
+    return s;
+  }
 }
 
 const Map<String, String> oidRoots = const <String, String>{
