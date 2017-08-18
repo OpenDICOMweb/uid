@@ -9,10 +9,8 @@ import 'package:uid/uid.dart';
 import 'package:test/test.dart';
 
 void main() {
-  uidTest2();
-}
+  System.log.level = Level.debug;
 
-void uidTest2() {
   var goodUids = [
     "0.20.3000",
     "1.20.3000",

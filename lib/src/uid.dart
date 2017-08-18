@@ -4,6 +4,9 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
+import 'dart:typed_data';
+
+import 'package:bignum/bignum.dart';
 import 'package:string/ascii.dart';
 import 'package:uuid/uuid.dart';
 
@@ -19,17 +22,23 @@ import 'well_known_uids.dart';
 /// Rec. ITU-T X.667 | ISO/IEC 9834-8. See <http://www.oid-info.com/get/2.25>
 ///
 /// [Uid]s are immutable.  They can be created as:
-///   1. compile time constants,
-///   2. from Strings, or
+///   1. compile time constants (e.g Well Known [Uid]s (WKUid),
+///   2. from Strings in [Uid] format, or
 ///   3. generated from random [Uuid]s. See <http://www.oid-info.com/get/2.25>
 
 /// A UID constructed from a [String] or from a root and leaf.  This
 /// class is the super class for all Well Known UIDs.
 class Uid {
+  // A generator function for random [Uid]s. This should be
+  // set to either [
+  static Uid Function() _generator = generateUid;
   final String value;
 
   //Urgent: s is not validated.
-  Uid([String s]) : this.value = (s == null) ? generateUid() : s;
+  Uid([String s]) : this.value = (s == null) ? _generator() : s;
+
+  /// Used by internal random generators
+  Uid._(this.value);
 
   const Uid.wellKnown(this.value);
 
@@ -69,11 +78,15 @@ class Uid {
 
   /// Returns a [String] containing a random UID as per the
   /// See Dart sdk/math/Random.
-  static Uid get pseudo => generatePseudoUid();
+  static Uid get seededPseudo => new Uid._(generateSeededPseudoUidString());
+
+  /// Returns a [String] containing a random UID as per the
+  /// See Dart sdk/math/Random.
+  static Uid get pseudo => new Uid._(generatePseudoUidString());
 
   /// Returns a [String] containing a _secure_ random UID.
   /// See Dart sdk/math/Random.
-  static Uid get secure => generateSecureUid();
+  static Uid get secure => new Uid._(generateSecureUidString());
 
   /// Returns the DICOM UID root [String]
   static String get dicomRoot => "1.2.840.10008";
@@ -83,10 +96,19 @@ class Uid {
   static WKUid lookup(String s) => wellKnownUids[s];
 
   /// Returns a [Uid] created from a pseudo random [Uuid].
-  static String generatePseudoUid() => '2.25.${Uuid.generateDcmString}';
+  static String generateSeededPseudoUidString() =>
+      _convertBigIntToUid(V4Generator.seededPseudo.next);
+
+  /// Returns a [Uid] created from a pseudo random [Uuid].
+  static String generatePseudoUidString() => _convertBigIntToUid(V4Generator.pseudo.next);
+
+  static _convertBigIntToUid(Uint8List uuid) {
+    BigInteger n = new BigInteger.fromBytes(1, uuid);
+    return '2.25.$n';
+  }
 
   /// Returns a [Uid] created from a secure random [Uuid].
-  static String generateSecureUid() => '2.25.${Uuid.generateSecureDcmString}';
+  static String generateSecureUidString() => _convertBigIntToUid(V4Generator.secure.next);
 
   static bool isDicom(Uid uid) => uid.asString.indexOf(dicomRoot) == 0;
 

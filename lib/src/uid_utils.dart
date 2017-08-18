@@ -18,8 +18,7 @@ bool _isValidLength(int length) => kUidMinLength <= length && length <= kUidMaxL
 
 /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
 bool isValidUidString(String s) {
-  if (s == null || !_isValidLength(s.length) || !kUidRoots.contains(s.codeUnitAt(0)))
-    return false;
+  if (s == null || !_isValidLength(s.length) || !kUidRoots.contains(s[0])) return false;
   for (int i = 0; i < s.length - 1; i++) {
     int char0 = s.codeUnitAt(i);
     if (char0 == kDot) {
@@ -34,6 +33,12 @@ bool isValidUidString(String s) {
   if (!isDigitChar(s.codeUnitAt(s.length - 1))) return false;
   return true;
 }
+
+//TODO: This can't be implemented until we can convert 39 character decimal
+//      strings into 16-byte values
+/// Verifies that the variant field is 0b10 and version field is 0b0100 = 4
+bool isValidUuidUid(String s) => throw new UnimplementedError();
+
 
 /// Returns true if each [String] in the [List] is a valid [Uid].
 bool isValidUidStringList(List<String> sList) {
