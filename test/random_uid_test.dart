@@ -12,7 +12,6 @@ main() {
   group('Random Uid Tests', () {
 
     test('Seeded Random Tests', (){
-      //Urgent unit test pseudo - see Uid.generateUid
       Uid uid = Uid.seededPseudo;
       expect(uid.asString.indexOf('2.25.') == 0, true);
       expect(uid.asString.length > 30, true);
@@ -20,7 +19,6 @@ main() {
     });
 
     test('Pseudo Random Tests', (){
-      //Urgent unit test pseudo - see Uid.generatePseudoUid
       Uid uid = Uid.pseudo;
       expect(uid.asString.indexOf('2.25.') == 0, true);
       expect(uid.asString.length > 30, true);
@@ -28,7 +26,6 @@ main() {
     });
 
     test('Secure Random Tests', (){
-      //Urgent unit test pseudo - see Uid.generateUid
       Uid uid = Uid.secure;
       expect(uid.asString.indexOf('2.25.') == 0, true);
       expect(uid.asString.length > 30, true);

@@ -31,11 +31,11 @@ import 'well_known_uids.dart';
 class Uid {
   // A generator function for random [Uid]s. This should be
   // set to either [
-  static Uid Function() _generator = generateUid;
+  static String Function() _generator = generateSecureUidString;
   final String value;
 
   //Urgent: s is not validated.
-  Uid([String s]) : this.value = (s == null) ? _generator() : s;
+  Uid([String s]) : this.value = (s == null) ? _generator() : check(s);
 
   /// Used by internal random generators
   Uid._(this.value);
