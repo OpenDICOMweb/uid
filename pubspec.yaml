@@ -13,12 +13,12 @@ dependencies:
   base:
     path: C:/odw/sdk/base
     version: ^0.6.2
+  bignum: ^0.1.0
   uuid:
     path: C:/odw/sdk/uuid
     version: ^0.6.1
 
 dev_dependencies:
-  bignum: ^0.1.0
   system:
     path: C:/odw/sdk/system
     version: ^0.6.1
