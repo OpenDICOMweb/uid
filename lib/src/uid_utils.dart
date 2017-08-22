@@ -4,6 +4,7 @@
 // Original author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
+import 'package:base/base.dart';
 import 'package:string/ascii.dart';
 
 /// Useful utilities for working with [Uid] [String]s.

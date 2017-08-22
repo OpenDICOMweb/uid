@@ -7,8 +7,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:base/base.dart';
 import 'package:bignum/bignum.dart';
-import 'package:string/ascii.dart';
 import 'package:uid/uid.dart';
 import 'package:uuid/uuid.dart';
 

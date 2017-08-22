@@ -9,10 +9,10 @@ environment:
   sdk: ^1.24.2
 
 dependencies:
-  binary: ^0.1.3
-  bignum: ^0.1.0
-  path: ^1.4.2
 # uses only string/ascii.dart
+  base:
+    path: C:/odw/sdk/base
+    version: ^0.6.1
   string:
     path: C:/odw/sdk/string
     version: ^0.6.1
@@ -21,6 +21,7 @@ dependencies:
     version: ^0.6.1
 
 dev_dependencies:
+  bignum: ^0.1.0
   system:
     path: C:/odw/sdk/system
     version: ^0.6.1
