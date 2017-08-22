@@ -7,7 +7,6 @@
 import 'dart:typed_data';
 
 import 'package:bignum/bignum.dart';
-import 'package:string/ascii.dart';
 import 'package:uuid/uuid.dart';
 
 import 'errors.dart';

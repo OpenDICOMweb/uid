@@ -12,10 +12,7 @@ dependencies:
 # uses only string/ascii.dart
   base:
     path: C:/odw/sdk/base
-    version: ^0.6.1
-  string:
-    path: C:/odw/sdk/string
-    version: ^0.6.1
+    version: ^0.6.2
   uuid:
     path: C:/odw/sdk/uuid
     version: ^0.6.1
