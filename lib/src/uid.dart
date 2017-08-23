@@ -175,4 +175,7 @@ class Uid {
     for (int i = 0; i < length; i++) uList[i] = new UidRandom._();
     return uList;
   }
+
+  /// Returns a [list] of [Uid] generated from random [Uuid]s.
+  static String randomString() => generateSecureUidString();
 }
