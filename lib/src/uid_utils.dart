@@ -4,7 +4,7 @@
 // Original author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-import 'package:base/base.dart';
+import 'package:system/system.dart';
 
 /// Useful utilities for working with [Uid] [String]s.
 /// TODO: verify that this file is used by Element UI.
