@@ -4,7 +4,7 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-import 'package:system/system.dart';
+import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
 
@@ -12,6 +12,7 @@ import 'package:uid/uid.dart';
 // TODO: add tests for all three errors in errors.dart.
 
 void main() {
+  Server.initialize(name: 'test/uid_test', level: Level.info0);
   uidTest();
 }
 
