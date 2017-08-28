@@ -33,7 +33,7 @@ class Uid {
   static String Function() _generator = generateSecureUidString;
   final String value;
 
-  //Urgent: s is not validated.
+  //Urgent: test that validation is working
   Uid([String s]) : this.value = (s == null) ? _generator() : check(s);
 
   /// Used by internal random generators
