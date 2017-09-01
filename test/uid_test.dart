@@ -117,5 +117,22 @@ void uidTest() {
       uid = TransferSyntaxUid.lookup("1.2.840.10008.1.2.1");
       expect(uid == TransferSyntaxUid.kExplicitVRLittleEndian, true);
     });
+    test("Generate Uid", (){
+      for(String s in goodUids){
+        Uid uid0 = new Uid(s);// checks 's' as valid Uid
+        log.info0('uid0:$uid0');
+        expect(uid0.value, equals(s));
+      }
+      Uid uid1 =  new Uid();// generates new Uid
+      log.info0('uid1:$uid1');
+      expect(uid1, isNotNull);
+    });
+
+    test("bad uid string test",(){
+      for(String s in badUids){
+        Uid uid0 = new Uid(s);// checks 's' as valid Uid
+        expect(uid0.value,isNull);
+      }
+    });
   });
 }
