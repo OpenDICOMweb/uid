@@ -36,7 +36,7 @@ List<String> badUids = const <String>[
   ".2.840.10008.0.1.2", // ".2.": uid can't start with dot
   "1.).840.10008.0.*.2.", // Special characters
   "1.2.840.10008.1.2.-4.64", // "-": uid can't have a negative number
-  // Invalid Length : length grater than 64
+  // Invalid Length : length greater than 64
   "1.4.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64",
   "0.0.000.00000.0.0.00",
   "1.2.a840.1b0008.1.2.4.64" // Uid can't have letters
@@ -117,6 +117,7 @@ void uidTest() {
       uid = TransferSyntaxUid.lookup("1.2.840.10008.1.2.1");
       expect(uid == TransferSyntaxUid.kExplicitVRLittleEndian, true);
     });
+
     test("Generate Uid", (){
       for(String s in goodUids){
         Uid uid0 = new Uid(s);// checks 's' as valid Uid
