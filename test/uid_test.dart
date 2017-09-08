@@ -12,7 +12,7 @@ import 'package:uid/uid.dart';
 // TODO: add tests for all three errors in errors.dart.
 
 void main() {
-  Server.initialize(name: 'test/uid_test', level: Level.info0);
+  Server.initialize(name: 'uid_test', level: Level.info0);
   uidTest();
 }
 
@@ -93,7 +93,7 @@ void uidTest() {
       // Bad letter 'Z'
       String s0 = "1.2.8z0.10008.1.2";
       Uid uid = Uid.parse(s0, onError: (s) => null);
-      print('uid: $uid');
+      log.debug('uid: $uid');
       expect(uid == null, true);
       //TODO: this should return null or
       String s1 = "4.2.840.10008.1.2";
@@ -121,11 +121,11 @@ void uidTest() {
     test("Generate Uid", (){
       for(String s in goodUids){
         Uid uid0 = new Uid(s);// checks 's' as valid Uid
-        log.info0('uid0:$uid0');
+        log.debug('uid0:$uid0');
         expect(uid0.value, equals(s));
       }
       Uid uid1 =  new Uid();// generates new Uid
-      log.info0('uid1:$uid1');
+      log.debug('uid1:$uid1');
       expect(uid1, isNotNull);
     });
 

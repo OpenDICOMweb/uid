@@ -9,8 +9,7 @@ import 'package:uid/uid.dart';
 import 'package:test/test.dart';
 
 void main() {
-  Server.initialize(name: 'test/uid2_test', level: Level.info0);
-  system.log.level = Level.debug;
+  Server.initialize(name: 'uid2_test', level: Level.info0);
 
   var goodUids = [
     "0.20.3000",
