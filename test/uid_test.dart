@@ -57,26 +57,26 @@ void uidTest() {
   group('Uid Tests', () {
     test('Well Known UIDs', () {
       Uid uid = Uid.parse("1.2.840.10008.1.2");
-      expect(uid == WKUid.kImplicitVRLittleEndian, true);
+      expect(uid == TransferSyntax.kImplicitVRLittleEndian, true);
       expect(uid.asString, equals("1.2.840.10008.1.2"));
       uid = Uid.parse("1.2.840.10008.1.2.1");
-      expect(uid == WKUid.kExplicitVRLittleEndian, true);
+      expect(uid == TransferSyntax.kExplicitVRLittleEndian, true);
       expect(uid.asString, equals(WKUids[1]));
 
       uid = Uid.parse(WKUids[2]);
-      expect(uid == WKUid.kDeflatedExplicitVRLittleEndian, true);
+      expect(uid == TransferSyntax.kDeflatedExplicitVRLittleEndian, true);
       expect(uid.asString, equals(WKUids[2]));
 
       uid = Uid.parse(WKUids[3]);
-      expect(uid == WKUid.kJPEG_LSLossyImageCompression, true);
+      expect(uid == TransferSyntax.kJPEG_LSLossyImageCompression, true);
       expect(uid.asString, equals(WKUids[3]));
 
       uid = Uid.parse(WKUids[4]);
-      expect(uid == WKUid.kJPEG2000ImageCompression, true);
+      expect(uid == TransferSyntax.kJPEG2000ImageCompression, true);
       expect(uid.asString, equals(WKUids[4]));
 
       uid = Uid.parse(WKUids[5]);
-      expect(uid == WKUid.kJPIPReferenced, true);
+      expect(uid == TransferSyntax.kJPIPReferenced, true);
       expect(uid.asString, equals(WKUids[5]));
     });
 
@@ -112,10 +112,10 @@ void uidTest() {
     });
 
     test('String to TransferSyntax', () {
-      Uid uid = TransferSyntaxUid.lookup("1.2.840.10008.1.2");
-      expect(uid == TransferSyntaxUid.kImplicitVRLittleEndian, true);
-      uid = TransferSyntaxUid.lookup("1.2.840.10008.1.2.1");
-      expect(uid == TransferSyntaxUid.kExplicitVRLittleEndian, true);
+      Uid uid = TransferSyntax.lookup("1.2.840.10008.1.2");
+      expect(uid == TransferSyntax.kImplicitVRLittleEndian, true);
+      uid = TransferSyntax.lookup("1.2.840.10008.1.2.1");
+      expect(uid == TransferSyntax.kExplicitVRLittleEndian, true);
     });
 
     test("Generate Uid", (){
