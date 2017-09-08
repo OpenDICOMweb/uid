@@ -4,9 +4,11 @@
 // See the AUTHORS file for contributors.
 
 import 'package:uid/uid.dart';
+import 'package:system/server.dart';
 import 'package:test/test.dart';
 
 void main() {
+  Server.initialize(name: 'transfer_syntax_test', level: Level.info0);
   transferSyntaxTest();
 }
 
