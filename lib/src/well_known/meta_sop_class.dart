@@ -27,8 +27,7 @@ class MetaSopClass extends WKUid {
   //in each class.
   static MetaSopClass lookup(String s) => map[s];
 
-  static const MetaSopClass kDetachedPatientManagementMetaSOPClass_Retired =
-      const MetaSopClass(
+  static const MetaSopClass kDetachedPatientManagement = const MetaSopClass(
     "1.2.840.10008.3.1.2.1.4",
     "DetachedPatientManagementMetaSOPClass_Retired",
     UidType.kMetaSOPClass,
@@ -36,8 +35,7 @@ class MetaSopClass extends WKUid {
     "Detached Patient Management Meta SOP Class (Retired)",
   );
 
-  static const MetaSopClass kDetachedResultsManagementMetaSOPClass_Retired =
-      const MetaSopClass(
+  static const MetaSopClass kDetachedResultsManagement = const MetaSopClass(
     "1.2.840.10008.3.1.2.5.4",
     "DetachedResultsManagementMetaSOPClass_Retired",
     UidType.kMetaSOPClass,
@@ -45,15 +43,14 @@ class MetaSopClass extends WKUid {
     "Detached Results Management Meta SOP Class (Retired)",
   );
 
-  static const MetaSopClass kDetachedStudyManagementMetaSOPClass_Retired =
-      const MetaSopClass(
-          "1.2.840.10008.3.1.2.5.5",
-          "DetachedStudyManagementMetaSOPClass_Retired",
-          UidType.kMetaSOPClass,
-          true,
-          "Detached Study Management Meta SOP Class (Retired)");
+  static const MetaSopClass kDetachedStudyManagement = const MetaSopClass(
+      "1.2.840.10008.3.1.2.5.5",
+      "DetachedStudyManagementMetaSOPClass_Retired",
+      UidType.kMetaSOPClass,
+      true,
+      "Detached Study Management Meta SOP Class (Retired)");
 
-  static const MetaSopClass kBasicGrayscalePrintManagementMetaSOPClass =
+  static const MetaSopClass kBasicGrayscalePrintManagement =
       const MetaSopClass(
           "1.2.840.10008.5.1.1.9",
           "BasicGrayscalePrintManagementMetaSOPClass",
@@ -61,8 +58,7 @@ class MetaSopClass extends WKUid {
           false,
           "Basic Grayscale Print Management Meta SOP Class");
 
-  static const MetaSopClass
-      kReferencedGrayscalePrintManagementMetaSOPClass_Retired =
+  static const MetaSopClass kReferencedGrayscalePrintManagement =
       const MetaSopClass(
     "1.2.840.10008.5.1.1.9.1",
     "ReferencedGrayscalePrintManagementMetaSOPClass_Retired",
@@ -71,7 +67,7 @@ class MetaSopClass extends WKUid {
     "Referenced Grayscale Print Management Meta SOP Class (Retired)",
   );
 
-  static const MetaSopClass kBasicColorPrintManagementMetaSOPClass =
+  static const MetaSopClass kBasicColorPrintManagement =
       const MetaSopClass(
           "1.2.840.10008.5.1.1.18",
           "BasicColorPrintManagementMetaSOPClass",
@@ -79,8 +75,7 @@ class MetaSopClass extends WKUid {
           false,
           "Basic Color Print Management Meta SOP Class");
 
-  static const MetaSopClass
-      kReferencedColorPrintManagementMetaSOPClass_Retired =
+  static const MetaSopClass kReferencedColorPrintManagement =
       const MetaSopClass(
     "1.2.840.10008.5.1.1.18.1",
     "ReferencedColorPrintManagementMetaSOPClass_Retired",
@@ -89,8 +84,7 @@ class MetaSopClass extends WKUid {
     "Referenced Color Print Management Meta SOP Class (Retired)",
   );
 
-  static const MetaSopClass kPullStoredPrintManagementMetaSOPClass_Retired =
-      const MetaSopClass(
+  static const MetaSopClass kPullStoredPrintManagement = const MetaSopClass(
     "1.2.840.10008.5.1.1.32",
     "PullStoredPrintManagementMetaSOPClass_Retired",
     UidType.kMetaSOPClass,
@@ -98,8 +92,7 @@ class MetaSopClass extends WKUid {
     "Pull Stored Print Management Meta SOP Class (Retired)",
   );
 
-  static const MetaSopClass
-      kGeneralPurposeWorklistManagementMetaSOPClass_Retired =
+  static const MetaSopClass kGeneralPurposeWorklistManagement =
       const MetaSopClass(
     "1.2.840.10008.5.1.4.32",
     "GeneralPurposeWorklistManagementMetaSOPClass_Retired",
@@ -109,30 +102,26 @@ class MetaSopClass extends WKUid {
   );
 
   static const List<MetaSopClass> members = const <MetaSopClass>[
-    kDetachedPatientManagementMetaSOPClass_Retired,
-    kDetachedResultsManagementMetaSOPClass_Retired,
-    kDetachedStudyManagementMetaSOPClass_Retired,
-    kBasicGrayscalePrintManagementMetaSOPClass,
-    kReferencedGrayscalePrintManagementMetaSOPClass_Retired,
-    kBasicColorPrintManagementMetaSOPClass,
-    kReferencedColorPrintManagementMetaSOPClass_Retired,
-    kPullStoredPrintManagementMetaSOPClass_Retired,
-    kGeneralPurposeWorklistManagementMetaSOPClass_Retired
+    kDetachedPatientManagement,
+    kDetachedResultsManagement,
+    kDetachedStudyManagement,
+    kBasicGrayscalePrintManagement,
+    kReferencedGrayscalePrintManagement,
+    kBasicColorPrintManagement,
+    kReferencedColorPrintManagement,
+    kPullStoredPrintManagement,
+    kGeneralPurposeWorklistManagement
   ];
 
-  static const Map<String, MetaSopClass> map =
-      const <String, MetaSopClass>{
-    "1.2.840.10008.3.1.2.1.4": kDetachedPatientManagementMetaSOPClass_Retired,
-    "1.2.840.10008.3.1.2.5.4": kDetachedResultsManagementMetaSOPClass_Retired,
-    "1.2.840.10008.3.1.2.5.5": kDetachedStudyManagementMetaSOPClass_Retired,
-    "1.2.840.10008.5.1.1.9": kBasicGrayscalePrintManagementMetaSOPClass,
-    "1.2.840.10008.5.1.1.9.1":
-        kReferencedGrayscalePrintManagementMetaSOPClass_Retired,
-    "1.2.840.10008.5.1.1.18": kBasicColorPrintManagementMetaSOPClass,
-    "1.2.840.10008.5.1.1.18.1":
-        kReferencedColorPrintManagementMetaSOPClass_Retired,
-    "1.2.840.10008.5.1.1.32": kPullStoredPrintManagementMetaSOPClass_Retired,
-    "1.2.840.10008.5.1.4.32":
-        kGeneralPurposeWorklistManagementMetaSOPClass_Retired
+  static const Map<String, MetaSopClass> map = const <String, MetaSopClass>{
+    "1.2.840.10008.3.1.2.1.4": kDetachedPatientManagement,
+    "1.2.840.10008.3.1.2.5.4": kDetachedResultsManagement,
+    "1.2.840.10008.3.1.2.5.5": kDetachedStudyManagement,
+    "1.2.840.10008.5.1.1.9": kBasicGrayscalePrintManagement,
+    "1.2.840.10008.5.1.1.9.1": kReferencedGrayscalePrintManagement,
+    "1.2.840.10008.5.1.1.18": kBasicColorPrintManagement,
+    "1.2.840.10008.5.1.1.18.1": kReferencedColorPrintManagement,
+    "1.2.840.10008.5.1.1.32": kPullStoredPrintManagement,
+    "1.2.840.10008.5.1.4.32": kGeneralPurposeWorklistManagement
   };
 }

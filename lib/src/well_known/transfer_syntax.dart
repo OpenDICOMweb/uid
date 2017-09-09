@@ -66,7 +66,7 @@ class TransferSyntax extends WKUid {
     false,
   );
 
-  static const TransferSyntax kDefaultTransferSyntaxForDIMSE = kImplicitVRLittleEndian;
+  static const TransferSyntax kDefaultForDIMSE = kImplicitVRLittleEndian;
 
   static const TransferSyntax kExplicitVRLittleEndian = const TransferSyntax(
       "1.2.840.10008.1.2.1",
@@ -76,7 +76,7 @@ class TransferSyntax extends WKUid {
       false,
       false);
 
-  static const TransferSyntax kTransferSyntaxDefaultForDicomWeb = kExplicitVRLittleEndian;
+  static const TransferSyntax kDefaultForDicomWeb = kExplicitVRLittleEndian;
 
   static const TransferSyntax kDeflatedExplicitVRLittleEndian =
       const TransferSyntax(
@@ -97,16 +97,16 @@ class TransferSyntax extends WKUid {
       false,
       false);
 
-  static const TransferSyntax kJPEGBaseline_1 = const TransferSyntax(
+  static const TransferSyntax kJPEGBaseline1 = const TransferSyntax(
       "1.2.840.10008.1.2.4.50",
       "JPEGBaseline_1",
       "JPEG Baseline (Process 1) : Default Transfer Syntax for Lossy "
       "JPEG 8 Bit Image Compression",
       "image/jpeg");
 
-  static const TransferSyntax kJPEGLossy8BitDefault = kJPEGBaseline_1;
+  static const TransferSyntax kJPEGLossy8BitDefault = kJPEGBaseline1;
 
-  static const TransferSyntax kJPEGExtended_2_4 = const TransferSyntax(
+  static const TransferSyntax kJPEGExtended2_4 = const TransferSyntax(
       "1.2.840.10008.1.2.4.51",
       "JPEGExtended_2_4",
       "JPEG Extended (Process 2 & 4) : Default Transfer Syntax for "
@@ -114,9 +114,9 @@ class TransferSyntax extends WKUid {
       "image/jpeg",
       false);
 
-  static const TransferSyntax kJPEGLossy12BitDefault = kJPEGExtended_2_4;
+  static const TransferSyntax kJPEGLossy12BitDefault = kJPEGExtended2_4;
 
-  static const TransferSyntax kJPEGExtended_3_5_Retired = const TransferSyntax(
+  static const TransferSyntax kJPEGExtended3_5 = const TransferSyntax(
       "1.2.840.10008.1.2.4.52",
       "JPEGExtended_3_5_Retired",
       "JPEG Extended (Process 3 & 5) (Retired)",
@@ -124,7 +124,7 @@ class TransferSyntax extends WKUid {
       true);
 
   static const TransferSyntax
-      kJPEGSpectralSelectionNon_Hierarchical_6_8_Retired = const TransferSyntax(
+      kJPEGSpectralSelectionNon_Hierarchical6_8 = const TransferSyntax(
           "1.2.840.10008.1.2.4.53",
           "JPEGSpectralSelectionNon_Hierarchical_6_8_Retired",
           "JPEG Spectral Selection, Non-Hierarchical (Process 6 & 8) (Retired)",
@@ -132,7 +132,7 @@ class TransferSyntax extends WKUid {
           true);
 
   static const TransferSyntax
-      kJPEGSpectralSelectionNon_Hierarchical_7_9_Retired = const TransferSyntax(
+      kJPEGSpectralSelectionNon_Hierarchical_7_9 = const TransferSyntax(
           "1.2.840.10008.1.2.4.54",
           "JPEGSpectralSelectionNon_Hierarchical_7_9_Retired",
           "JPEG Spectral Selection, Non-Hierarchical (Process 7 & 9) (Retired)",
@@ -140,7 +140,7 @@ class TransferSyntax extends WKUid {
           true);
 
   static const TransferSyntax
-      kJPEGFullProgressionNon_Hierarchical_10_12_Retired = const TransferSyntax(
+      kJPEGFullProgressionNon_Hierarchical_10_12 = const TransferSyntax(
           "1.2.840.10008.1.2.4.55",
           "JPEGFullProgressionNon_Hierarchical_10_12_Retired",
           "JPEG Full Progression, Non-Hierarchical (Process 10 & 12) (Retired)",
@@ -148,7 +148,7 @@ class TransferSyntax extends WKUid {
           true);
 
   static const TransferSyntax
-      kJPEGFullProgressionNon_Hierarchical_11_13_Retired = const TransferSyntax(
+      kJPEGFullProgressionNon_Hierarchical_11_13 = const TransferSyntax(
           "1.2.840.10008.1.2.4.56",
           "JPEGFullProgressionNon_Hierarchical_11_13_Retired",
           "JPEG Full Progression, Non-Hierarchical (Process 11 & 13) (Retired)",
@@ -162,7 +162,7 @@ class TransferSyntax extends WKUid {
           "JPEG Lossless, Non-Hierarchical (Process 14)",
           "image/jpeg???");
 
-  static const TransferSyntax kJPEGLosslessNon_Hierarchical_15_Retired =
+  static const TransferSyntax kJPEGLosslessNon_Hierarchical_15 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.58",
           "JPEGLosslessNon_Hierarchical_15_Retired",
@@ -170,7 +170,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGExtendedHierarchical_16_18_Retired =
+  static const TransferSyntax kJPEGExtendedHierarchical_16_18 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.59",
           "JPEGExtendedHierarchical_16_18_Retired",
@@ -178,7 +178,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGExtendedHierarchical_17_19_Retired =
+  static const TransferSyntax kJPEGExtendedHierarchical_17_19 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.60",
           "JPEGExtendedHierarchical_17_19_Retired",
@@ -186,7 +186,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGSpectralSelectionHierarchical_20_22_Retired =
+  static const TransferSyntax kJPEGSpectralSelectionHierarchical_20_22 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.61",
           "JPEGSpectralSelectionHierarchical_20_22_Retired",
@@ -194,7 +194,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGSpectralSelectionHierarchical_21_23_Retired =
+  static const TransferSyntax kJPEGSpectralSelectionHierarchical_21_23 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.62",
           "JPEGSpectralSelectionHierarchical_21_23_Retired",
@@ -202,7 +202,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGFullProgressionHierarchical_24_26_Retired =
+  static const TransferSyntax kJPEGFullProgressionHierarchical_24_26 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.63",
           "JPEGFullProgressionHierarchical_24_26_Retired",
@@ -210,7 +210,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGFullProgressionHierarchical_25_27_Retired =
+  static const TransferSyntax kJPEGFullProgressionHierarchical_25_27 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.64",
           "JPEGFullProgressionHierarchical_25_27_Retired",
@@ -218,7 +218,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGLosslessHierarchical_28_Retired =
+  static const TransferSyntax kJPEGLosslessHierarchical_28 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.65",
           "JPEGLosslessHierarchical_28_Retired",
@@ -226,7 +226,7 @@ class TransferSyntax extends WKUid {
           "image/jpeg",
           true);
 
-  static const TransferSyntax kJPEGLosslessHierarchical_29_Retired =
+  static const TransferSyntax kJPEGLosslessHierarchical_29 =
       const TransferSyntax(
           "1.2.840.10008.1.2.4.66",
           "JPEGLosslessHierarchical_29_Retired",
@@ -356,27 +356,27 @@ class TransferSyntax extends WKUid {
     "1.2.840.10008.1.2.1": kExplicitVRLittleEndian,
     "1.2.840.10008.1.2.1.99": kDeflatedExplicitVRLittleEndian,
     "1.2.840.10008.1.2.2": kExplicitVRBigEndian,
-    "1.2.840.10008.1.2.4.50": kJPEGBaseline_1,
-    "1.2.840.10008.1.2.4.51": kJPEGExtended_2_4,
-    "1.2.840.10008.1.2.4.52": kJPEGExtended_3_5_Retired,
+    "1.2.840.10008.1.2.4.50": kJPEGBaseline1,
+    "1.2.840.10008.1.2.4.51": kJPEGExtended2_4,
+    "1.2.840.10008.1.2.4.52": kJPEGExtended3_5,
     "1.2.840.10008.1.2.4.53":
-        kJPEGSpectralSelectionNon_Hierarchical_6_8_Retired,
+        kJPEGSpectralSelectionNon_Hierarchical6_8,
     "1.2.840.10008.1.2.4.54":
-        kJPEGSpectralSelectionNon_Hierarchical_7_9_Retired,
+        kJPEGSpectralSelectionNon_Hierarchical_7_9,
     "1.2.840.10008.1.2.4.55":
-        kJPEGFullProgressionNon_Hierarchical_10_12_Retired,
+        kJPEGFullProgressionNon_Hierarchical_10_12,
     "1.2.840.10008.1.2.4.56":
-        kJPEGFullProgressionNon_Hierarchical_11_13_Retired,
+        kJPEGFullProgressionNon_Hierarchical_11_13,
     "1.2.840.10008.1.2.4.57": kJPEGLosslessNon_Hierarchical_14,
-    "1.2.840.10008.1.2.4.58": kJPEGLosslessNon_Hierarchical_15_Retired,
-    "1.2.840.10008.1.2.4.59": kJPEGExtendedHierarchical_16_18_Retired,
-    "1.2.840.10008.1.2.4.60": kJPEGExtendedHierarchical_17_19_Retired,
-    "1.2.840.10008.1.2.4.61": kJPEGSpectralSelectionHierarchical_20_22_Retired,
-    "1.2.840.10008.1.2.4.62": kJPEGSpectralSelectionHierarchical_21_23_Retired,
-    "1.2.840.10008.1.2.4.63": kJPEGFullProgressionHierarchical_24_26_Retired,
-    "1.2.840.10008.1.2.4.64": kJPEGFullProgressionHierarchical_25_27_Retired,
-    "1.2.840.10008.1.2.4.65": kJPEGLosslessHierarchical_28_Retired,
-    "1.2.840.10008.1.2.4.66": kJPEGLosslessHierarchical_29_Retired,
+    "1.2.840.10008.1.2.4.58": kJPEGLosslessNon_Hierarchical_15,
+    "1.2.840.10008.1.2.4.59": kJPEGExtendedHierarchical_16_18,
+    "1.2.840.10008.1.2.4.60": kJPEGExtendedHierarchical_17_19,
+    "1.2.840.10008.1.2.4.61": kJPEGSpectralSelectionHierarchical_20_22,
+    "1.2.840.10008.1.2.4.62": kJPEGSpectralSelectionHierarchical_21_23,
+    "1.2.840.10008.1.2.4.63": kJPEGFullProgressionHierarchical_24_26,
+    "1.2.840.10008.1.2.4.64": kJPEGFullProgressionHierarchical_25_27,
+    "1.2.840.10008.1.2.4.65": kJPEGLosslessHierarchical_28,
+    "1.2.840.10008.1.2.4.66": kJPEGLosslessHierarchical_29,
     "1.2.840.10008.1.2.4.70":
         kJPEGLosslessNon_HierarchicalFirst_OrderPrediction_14_1,
     "1.2.840.10008.1.2.4.80": kJPEG_LSLosslessImageCompression,
