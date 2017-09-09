@@ -74,7 +74,7 @@ class WKUid extends Uid {
       "Storage Service Class");
 
   static const WKUid
-      kUnifiedWorklistAndProcedureStepServiceClass_Trial = const WKUid(
+      kUnifiedWorklistAndProcedureStepServiceClassTrial = const WKUid(
     "1.2.840.10008.5.1.4.34.4",
     "UnifiedWorklistAndProcedureStepServiceClass_Trial_Retired",
     UidType.kServiceClass,

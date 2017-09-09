@@ -42,13 +42,12 @@ class SopClass extends WKUid {
       false,
       "Media Storage Directory Storage");
 
-  static const SopClass kBasicStudyContentNotification =
-      const SopClass(
-          "1.2.840.10008.1.9",
-          "BasicStudyContentNotificationSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Basic Study Content Notification SOP Class (Retired)");
+  static const SopClass kBasicStudyContentNotification = const SopClass(
+      "1.2.840.10008.1.9",
+      "BasicStudyContentNotificationSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Basic Study Content Notification SOP Class (Retired)");
   static const SopClass kStorageCommitmentPushModel = const SopClass(
       "1.2.840.10008.1.20.1",
       "StorageCommitmentPushModelSOPClass",
@@ -56,13 +55,12 @@ class SopClass extends WKUid {
       true,
       "Storage Commitment Push Model SOP Class");
 
-  static const SopClass kStorageCommitmentPullModel =
-      const SopClass(
-          "1.2.840.10008.1.20.2",
-          "StorageCommitmentPullModelSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Storage Commitment Pull Model SOP Class (Retired)");
+  static const SopClass kStorageCommitmentPullModel = const SopClass(
+      "1.2.840.10008.1.20.2",
+      "StorageCommitmentPullModelSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Storage Commitment Pull Model SOP Class (Retired)");
 
   static const SopClass kProceduralEventLogging = const SopClass(
       "1.2.840.10008.1.40",
@@ -71,49 +69,43 @@ class SopClass extends WKUid {
       false,
       "Procedural Event Logging SOP Class");
 
-  static const SopClass kSubstanceAdministrationLogging =
-      const SopClass(
-          "1.2.840.10008.1.42",
-          "SubstanceAdministrationLoggingSOPClass",
-          UidType.kSOPClass,
-          false,
-          "Substance Administration Logging SOP Class");
-  static const SopClass kDetachedPatientManagement =
-      const SopClass(
-          "1.2.840.10008.3.1.2.1.1",
-          "DetachedPatientManagementSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Detached Patient Management SOP Class (Retired)");
+  static const SopClass kSubstanceAdministrationLogging = const SopClass(
+      "1.2.840.10008.1.42",
+      "SubstanceAdministrationLoggingSOPClass",
+      UidType.kSOPClass,
+      false,
+      "Substance Administration Logging SOP Class");
+  static const SopClass kDetachedPatientManagement = const SopClass(
+      "1.2.840.10008.3.1.2.1.1",
+      "DetachedPatientManagementSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Detached Patient Management SOP Class (Retired)");
 
-  static const SopClass kDetachedVisitManagement =
-      const SopClass(
-          "1.2.840.10008.3.1.2.2.1",
-          "DetachedVisitManagementSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Detached Visit Management SOP Class (Retired)");
-  static const SopClass kDetachedStudyManagement =
-      const SopClass(
-          "1.2.840.10008.3.1.2.3.1",
-          "DetachedStudyManagementSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Detached Study Management SOP Class (Retired)");
-  static const SopClass kStudyComponentManagement =
-      const SopClass(
-          "1.2.840.10008.3.1.2.3.2",
-          "StudyComponentManagementSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Study Component Management SOP Class (Retired)");
-  static const SopClass kModalityPerformedProcedureStep =
-      const SopClass(
-          "1.2.840.10008.3.1.2.3.3",
-          "ModalityPerformedProcedureStepSOPClass",
-          UidType.kSOPClass,
-          false,
-          "Modality Performed Procedure Step SOP Class");
+  static const SopClass kDetachedVisitManagement = const SopClass(
+      "1.2.840.10008.3.1.2.2.1",
+      "DetachedVisitManagementSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Detached Visit Management SOP Class (Retired)");
+  static const SopClass kDetachedStudyManagement = const SopClass(
+      "1.2.840.10008.3.1.2.3.1",
+      "DetachedStudyManagementSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Detached Study Management SOP Class (Retired)");
+  static const SopClass kStudyComponentManagement = const SopClass(
+      "1.2.840.10008.3.1.2.3.2",
+      "StudyComponentManagementSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Study Component Management SOP Class (Retired)");
+  static const SopClass kModalityPerformedProcedureStep = const SopClass(
+      "1.2.840.10008.3.1.2.3.3",
+      "ModalityPerformedProcedureStepSOPClass",
+      UidType.kSOPClass,
+      false,
+      "Modality Performed Procedure Step SOP Class");
   static const SopClass kModalityPerformedProcedureStepRetrieve =
       const SopClass(
     "1.2.840.10008.3.1.2.3.4",
@@ -130,15 +122,13 @@ class SopClass extends WKUid {
     false,
     "Modality Performed Procedure Step Notification SOP Class",
   );
-  static const SopClass kDetachedResultsManagement =
-      const SopClass(
-          "1.2.840.10008.3.1.2.5.1",
-          "DetachedResultsManagementSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Detached Results Management SOP Class (Retired)");
-  static const SopClass kDetachedInterpretationManagement =
-      const SopClass(
+  static const SopClass kDetachedResultsManagement = const SopClass(
+      "1.2.840.10008.3.1.2.5.1",
+      "DetachedResultsManagementSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Detached Results Management SOP Class (Retired)");
+  static const SopClass kDetachedInterpretationManagement = const SopClass(
     "1.2.840.10008.3.1.2.6.1",
     "DetachedInterpretationManagementSOPClass_Retired",
     UidType.kSOPClass,
@@ -176,36 +166,24 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       true,
       "Referenced Image Box SOP Class (Retired)");
-  static const SopClass kPrintJob = const SopClass(
-      "1.2.840.10008.5.1.1.14",
-      "PrintJobSOPClass",
-      UidType.kSOPClass,
-      false,
-      "Print Job SOP Class");
+  static const SopClass kPrintJob = const SopClass("1.2.840.10008.5.1.1.14",
+      "PrintJobSOPClass", UidType.kSOPClass, false, "Print Job SOP Class");
   static const SopClass kBasicAnnotationBox = const SopClass(
       "1.2.840.10008.5.1.1.15",
       "BasicAnnotationBoxSOPClass",
       UidType.kSOPClass,
       false,
       "Basic Annotation Box SOP Class");
-  static const SopClass kPrinter = const SopClass(
-      "1.2.840.10008.5.1.1.16",
-      "PrinterSOPClass",
-      UidType.kSOPClass,
-      false,
-      "Printer SOP Class");
+  static const SopClass kPrinter = const SopClass("1.2.840.10008.5.1.1.16",
+      "PrinterSOPClass", UidType.kSOPClass, false, "Printer SOP Class");
   static const SopClass kPrinterConfigurationRetrieval = const SopClass(
       "1.2.840.10008.5.1.1.16.376",
       "PrinterConfigurationRetrievalSOPClass",
       UidType.kSOPClass,
       false,
       "Printer Configuration Retrieval SOP Class");
-  static const SopClass kVOILUTBox = const SopClass(
-      "1.2.840.10008.5.1.1.22",
-      "VOILUTBoxSOPClass",
-      UidType.kSOPClass,
-      false,
-      "VOI LUT Box SOP Class");
+  static const SopClass kVOILUTBox = const SopClass("1.2.840.10008.5.1.1.22",
+      "VOILUTBoxSOPClass", UidType.kSOPClass, false, "VOI LUT Box SOP Class");
   static const SopClass kPresentationLUT = const SopClass(
       "1.2.840.10008.5.1.1.23",
       "PresentationLUTSOPClass",
@@ -218,13 +196,12 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       true,
       "Image Overlay Box SOP Class (Retired)");
-  static const SopClass kBasicPrintImageOverlayBox =
-      const SopClass(
-          "1.2.840.10008.5.1.1.24.1",
-          "BasicPrintImageOverlayBoxSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Basic Print Image Overlay Box SOP Class (Retired)");
+  static const SopClass kBasicPrintImageOverlayBox = const SopClass(
+      "1.2.840.10008.5.1.1.24.1",
+      "BasicPrintImageOverlayBoxSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Basic Print Image Overlay Box SOP Class (Retired)");
 
   static const SopClass kPrintQueueManagement = const SopClass(
       "1.2.840.10008.5.1.1.26",
@@ -238,21 +215,19 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       true,
       "Stored Print Storage SOP Class (Retired)");
-  static const SopClass kHardcopyGrayscaleImageStorage =
-      const SopClass(
+  static const SopClass kHardcopyGrayscaleImageStorage = const SopClass(
     "1.2.840.10008.5.1.1.29",
     "HardcopyGrayscaleImageStorageSOPClass_Retired",
     UidType.kSOPClass,
     true,
     "Hardcopy Grayscale Image Storage SOP Class (Retired)",
   );
-  static const SopClass kHardcopyColorImageStorage =
-      const SopClass(
-          "1.2.840.10008.5.1.1.30",
-          "HardcopyColorImageStorageSOPClass_Retired",
-          UidType.kSOPClass,
-          true,
-          "Hardcopy Color Image Storage SOP Class (Retired)");
+  static const SopClass kHardcopyColorImageStorage = const SopClass(
+      "1.2.840.10008.5.1.1.30",
+      "HardcopyColorImageStorageSOPClass_Retired",
+      UidType.kSOPClass,
+      true,
+      "Hardcopy Color Image Storage SOP Class (Retired)");
   static const SopClass kPullPrintRequest = const SopClass(
       "1.2.840.10008.5.1.1.31",
       "PullPrintRequestSOPClass_Retired",
@@ -271,7 +246,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Computed Radiography Image Storage");
-  static const SopClass kDigitalX_RayImageStorage_ForPresentation =
+  static const SopClass kDigitalXRayImageStorageForPresentation =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.1.1",
     "DigitalX_RayImageStorage_ForPresentation",
@@ -279,7 +254,7 @@ class SopClass extends WKUid {
     false,
     "Digital X-Ray Image Storage - For Presentation",
   );
-  static const SopClass kDigitalX_RayImageStorage_ForProcessing =
+  static const SopClass kDigitalXRayImageStorageForProcessing =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.1.1.1",
     "DigitalX_RayImageStorage_ForProcessing",
@@ -287,7 +262,7 @@ class SopClass extends WKUid {
     false,
     "Digital X-Ray Image Storage - For Processing",
   );
-  static const SopClass kDigitalMammographyX_RayImageStorage_ForPresentation =
+  static const SopClass kDigitalMammographyXRayImageStorageForPresentation =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.1.2",
     "DigitalMammographyX_RayImageStorage_ForPresentation",
@@ -295,7 +270,7 @@ class SopClass extends WKUid {
     false,
     "Digital Mammography X-Ray Image Storage - For Presentation",
   );
-  static const SopClass kDigitalMammographyX_RayImageStorage_ForProcessing =
+  static const SopClass kDigitalMammographyXRayImageStorageForProcessing =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.1.2.1",
     "DigitalMammographyX_RayImageStorage_ForProcessing",
@@ -303,7 +278,7 @@ class SopClass extends WKUid {
     false,
     "Digital Mammography X-Ray Image Storage - For Processing",
   );
-  static const SopClass kDigitalIntra_OralX_RayImageStorage_ForPresentation =
+  static const SopClass kDigitalIntraOralXRayImageStorageForPresentation =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.1.3",
     "DigitalIntra_OralX_RayImageStorage_ForPresentation",
@@ -311,7 +286,7 @@ class SopClass extends WKUid {
     false,
     "Digital Intra-Oral X-Ray Image Storage - For Presentation",
   );
-  static const SopClass kDigitalIntra_OralX_RayImageStorage_ForProcessing =
+  static const SopClass kDigitalIntraOralXRayImageStorageForProcessing =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.1.3.1",
     "DigitalIntra_OralX_RayImageStorage_ForProcessing",
@@ -337,19 +312,19 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Legacy Converted Enhanced CT Image Storage");
-  static const SopClass kUltrasoundMultiFrameImageStorage =
-      const SopClass(
-          "1.2.840.10008.5.1.4.1.1.3",
-          "UltrasoundMulti_frameImageStorage_Retired",
-          UidType.kSOPClass,
-          true,
-          "Ultrasound Multi-frame Image Storage (Retired)");
-  static const SopClass kUltrasoundMultiFrameImageStorage_Retired = const SopClass(
-      "1.2.840.10008.5.1.4.1.1.3.1",
-      "UltrasoundMulti_frameImageStorage",
+  static const SopClass kUltrasoundMultiFrameImageStorage = const SopClass(
+      "1.2.840.10008.5.1.4.1.1.3",
+      "UltrasoundMulti_frameImageStorage_Retired",
       UidType.kSOPClass,
-      false,
-      "Ultrasound Multi-frame Image Storage");
+      true,
+      "Ultrasound Multi-frame Image Storage (Retired)");
+  static const SopClass kUltrasoundMultiFrameImageStorageRetired =
+      const SopClass(
+          "1.2.840.10008.5.1.4.1.1.3.1",
+          "UltrasoundMulti_frameImageStorage",
+          UidType.kSOPClass,
+          false,
+          "Ultrasound Multi-frame Image Storage");
   static const SopClass kMRImageStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.4",
       "MRImageStorage",
@@ -386,7 +361,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       true,
       "Nuclear Medicine Image Storage (Retired)");
-  static const SopClass kUltrasoundImageStorage_Retired = const SopClass(
+  static const SopClass kUltrasoundImageStorageRetired = const SopClass(
       "1.2.840.10008.5.1.4.1.1.6",
       "UltrasoundImageStorage_Retired",
       UidType.kSOPClass,
@@ -454,13 +429,13 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       true,
       "Standalone Curve Storage (Retired)");
-  static const SopClass kWaveformStorage_Trial = const SopClass(
+  static const SopClass kWaveformStorageTrial = const SopClass(
       "1.2.840.10008.5.1.4.1.1.9.1",
       "WaveformStorage_Trial_Retired",
       UidType.kSOPClass,
       true,
       "Waveform Storage - Trial (Retired)");
-  static const SopClass ktwelve_lead_12ECGWaveformStorage = const SopClass(
+  static const SopClass kTwelvelead12ECGWaveformStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.9.1.1",
       "twelve_lead_12ECGWaveformStorage",
       UidType.kSOPClass,
@@ -536,15 +511,14 @@ class SopClass extends WKUid {
     false,
     "Grayscale Softcopy Presentation State Storage SOP Class",
   );
-  static const SopClass kColorSoftcopyPresentationStateStorage =
-      const SopClass(
+  static const SopClass kColorSoftcopyPresentationStateStorage = const SopClass(
     "1.2.840.10008.5.1.4.1.1.11.2",
     "ColorSoftcopyPresentationStateStorageSOPClass",
     UidType.kSOPClass,
     false,
     "Color Softcopy Presentation State Storage SOP Class",
   );
-  static const SopClass kPseudo_ColorSoftcopyPresentationStateStorage =
+  static const SopClass kPseudoColorSoftcopyPresentationStateStorage =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.11.3",
     "Pseudo_ColorSoftcopyPresentationStateStorageSOPClass",
@@ -560,7 +534,7 @@ class SopClass extends WKUid {
     false,
     "Blending Softcopy Presentation State Storage SOP Class",
   );
-  static const SopClass kXA_XRFGrayscaleSoftcopyPresentationStateStorage =
+  static const SopClass kXAXRFGrayscaleSoftcopyPresentationStateStorage =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.11.5",
     "XA_XRFGrayscaleSoftcopyPresentationStateStorage",
@@ -568,7 +542,7 @@ class SopClass extends WKUid {
     false,
     "XA/XRF Grayscale Softcopy Presentation State Storage",
   );
-  static const SopClass kX_RayAngiographicImageStorage = const SopClass(
+  static const SopClass kXRayAngiographicImageStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.12.1",
       "X_RayAngiographicImageStorage",
       UidType.kSOPClass,
@@ -580,7 +554,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Enhanced XA Image Storage");
-  static const SopClass kX_RayRadiofluoroscopicImageStorage = const SopClass(
+  static const SopClass kXRayRadiofluoroscopicImageStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.12.2",
       "X_RayRadiofluoroscopicImageStorage",
       UidType.kSOPClass,
@@ -592,21 +566,20 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Enhanced XRF Image Storage");
-  static const SopClass kX_RayAngiographicBi_PlaneImageStorage =
-      const SopClass(
+  static const SopClass kXRayAngiographicBiPlaneImageStorage = const SopClass(
     "1.2.840.10008.5.1.4.1.1.12.3",
     "X_RayAngiographicBi_PlaneImageStorage_Retired",
     UidType.kSOPClass,
     true,
     "X-Ray Angiographic Bi-Plane Image Storage (Retired)",
   );
-  static const SopClass kX_Ray3DAngiographicImageStorage = const SopClass(
+  static const SopClass kXRay3DAngiographicImageStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.13.1.1",
       "X_Ray3DAngiographicImageStorage",
       UidType.kSOPClass,
       false,
       "X-Ray 3D Angiographic Image Storage");
-  static const SopClass kX_Ray3DCraniofacialImageStorage = const SopClass(
+  static const SopClass kXRay3DCraniofacialImageStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.13.1.2",
       "X_Ray3DCraniofacialImageStorage",
       UidType.kSOPClass,
@@ -619,7 +592,7 @@ class SopClass extends WKUid {
       false,
       "Breast Tomosynthesis Image Storage");
   static const SopClass
-      kIntravascularOpticalCoherenceTomographyImageStorage_ForPresentation =
+      kIntravascularOpticalCoherenceTomographyImageStorageForPresentation =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.14.1",
     "IntravascularOpticalCoherenceTomographyImageStorage_ForPresentation",
@@ -629,7 +602,7 @@ class SopClass extends WKUid {
         "- For Presentation",
   );
   static const SopClass
-      kIntravascularOpticalCoherenceTomographyImageStorage_ForProcessing =
+      kIntravascularOpticalCoherenceTomographyImageStorageForProcessing =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.14.2",
     "IntravascularOpticalCoherenceTomographyImageStorage_ForProcessing",
@@ -637,7 +610,7 @@ class SopClass extends WKUid {
     false,
     "Intravascular Optical Coherence Tomography Image Storage - For Processing",
   );
-  static const SopClass kNuclearMedicineImageStorage_Retired = const SopClass(
+  static const SopClass kNuclearMedicineImageStorageRetired = const SopClass(
       "1.2.840.10008.5.1.4.1.1.20",
       "NuclearMedicineImageStorage",
       UidType.kSOPClass,
@@ -697,14 +670,13 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Surface Scan Point Cloud Storage");
-  static const SopClass kVLImageStorage_Trial = const SopClass(
+  static const SopClass kVLImageStorageTrial = const SopClass(
       "1.2.840.10008.5.1.4.1.1.77.1",
       "VLImageStorage_Trial_Retired",
       UidType.kSOPClass,
       true,
       "VL Image Storage - Trial (Retired)");
-  static const SopClass kVLMultiFrameImageStorage_Trial =
-      const SopClass(
+  static const SopClass kVLMultiFrameImageStorageTrial = const SopClass(
     "1.2.840.10008.5.1.4.1.1.77.2",
     "VLMulti_frameImageStorage_Trial_Retired",
     UidType.kSOPClass,
@@ -735,7 +707,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Video Microscopic Image Storage");
-  static const SopClass kVLSlide_CoordinatesMicroscopicImageStorage =
+  static const SopClass kVLSlideCoordinatesMicroscopicImageStorage =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.77.1.3",
     "VLSlide_CoordinatesMicroscopicImageStorage",
@@ -866,25 +838,25 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Corneal Topography Map Storage");
-  static const SopClass kTextSRStorage_Trial = const SopClass(
+  static const SopClass kTextSRStorageTrial = const SopClass(
       "1.2.840.10008.5.1.4.1.1.88.1",
       "TextSRStorage_Trial_Retired",
       UidType.kSOPClass,
       true,
       "Text SR Storage - Trial (Retired)");
-  static const SopClass kAudioSRStorage_Trial = const SopClass(
+  static const SopClass kAudioSRStorageTrial = const SopClass(
       "1.2.840.10008.5.1.4.1.1.88.2",
       "AudioSRStorage_Trial_Retired",
       UidType.kSOPClass,
       true,
       "Audio SR Storage - Trial (Retired)");
-  static const SopClass kDetailSRStorage_Trial = const SopClass(
+  static const SopClass kDetailSRStorageTrial = const SopClass(
       "1.2.840.10008.5.1.4.1.1.88.3",
       "DetailSRStorage_Trial_Retired",
       UidType.kSOPClass,
       true,
       "Detail SR Storage - Trial (Retired)");
-  static const SopClass kComprehensiveSRStorage_Trial = const SopClass(
+  static const SopClass kComprehensiveSRStorageTrial = const SopClass(
       "1.2.840.10008.5.1.4.1.1.88.4",
       "ComprehensiveSRStorage_Trial_Retired",
       UidType.kSOPClass,
@@ -938,7 +910,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Chest CAD SR Storage");
-  static const SopClass kX_RayRadiationDoseSRStorage = const SopClass(
+  static const SopClass kXRayRadiationDoseSRStorage = const SopClass(
       "1.2.840.10008.5.1.4.1.1.88.67",
       "X_RayRadiationDoseSRStorage",
       UidType.kSOPClass,
@@ -1061,7 +1033,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "DICOS CT Image Storage");
-  static const SopClass kDICOSDigitalX_RayImageStorage_ForPresentation =
+  static const SopClass kDICOSDigitalXRayImageStorageForPresentation =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.501.2.1",
     "DICOSDigitalX_RayImageStorage_ForPresentation",
@@ -1069,7 +1041,7 @@ class SopClass extends WKUid {
     false,
     "DICOS Digital X-Ray Image Storage - For Presentation",
   );
-  static const SopClass kDICOSDigitalX_RayImageStorage_ForProcessing =
+  static const SopClass kDICOSDigitalXRayImageStorageForProcessing =
       const SopClass(
     "1.2.840.10008.5.1.4.1.1.501.2.2",
     "DICOSDigitalX_RayImageStorage_ForProcessing",
@@ -1114,7 +1086,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Eddy Current Multi-frame Image Storage");
-  static const SopClass kPatientRootQueryRetrieveInformationModel_FIND =
+  static const SopClass kPatientRootQueryRetrieveInformationModelFIND =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.1.1",
     "PatientRootQueryRetrieveInformationModel_FIND",
@@ -1122,7 +1094,7 @@ class SopClass extends WKUid {
     false,
     "Patient Root Query/Retrieve Information Model - FIND",
   );
-  static const SopClass kPatientRootQueryRetrieveInformationModel_MOVE =
+  static const SopClass kPatientRootQueryRetrieveInformationModelMOVE =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.1.2",
     "PatientRootQueryRetrieveInformationModel_MOVE",
@@ -1130,7 +1102,7 @@ class SopClass extends WKUid {
     false,
     "Patient Root Query/Retrieve Information Model - MOVE",
   );
-  static const SopClass kPatientRootQueryRetrieveInformationModel_GET =
+  static const SopClass kPatientRootQueryRetrieveInformationModelGET =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.1.3",
     "PatientRootQueryRetrieveInformationModel_GET",
@@ -1138,7 +1110,7 @@ class SopClass extends WKUid {
     false,
     "Patient Root Query/Retrieve Information Model - GET",
   );
-  static const SopClass kStudyRootQueryRetrieveInformationModel_FIND =
+  static const SopClass kStudyRootQueryRetrieveInformationModelFIND =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.2.1",
     "StudyRootQueryRetrieveInformationModel_FIND",
@@ -1146,7 +1118,7 @@ class SopClass extends WKUid {
     false,
     "Study Root Query/Retrieve Information Model - FIND",
   );
-  static const SopClass kStudyRootQueryRetrieveInformationModel_MOVE =
+  static const SopClass kStudyRootQueryRetrieveInformationModelMOVE =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.2.2",
     "StudyRootQueryRetrieveInformationModel_MOVE",
@@ -1154,7 +1126,7 @@ class SopClass extends WKUid {
     false,
     "Study Root Query/Retrieve Information Model - MOVE",
   );
-  static const SopClass kStudyRootQueryRetrieveInformationModel_GET =
+  static const SopClass kStudyRootQueryRetrieveInformationModelGET =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.2.3",
     "StudyRootQueryRetrieveInformationModel_GET",
@@ -1162,8 +1134,7 @@ class SopClass extends WKUid {
     false,
     "Study Root Query/Retrieve Information Model - GET",
   );
-  static const SopClass
-      kPatient_StudyOnlyQueryRetrieveInformationModel_FIND =
+  static const SopClass kPatientStudyOnlyQueryRetrieveInformationModelFIND =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.3.1",
     "Patient_StudyOnlyQueryRetrieveInformationModel_FIND_Retired",
@@ -1171,8 +1142,7 @@ class SopClass extends WKUid {
     true,
     "Patient/Study Only Query/Retrieve Information Model - FIND (Retired)",
   );
-  static const SopClass
-      kPatient_StudyOnlyQueryRetrieveInformationModel_MOVE =
+  static const SopClass kPatientStudyOnlyQueryRetrieveInformationModelMOVE =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.3.2",
     "Patient_StudyOnlyQueryRetrieveInformationModel_MOVE_Retired",
@@ -1180,8 +1150,7 @@ class SopClass extends WKUid {
     true,
     "Patient/Study Only Query/Retrieve Information Model - MOVE (Retired)",
   );
-  static const SopClass
-      kPatient_StudyOnlyQueryRetrieveInformationModel_GET =
+  static const SopClass kPatientStudyOnlyQueryRetrieveInformationModelGET =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.3.3",
     "Patient_StudyOnlyQueryRetrieveInformationModel_GET_Retired",
@@ -1189,19 +1158,19 @@ class SopClass extends WKUid {
     true,
     "Patient/Study Only Query/Retrieve Information Model - GET (Retired)",
   );
-  static const SopClass kCompositeInstanceRootRetrieve_MOVE = const SopClass(
+  static const SopClass kCompositeInstanceRootRetrieveMOVE = const SopClass(
       "1.2.840.10008.5.1.4.1.2.4.2",
       "CompositeInstanceRootRetrieve_MOVE",
       UidType.kSOPClass,
       false,
       "Composite Instance Root Retrieve - MOVE");
-  static const SopClass kCompositeInstanceRootRetrieve_GET = const SopClass(
+  static const SopClass kCompositeInstanceRootRetrieveGET = const SopClass(
       "1.2.840.10008.5.1.4.1.2.4.3",
       "CompositeInstanceRootRetrieve_GET",
       UidType.kSOPClass,
       false,
       "Composite Instance Root Retrieve - GET");
-  static const SopClass kCompositeInstanceRetrieveWithoutBulkData_GET =
+  static const SopClass kCompositeInstanceRetrieveWithoutBulkDataGET =
       const SopClass(
     "1.2.840.10008.5.1.4.1.2.5.3",
     "CompositeInstanceRetrieveWithoutBulkData_GET",
@@ -1209,13 +1178,13 @@ class SopClass extends WKUid {
     false,
     "Composite Instance Retrieve Without Bulk Data - GET",
   );
-  static const SopClass kModalityWorklistInformationModel_FIND = const SopClass(
+  static const SopClass kModalityWorklistInformationModelFIND = const SopClass(
       "1.2.840.10008.5.1.4.31",
       "ModalityWorklistInformationModel_FIND",
       UidType.kSOPClass,
       false,
       "Modality Worklist Information Model - FIND");
-  static const SopClass kGeneralPurposeWorklistInformationModel_FIND =
+  static const SopClass kGeneralPurposeWorklistInformationModelFIND =
       const SopClass(
     "1.2.840.10008.5.1.4.32.1",
     "GeneralPurposeWorklistInformationModel_FIND_Retired",
@@ -1223,38 +1192,34 @@ class SopClass extends WKUid {
     true,
     "General Purpose Worklist Information Model - FIND (Retired)",
   );
-  static const SopClass kGeneralPurposeScheduledProcedureStep =
-      const SopClass(
+  static const SopClass kGeneralPurposeScheduledProcedureStep = const SopClass(
     "1.2.840.10008.5.1.4.32.2",
     "GeneralPurposeScheduledProcedureStepSOPClass_Retired",
     UidType.kSOPClass,
     true,
     "General Purpose Scheduled Procedure Step SOP Class (Retired)",
   );
-  static const SopClass kGeneralPurposePerformedProcedureStep =
-      const SopClass(
+  static const SopClass kGeneralPurposePerformedProcedureStep = const SopClass(
     "1.2.840.10008.5.1.4.32.3",
     "GeneralPurposePerformedProcedureStepSOPClass_Retired",
     UidType.kSOPClass,
     true,
     "General Purpose Performed Procedure Step SOP Class (Retired)",
   );
-  static const SopClass kGeneralPurposeWorklistManagement =
-      const SopClass(
+  static const SopClass kGeneralPurposeWorklistManagement = const SopClass(
     "1.2.840.10008.5.1.4.32",
     "GeneralPurposeWorklistManagementMetaSOPClass_Retired",
     UidType.kMetaSOPClass,
     true,
     "General Purpose Worklist Management Meta SOP Class (Retired)",
   );
-  static const SopClass kInstanceAvailabilityNotification =
-      const SopClass(
-          "1.2.840.10008.5.1.4.33",
-          "InstanceAvailabilityNotificationSOPClass",
-          UidType.kSOPClass,
-          false,
-          "Instance Availability Notification SOP Class");
-  static const SopClass kRTBeamsDeliveryInstructionStorage_Trial =
+  static const SopClass kInstanceAvailabilityNotification = const SopClass(
+      "1.2.840.10008.5.1.4.33",
+      "InstanceAvailabilityNotificationSOPClass",
+      UidType.kSOPClass,
+      false,
+      "Instance Availability Notification SOP Class");
+  static const SopClass kRTBeamsDeliveryInstructionStorageTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.1",
     "RTBeamsDeliveryInstructionStorage_Trial_Retired",
@@ -1262,7 +1227,7 @@ class SopClass extends WKUid {
     true,
     "RT Beams Delivery Instruction Storage - Trial (Retired)",
   );
-  static const SopClass kRTConventionalMachineVerification_Trial =
+  static const SopClass kRTConventionalMachineVerificationTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.2",
     "RTConventionalMachineVerification_Trial_Retired",
@@ -1270,15 +1235,13 @@ class SopClass extends WKUid {
     true,
     "RT Conventional Machine Verification - Trial (Retired)",
   );
-  static const SopClass kRTIonMachineVerification_Trial =
-      const SopClass(
-          "1.2.840.10008.5.1.4.34.3",
-          "RTIonMachineVerification_Trial_Retired",
-          UidType.kSOPClass,
-          true,
-          "RT Ion Machine Verification - Trial (Retired)");
-  static const SopClass
-      kUnifiedWorklistAndProcedureStepServiceClass_Trial =
+  static const SopClass kRTIonMachineVerificationTrial = const SopClass(
+      "1.2.840.10008.5.1.4.34.3",
+      "RTIonMachineVerification_Trial_Retired",
+      UidType.kSOPClass,
+      true,
+      "RT Ion Machine Verification - Trial (Retired)");
+  static const SopClass kUnifiedWorklistAndProcedureStepServiceClassTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.4",
     "UnifiedWorklistandProcedureStepServiceClass_Trial_Retired",
@@ -1286,7 +1249,7 @@ class SopClass extends WKUid {
     true,
     "Unified Worklist and Procedure Step Service Class - Trial (Retired)",
   );
-  static const SopClass kUnifiedProcedureStep_PushSOPClass_Trial =
+  static const SopClass kUnifiedProcedureStepPushSOPClassTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.4.1",
     "UnifiedProcedureStep_PushSOPClass_Trial_Retired",
@@ -1294,7 +1257,7 @@ class SopClass extends WKUid {
     true,
     "Unified Procedure Step - Push SOP Class - Trial (Retired)",
   );
-  static const SopClass kUnifiedProcedureStep_WatchSOPClass_Trial =
+  static const SopClass kUnifiedProcedureStepWatchSOPClassTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.4.2",
     "UnifiedProcedureStep_WatchSOPClass_Trial_Retired",
@@ -1302,7 +1265,7 @@ class SopClass extends WKUid {
     true,
     "Unified Procedure Step - Watch SOP Class - Trial (Retired)",
   );
-  static const SopClass kUnifiedProcedureStep_PullSOPClass_Trial =
+  static const SopClass kUnifiedProcedureStepPullSOPClassTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.4.3",
     "UnifiedProcedureStep_PullSOPClass_Trial_Retired",
@@ -1310,7 +1273,7 @@ class SopClass extends WKUid {
     true,
     "Unified Procedure Step - Pull SOP Class - Trial (Retired)",
   );
-  static const SopClass kUnifiedProcedureStep_EventSOPClass_Trial =
+  static const SopClass kUnifiedProcedureStepEventSOPClassTrial =
       const SopClass(
     "1.2.840.10008.5.1.4.34.4.4",
     "UnifiedProcedureStep_EventSOPClass_Trial_Retired",
@@ -1318,25 +1281,25 @@ class SopClass extends WKUid {
     true,
     "Unified Procedure Step - Event SOP Class - Trial (Retired)",
   );
-  static const SopClass kUnifiedProcedureStep_Push = const SopClass(
+  static const SopClass kUnifiedProcedureStepPush = const SopClass(
       "1.2.840.10008.5.1.4.34.6.1",
       "UnifiedProcedureStep_PushSOPClass",
       UidType.kSOPClass,
       false,
       "Unified Procedure Step - Push SOP Class");
-  static const SopClass kUnifiedProcedureStep_Watch = const SopClass(
+  static const SopClass kUnifiedProcedureStepWatch = const SopClass(
       "1.2.840.10008.5.1.4.34.6.2",
       "UnifiedProcedureStep_WatchSOPClass",
       UidType.kSOPClass,
       false,
       "Unified Procedure Step - Watch SOP Class");
-  static const SopClass kUnifiedProcedureStep_Pull = const SopClass(
+  static const SopClass kUnifiedProcedureStepPull = const SopClass(
       "1.2.840.10008.5.1.4.34.6.3",
       "UnifiedProcedureStep_PullSOPClass",
       UidType.kSOPClass,
       false,
       "Unified Procedure Step - Pull SOP Class");
-  static const SopClass kUnifiedProcedureStep_Event = const SopClass(
+  static const SopClass kUnifiedProcedureStepEvent = const SopClass(
       "1.2.840.10008.5.1.4.34.6.4",
       "UnifiedProcedureStep_EventSOPClass",
       UidType.kSOPClass,
@@ -1388,19 +1351,19 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Hanging Protocol Storage");
-  static const SopClass kHangingProtocolInformationModel_FIND = const SopClass(
+  static const SopClass kHangingProtocolInformationModelFIND = const SopClass(
       "1.2.840.10008.5.1.4.38.2",
       "HangingProtocolInformationModel_FIND",
       UidType.kSOPClass,
       false,
       "Hanging Protocol Information Model - FIND");
-  static const SopClass kHangingProtocolInformationModel_MOVE = const SopClass(
+  static const SopClass kHangingProtocolInformationModelMOVE = const SopClass(
       "1.2.840.10008.5.1.4.38.3",
       "HangingProtocolInformationModel_MOVE",
       UidType.kSOPClass,
       false,
       "Hanging Protocol Information Model - MOVE");
-  static const SopClass kHangingProtocolInformationModel_GET = const SopClass(
+  static const SopClass kHangingProtocolInformationModelGET = const SopClass(
       "1.2.840.10008.5.1.4.38.4",
       "HangingProtocolInformationModel_GET",
       UidType.kSOPClass,
@@ -1413,21 +1376,21 @@ class SopClass extends WKUid {
       false,
       "Color Palette Storage");
 
-  static const SopClass kColorPaletteInformationModel_FIND = const SopClass(
+  static const SopClass kColorPaletteInformationModelFIND = const SopClass(
       "1.2.840.10008.5.1.4.39.2",
       "ColorPaletteInformationModel_FIND",
       UidType.kSOPClass,
       false,
       "Color Palette Information Model - FIND");
 
-  static const SopClass kColorPaletteInformationModel_MOVE = const SopClass(
+  static const SopClass kColorPaletteInformationModelMOVE = const SopClass(
       "1.2.840.10008.5.1.4.39.3",
       "ColorPaletteInformationModel_MOVE",
       UidType.kSOPClass,
       false,
       "Color Palette Information Model - MOVE");
 
-  static const SopClass kColorPaletteInformationModel_GET = const SopClass(
+  static const SopClass kColorPaletteInformationModelGET = const SopClass(
       "1.2.840.10008.5.1.4.39.4",
       "ColorPaletteInformationModel_GET",
       UidType.kSOPClass,
@@ -1452,7 +1415,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Generic Implant Template Storage");
-  static const SopClass kGenericImplantTemplateInformationModel_FIND =
+  static const SopClass kGenericImplantTemplateInformationModelFIND =
       const SopClass(
     "1.2.840.10008.5.1.4.43.2",
     "GenericImplantTemplateInformationModel_FIND",
@@ -1460,7 +1423,7 @@ class SopClass extends WKUid {
     false,
     "Generic Implant Template Information Model - FIND",
   );
-  static const SopClass kGenericImplantTemplateInformationModel_MOVE =
+  static const SopClass kGenericImplantTemplateInformationModelMOVE =
       const SopClass(
     "1.2.840.10008.5.1.4.43.3",
     "GenericImplantTemplateInformationModel_MOVE",
@@ -1468,7 +1431,7 @@ class SopClass extends WKUid {
     false,
     "Generic Implant Template Information Model - MOVE",
   );
-  static const SopClass kGenericImplantTemplateInformationModel_GET =
+  static const SopClass kGenericImplantTemplateInformationModelGET =
       const SopClass(
           "1.2.840.10008.5.1.4.43.4",
           "GenericImplantTemplateInformationModel_GET",
@@ -1481,7 +1444,7 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Implant Assembly Template Storage");
-  static const SopClass kImplantAssemblyTemplateInformationModel_FIND =
+  static const SopClass kImplantAssemblyTemplateInformationModelFIND =
       const SopClass(
     "1.2.840.10008.5.1.4.44.2",
     "ImplantAssemblyTemplateInformationModel_FIND",
@@ -1489,7 +1452,7 @@ class SopClass extends WKUid {
     false,
     "Implant Assembly Template Information Model - FIND",
   );
-  static const SopClass kImplantAssemblyTemplateInformationModel_MOVE =
+  static const SopClass kImplantAssemblyTemplateInformationModelMOVE =
       const SopClass(
     "1.2.840.10008.5.1.4.44.3",
     "ImplantAssemblyTemplateInformationModel_MOVE",
@@ -1497,7 +1460,7 @@ class SopClass extends WKUid {
     false,
     "Implant Assembly Template Information Model - MOVE",
   );
-  static const SopClass kImplantAssemblyTemplateInformationModel_GET =
+  static const SopClass kImplantAssemblyTemplateInformationModelGET =
       const SopClass(
     "1.2.840.10008.5.1.4.44.4",
     "ImplantAssemblyTemplateInformationModel_GET",
@@ -1511,21 +1474,21 @@ class SopClass extends WKUid {
       UidType.kSOPClass,
       false,
       "Implant Template Group Storage");
-  static const SopClass kImplantTemplateGroupInformationModel_FIND =
+  static const SopClass kImplantTemplateGroupInformationModelFIND =
       const SopClass(
           "1.2.840.10008.5.1.4.45.2",
           "ImplantTemplateGroupInformationModel_FIND",
           UidType.kSOPClass,
           false,
           "Implant Template Group Information Model - FIND");
-  static const SopClass kImplantTemplateGroupInformationModel_MOVE =
+  static const SopClass kImplantTemplateGroupInformationModelMOVE =
       const SopClass(
           "1.2.840.10008.5.1.4.45.3",
           "ImplantTemplateGroupInformationModel_MOVE",
           UidType.kSOPClass,
           false,
           "Implant Template Group Information Model - MOVE");
-  static const SopClass kImplantTemplateGroupInformationModel_GET =
+  static const SopClass kImplantTemplateGroupInformationModelGET =
       const SopClass(
           "1.2.840.10008.5.1.4.45.4",
           "ImplantTemplateGroupInformationModel_GET",

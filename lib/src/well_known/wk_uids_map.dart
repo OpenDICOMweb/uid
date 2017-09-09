@@ -24,52 +24,55 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.1.2.1": TransferSyntax.kExplicitVRLittleEndian,
   "1.2.840.10008.1.2.1.99": TransferSyntax.kDeflatedExplicitVRLittleEndian,
   "1.2.840.10008.1.2.2": TransferSyntax.kExplicitVRBigEndian,
-  "1.2.840.10008.1.2.4.50": TransferSyntax.kJPEGBaseline1,
-  "1.2.840.10008.1.2.4.51": TransferSyntax.kJPEGExtended2_4,
-  "1.2.840.10008.1.2.4.52": TransferSyntax.kJPEGExtended3_5,
+  "1.2.840.10008.1.2.4.50": TransferSyntax.kJpegBaseline1,
+  "1.2.840.10008.1.2.4.51": TransferSyntax.kJpegExtended2_4,
+  "1.2.840.10008.1.2.4.52": TransferSyntax.kJpegExtended3_5,
   "1.2.840.10008.1.2.4.53":
-      TransferSyntax.kJPEGSpectralSelectionNon_Hierarchical6_8,
+      TransferSyntax.kJpegSpectralSelectionNonHierarchical6_8,
   "1.2.840.10008.1.2.4.54":
-      TransferSyntax.kJPEGSpectralSelectionNon_Hierarchical_7_9,
+      TransferSyntax.kJpegSpectralSelectionNonHierarchical7_9,
   "1.2.840.10008.1.2.4.55":
-      TransferSyntax.kJPEGFullProgressionNon_Hierarchical_10_12,
+      TransferSyntax.kJpegFullProgressionNonHierarchical10_12,
   "1.2.840.10008.1.2.4.56":
-      TransferSyntax.kJPEGFullProgressionNon_Hierarchical_11_13,
-  "1.2.840.10008.1.2.4.57": TransferSyntax.kJPEGLosslessNon_Hierarchical_14,
-  "1.2.840.10008.1.2.4.58": TransferSyntax.kJPEGLosslessNon_Hierarchical_15,
-  "1.2.840.10008.1.2.4.59": TransferSyntax.kJPEGExtendedHierarchical_16_18,
-  "1.2.840.10008.1.2.4.60": TransferSyntax.kJPEGExtendedHierarchical_17_19,
+      TransferSyntax.kJpegFullProgressionNonHierarchical11_13,
+  "1.2.840.10008.1.2.4.57": TransferSyntax.kJpegLosslessNonHierarchical14,
+  "1.2.840.10008.1.2.4.58": TransferSyntax.kJpegLosslessNonHierarchical15,
+  "1.2.840.10008.1.2.4.59": TransferSyntax.kJpegExtendedHierarchical16_18,
+  "1.2.840.10008.1.2.4.60": TransferSyntax.kJpegExtendedHierarchical17_19,
   "1.2.840.10008.1.2.4.61":
-      TransferSyntax.kJPEGSpectralSelectionHierarchical_20_22,
+      TransferSyntax.kJpegSpectralSelectionHierarchical20_22,
   "1.2.840.10008.1.2.4.62":
-      TransferSyntax.kJPEGSpectralSelectionHierarchical_21_23,
+      TransferSyntax.kJpegSpectralSelectionHierarchical21_23,
   "1.2.840.10008.1.2.4.63":
-      TransferSyntax.kJPEGFullProgressionHierarchical_24_26,
+      TransferSyntax.kJpegFullProgressionHierarchical24_26,
   "1.2.840.10008.1.2.4.64":
-      TransferSyntax.kJPEGFullProgressionHierarchical_25_27,
-  "1.2.840.10008.1.2.4.65": TransferSyntax.kJPEGLosslessHierarchical_28,
-  "1.2.840.10008.1.2.4.66": TransferSyntax.kJPEGLosslessHierarchical_29,
+      TransferSyntax.kJpegFullProgressionHierarchical25_27,
+  "1.2.840.10008.1.2.4.65": TransferSyntax.kJpegLosslessHierarchical28,
+  "1.2.840.10008.1.2.4.66": TransferSyntax.kJpegLosslessHierarchical29,
   "1.2.840.10008.1.2.4.70":
-      TransferSyntax.kJPEGLosslessNon_HierarchicalFirst_OrderPrediction_14_1,
-  "1.2.840.10008.1.2.4.80": TransferSyntax.kJPEG_LSLosslessImageCompression,
-  "1.2.840.10008.1.2.4.81": TransferSyntax.kJPEG_LSLossyImageCompression,
-  "1.2.840.10008.1.2.4.90": TransferSyntax.kJPEG2000ImageCompressionLosslessOnly,
-  "1.2.840.10008.1.2.4.91": TransferSyntax.kJPEG2000ImageCompression,
+      TransferSyntax.kJpegLosslessNonHierarchicalFirstOrderPrediction14_1,
+  "1.2.840.10008.1.2.4.80": TransferSyntax.kJpegLSLosslessImageCompression,
+  "1.2.840.10008.1.2.4.81": TransferSyntax.kJpegLSLossyImageCompression,
+  "1.2.840.10008.1.2.4.90":
+      TransferSyntax.kJpeg2000ImageCompressionLosslessOnly,
+  "1.2.840.10008.1.2.4.91": TransferSyntax.kJpeg2000ImageCompression,
   "1.2.840.10008.1.2.4.92":
-      TransferSyntax.kJPEG2000Part2Multi_componentImageCompressionLosslessOnly,
-  "1.2.840.10008.1.2.4.93": TransferSyntax.kJPEG2000Part2Multi_componentImageCompression,
+      TransferSyntax.kJpeg2000Part2MultiComponentImageCompressionLosslessOnly,
+  "1.2.840.10008.1.2.4.93":
+      TransferSyntax.kJpeg2000Part2MultiComponentImageCompression,
   "1.2.840.10008.1.2.4.94": TransferSyntax.kJPIPReferenced,
   "1.2.840.10008.1.2.4.95": TransferSyntax.kJPIPReferencedDeflate,
-  "1.2.840.10008.1.2.4.100": TransferSyntax.kMPEG2MainProfile_MainLevel,
-  "1.2.840.10008.1.2.4.101": TransferSyntax.kMPEG2MainProfile_HighLevel,
-  "1.2.840.10008.1.2.4.102": TransferSyntax.kMPEG_4AVC_H264HighProfile_Level41,
+  "1.2.840.10008.1.2.4.100": TransferSyntax.kMpeg2MainProfileMainLevel,
+  "1.2.840.10008.1.2.4.101": TransferSyntax.kMpeg2MainProfileHighLevel,
+  "1.2.840.10008.1.2.4.102": TransferSyntax.kMpeg4AVCH264HighProfileLevel41,
   "1.2.840.10008.1.2.4.103":
-      TransferSyntax.kMPEG_4AVC_H264BD_compatibleHighProfile_Level41,
+      TransferSyntax.kMpeg4AVCH264BDCompatibleHighProfileLevel41,
   "1.2.840.10008.1.2.5": TransferSyntax.kRLELossless,
   "1.2.840.10008.1.2.6.1": TransferSyntax.kRFC2557MIMEncapsulation,
   "1.2.840.10008.1.2.6.2": TransferSyntax.kXMLEncoding,
   "1.2.840.10008.1.3.10": SopClass.kMediaStorageDirectoryStorage,
-  "1.2.840.10008.1.4.1.1": FrameOfReference.kTalairachBrainAtlasFrameOfReference,
+  "1.2.840.10008.1.4.1.1":
+      FrameOfReference.kTalairachBrainAtlasFrameOfReference,
   "1.2.840.10008.1.4.1.2": FrameOfReference.kSPM2T1FrameOfReference,
   "1.2.840.10008.1.4.1.3": FrameOfReference.kSPM2T2FrameOfReference,
   "1.2.840.10008.1.4.1.4": FrameOfReference.kSPM2PDFrameOfReference,
@@ -88,7 +91,8 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.1.4.1.17": FrameOfReference.kSPM2AVG152PDFrameOfReference,
   "1.2.840.10008.1.4.1.18": FrameOfReference.kSPM2SINGLESUBJT1FrameOfReference,
   "1.2.840.10008.1.4.2.1": FrameOfReference.kICBM452T1FrameOfReference,
-  "1.2.840.10008.1.4.2.2": FrameOfReference.kICBMSingleSubjectMRIFrameOfReference,
+  "1.2.840.10008.1.4.2.2":
+      FrameOfReference.kICBMSingleSubjectMRIFrameOfReference,
   "1.2.840.10008.1.5.1": WellKnownSopInstance.kHotIronColorPalette,
   "1.2.840.10008.1.5.2": WellKnownSopInstance.kPETColorPalette,
   "1.2.840.10008.1.5.3": WellKnownSopInstance.kHotMetalBlueColorPalette,
@@ -97,8 +101,7 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.1.20.1": SopClass.kStorageCommitmentPushModel,
   "1.2.840.10008.1.20.1.1": WellKnownSopInstance.kStorageCommitmentPushModel,
   "1.2.840.10008.1.20.2": SopClass.kStorageCommitmentPullModel,
-  "1.2.840.10008.1.20.2.1":
-  WellKnownSopInstance.kStorageCommitmentPullModel,
+  "1.2.840.10008.1.20.2.1": WellKnownSopInstance.kStorageCommitmentPullModel,
   "1.2.840.10008.1.40": SopClass.kProceduralEventLogging,
   "1.2.840.10008.1.40.1": WellKnownSopInstance.kProceduralEventLogging,
   "1.2.840.10008.1.42": SopClass.kSubstanceAdministrationLogging,
@@ -116,11 +119,9 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.�2.840.10008.3.1.2.3.5":
       SopClass.kModalityPerformedProcedureStepNotification,
   "1.2.840.10008.3.1.2.5.1": SopClass.kDetachedResultsManagement,
-  "1.2.840.10008.3.1.2.5.4":
-  MetaSopClass.kDetachedResultsManagement,
+  "1.2.840.10008.3.1.2.5.4": MetaSopClass.kDetachedResultsManagement,
   "1.2.840.10008.3.1.2.5.5": MetaSopClass.kDetachedStudyManagement,
-  "1.2.840.10008.3.1.2.6.1":
-      SopClass.kDetachedInterpretationManagement,
+  "1.2.840.10008.3.1.2.6.1": SopClass.kDetachedInterpretationManagement,
   "1.2.840.10008.4.2": WKUid.kStorageServiceClass,
   "1.2.840.10008.5.1.1.1": SopClass.kBasicFilmSession,
   "1.2.840.10008.5.1.1.2": SopClass.kBasicFilmBox,
@@ -128,17 +129,16 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.1.4.1": SopClass.kBasicColorImageBox,
   "1.2.840.10008.5.1.1.4.2": SopClass.kReferencedImageBox,
   "1.2.840.10008.5.1.1.9": MetaSopClass.kBasicGrayscalePrintManagement,
-  "1.2.840.10008.5.1.1.9.1":
-  MetaSopClass.kReferencedGrayscalePrintManagement,
+  "1.2.840.10008.5.1.1.9.1": MetaSopClass.kReferencedGrayscalePrintManagement,
   "1.2.840.10008.5.1.1.14": SopClass.kPrintJob,
   "1.2.840.10008.5.1.1.15": SopClass.kBasicAnnotationBox,
   "1.2.840.10008.5.1.1.16": SopClass.kPrinter,
   "1.2.840.10008.5.1.1.16.376": SopClass.kPrinterConfigurationRetrieval,
   "1.2.840.10008.5.1.1.17": WellKnownSopInstance.kPrinter,
-  "1.2.840.10008.5.1.1.17.376": WellKnownSopInstance.kPrinterConfigurationRetrieval,
+  "1.2.840.10008.5.1.1.17.376":
+      WellKnownSopInstance.kPrinterConfigurationRetrieval,
   "1.2.840.10008.5.1.1.18": MetaSopClass.kBasicColorPrintManagement,
-  "1.2.840.10008.5.1.1.18.1":
-      MetaSopClass.kReferencedColorPrintManagement,
+  "1.2.840.10008.5.1.1.18.1": MetaSopClass.kReferencedColorPrintManagement,
   "1.2.840.10008.5.1.1.22": SopClass.kVOILUTBox,
   "1.2.840.10008.5.1.1.23": SopClass.kPresentationLUT,
   "1.2.840.10008.5.1.1.24": SopClass.kImageOverlayBox,
@@ -146,36 +146,36 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.1.25": WellKnownSopInstance.kPrintQueue,
   "1.2.840.10008.5.1.1.26": SopClass.kPrintQueueManagement,
   "1.2.840.10008.5.1.1.27": SopClass.kStoredPrintStorage,
-  "1.2.840.10008.5.1.1.29":
-      SopClass.kHardcopyGrayscaleImageStorage,
+  "1.2.840.10008.5.1.1.29": SopClass.kHardcopyGrayscaleImageStorage,
   "1.2.840.10008.5.1.1.30": SopClass.kHardcopyColorImageStorage,
   "1.2.840.10008.5.1.1.31": SopClass.kPullPrintRequest,
-  "1.2.840.10008.5.1.1.32":
-      MetaSopClass.kPullStoredPrintManagement,
+  "1.2.840.10008.5.1.1.32": MetaSopClass.kPullStoredPrintManagement,
   "1.2.840.10008.5.1.1.33": SopClass.kMediaCreationManagementSOPClassUID,
   "1.2.840.10008.5.1.4.1.1.1": SopClass.kComputedRadiographyImageStorage,
   "1.2.840.10008.5.1.4.1.1.1.1":
-      SopClass.kDigitalX_RayImageStorage_ForPresentation,
+      SopClass.kDigitalXRayImageStorageForPresentation,
   "1.2.840.10008.5.1.4.1.1.1.1.1":
-      SopClass.kDigitalX_RayImageStorage_ForProcessing,
+      SopClass.kDigitalXRayImageStorageForProcessing,
   "1.2.840.10008.5.1.4.1.1.1.2":
-      SopClass.kDigitalMammographyX_RayImageStorage_ForPresentation,
+      SopClass.kDigitalMammographyXRayImageStorageForPresentation,
   "1.2.840.10008.5.1.4.1.1.1.2.1":
-      SopClass.kDigitalMammographyX_RayImageStorage_ForProcessing,
+      SopClass.kDigitalMammographyXRayImageStorageForProcessing,
   "1.2.840.10008.5.1.4.1.1.1.3":
-      SopClass.kDigitalIntra_OralX_RayImageStorage_ForPresentation,
+      SopClass.kDigitalIntraOralXRayImageStorageForPresentation,
   "1.2.840.10008.5.1.4.1.1.1.3.1":
-      SopClass.kDigitalIntra_OralX_RayImageStorage_ForProcessing,
+      SopClass.kDigitalIntraOralXRayImageStorageForProcessing,
   "1.2.840.10008.5.1.4.1.1.2": SopClass.kCTImageStorage,
   "1.2.840.10008.5.1.4.1.1.2.1": SopClass.kEnhancedCTImageStorage,
-  "1.2.840.10008.5.1.4.1.1.2.2": SopClass.kLegacyConvertedEnhancedCTImageStorage,
+  "1.2.840.10008.5.1.4.1.1.2.2":
+      SopClass.kLegacyConvertedEnhancedCTImageStorage,
   "1.2.840.10008.5.1.4.1.1.3": SopClass.kUltrasoundMultiFrameImageStorage,
   "1.2.840.10008.5.1.4.1.1.3.1": SopClass.kUltrasoundMultiFrameImageStorage,
   "1.2.840.10008.5.1.4.1.1.4": SopClass.kMRImageStorage,
   "1.2.840.10008.5.1.4.1.1.4.1": SopClass.kEnhancedMRImageStorage,
   "1.2.840.10008.5.1.4.1.1.4.2": SopClass.kMRSpectroscopyStorage,
   "1.2.840.10008.5.1.4.1.1.4.3": SopClass.kEnhancedMRColorImageStorage,
-  "1.2.840.10008.5.1.4.1.1.4.4": SopClass.kLegacyConvertedEnhancedMRImageStorage,
+  "1.2.840.10008.5.1.4.1.1.4.4":
+      SopClass.kLegacyConvertedEnhancedMRImageStorage,
   "1.2.840.10008.5.1.4.1.1.5": SopClass.kNuclearMedicineImageStorage,
   "1.2.840.10008.5.1.4.1.1.6": SopClass.kUltrasoundImageStorage,
   "1.2.840.10008.5.1.4.1.1.6.1": SopClass.kUltrasoundImageStorage,
@@ -191,8 +191,8 @@ const Map<String, WKUid> wellKnownUids = const {
       SopClass.kMultiFrameTrueColorSecondaryCaptureImageStorage,
   "1.2.840.10008.5.1.4.1.1.8": SopClass.kStandaloneOverlayStorage,
   "1.2.840.10008.5.1.4.1.1.9": SopClass.kStandaloneCurveStorage,
-  "1.2.840.10008.5.1.4.1.1.9.1": SopClass.kWaveformStorage_Trial,
-  "1.2.840.10008.5.1.4.1.1.9.1.1": SopClass.ktwelve_lead_12ECGWaveformStorage,
+  "1.2.840.10008.5.1.4.1.1.9.1": SopClass.kWaveformStorageTrial,
+  "1.2.840.10008.5.1.4.1.1.9.1.1": SopClass.kTwelvelead12ECGWaveformStorage,
   "1.2.840.10008.5.1.4.1.1.9.1.2": SopClass.kGeneralECGWaveformStorage,
   "1.2.840.10008.5.1.4.1.1.9.1.3": SopClass.kAmbulatoryECGWaveformStorage,
   "1.2.840.10008.5.1.4.1.1.9.2.1": SopClass.kHemodynamicWaveformStorage,
@@ -209,43 +209,43 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.4.1.1.11.2":
       SopClass.kColorSoftcopyPresentationStateStorage,
   "1.2.840.10008.5.1.4.1.1.11.3":
-      SopClass.kPseudo_ColorSoftcopyPresentationStateStorage,
+      SopClass.kPseudoColorSoftcopyPresentationStateStorage,
   "1.2.840.10008.5.1.4.1.1.11.4":
       SopClass.kBlendingSoftcopyPresentationStateStorage,
   "1.2.840.10008.5.1.4.1.1.11.5":
-      SopClass.kXA_XRFGrayscaleSoftcopyPresentationStateStorage,
-  "1.2.840.10008.5.1.4.1.1.12.1": SopClass.kX_RayAngiographicImageStorage,
+      SopClass.kXAXRFGrayscaleSoftcopyPresentationStateStorage,
+  "1.2.840.10008.5.1.4.1.1.12.1": SopClass.kXRayAngiographicImageStorage,
   "1.2.840.10008.5.1.4.1.1.12.1.1": SopClass.kEnhancedXAImageStorage,
-  "1.2.840.10008.5.1.4.1.1.12.2": SopClass.kX_RayRadiofluoroscopicImageStorage,
+  "1.2.840.10008.5.1.4.1.1.12.2": SopClass.kXRayRadiofluoroscopicImageStorage,
   "1.2.840.10008.5.1.4.1.1.12.2.1": SopClass.kEnhancedXRFImageStorage,
   "1.2.840.10008.5.1.4.1.1.12.3":
-      SopClass.kX_RayAngiographicBi_PlaneImageStorage,
-  "1.2.840.10008.5.1.4.1.1.13.1.1": SopClass.kX_Ray3DAngiographicImageStorage,
-  "1.2.840.10008.5.1.4.1.1.13.1.2": SopClass.kX_Ray3DCraniofacialImageStorage,
+      SopClass.kXRayAngiographicBiPlaneImageStorage,
+  "1.2.840.10008.5.1.4.1.1.13.1.1": SopClass.kXRay3DAngiographicImageStorage,
+  "1.2.840.10008.5.1.4.1.1.13.1.2": SopClass.kXRay3DCraniofacialImageStorage,
   "1.2.840.10008.5.1.4.1.1.13.1.3": SopClass.kBreastTomosynthesisImageStorage,
   "1.2.840.10008.5.1.4.1.1.14.1": SopClass
-      .kIntravascularOpticalCoherenceTomographyImageStorage_ForPresentation,
-  "1.2.840.10008.5.1.4.1.1.14.2":
-      SopClass.kIntravascularOpticalCoherenceTomographyImageStorage_ForProcessing,
+      .kIntravascularOpticalCoherenceTomographyImageStorageForPresentation,
+  "1.2.840.10008.5.1.4.1.1.14.2": SopClass
+      .kIntravascularOpticalCoherenceTomographyImageStorageForProcessing,
   "1.2.840.10008.5.1.4.1.1.20": SopClass.kNuclearMedicineImageStorage,
   "1.2.840.10008.5.1.4.1.1.66": SopClass.kRawDataStorage,
   "1.2.840.10008.5.1.4.1.1.66.1": SopClass.kSpatialRegistrationStorage,
   "1.2.840.10008.5.1.4.1.1.66.2": SopClass.kSpatialFiducialsStorage,
-  "1.2.840.10008.5.1.4.1.1.66.3": SopClass.kDeformableSpatialRegistrationStorage,
+  "1.2.840.10008.5.1.4.1.1.66.3":
+      SopClass.kDeformableSpatialRegistrationStorage,
   "1.2.840.10008.5.1.4.1.1.66.4": SopClass.kSegmentationStorage,
   "1.2.840.10008.5.1.4.1.1.66.5": SopClass.kSurfaceSegmentationStorage,
   "1.2.840.10008.5.1.4.1.1.67": SopClass.kRealWorldValueMappingStorage,
   "1.2.840.10008.5.1.4.1.1.68.1": SopClass.kSurfaceScanMeshStorage,
   "1.2.840.10008.5.1.4.1.1.68.2": SopClass.kSurfaceScanPointCloudStorage,
-  "1.2.840.10008.5.1.4.1.1.77.1": SopClass.kVLImageStorage_Trial,
-  "1.2.840.10008.5.1.4.1.1.77.2":
-      SopClass.kVLMultiFrameImageStorage_Trial,
+  "1.2.840.10008.5.1.4.1.1.77.1": SopClass.kVLImageStorageTrial,
+  "1.2.840.10008.5.1.4.1.1.77.2": SopClass.kVLMultiFrameImageStorageTrial,
   "1.2.840.10008.5.1.4.1.1.77.1.1": SopClass.kVLEndoscopicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.1.1": SopClass.kVideoEndoscopicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.2": SopClass.kVLMicroscopicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.2.1": SopClass.kVideoMicroscopicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.3":
-      SopClass.kVLSlide_CoordinatesMicroscopicImageStorage,
+      SopClass.kVLSlideCoordinatesMicroscopicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.4": SopClass.kVLPhotographicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.4.1": SopClass.kVideoPhotographicImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.5.1":
@@ -253,8 +253,10 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.4.1.1.77.1.5.2":
       SopClass.kOphthalmicPhotography16BitImageStorage,
   "1.2.840.10008.5.1.4.1.1.77.1.5.3": SopClass.kStereometricRelationshipStorage,
-  "1.2.840.10008.5.1.4.1.1.77.1.5.4": SopClass.kOphthalmicTomographyImageStorage,
-  "1.2.840.10008.5.1.4.1.1.77.1.6": SopClass.kVLWholeSlideMicroscopyImageStorage,
+  "1.2.840.10008.5.1.4.1.1.77.1.5.4":
+      SopClass.kOphthalmicTomographyImageStorage,
+  "1.2.840.10008.5.1.4.1.1.77.1.6":
+      SopClass.kVLWholeSlideMicroscopyImageStorage,
   "1.2.840.10008.5.1.4.1.1.78.1": SopClass.kLensometryMeasurementsStorage,
   "1.2.840.10008.5.1.4.1.1.78.2": SopClass.kAutorefractionMeasurementsStorage,
   "1.2.840.10008.5.1.4.1.1.78.3": SopClass.kKeratometryMeasurementsStorage,
@@ -270,10 +272,10 @@ const Map<String, WKUid> wellKnownUids = const {
       SopClass.kOphthalmicVisualFieldStaticPerimetryMeasurementsStorage,
   "1.2.840.10008.5.1.4.1.1.81.1": SopClass.kOphthalmicThicknessMapStorage,
   "11.2.840.10008.5.1.4.1.1.82.1": SopClass.kCornealTopographyMapStorage,
-  "1.2.840.10008.5.1.4.1.1.88.1": SopClass.kTextSRStorage_Trial,
-  "1.2.840.10008.5.1.4.1.1.88.2": SopClass.kAudioSRStorage_Trial,
-  "1.2.840.10008.5.1.4.1.1.88.3": SopClass.kDetailSRStorage_Trial,
-  "1.2.840.10008.5.1.4.1.1.88.4": SopClass.kComprehensiveSRStorage_Trial,
+  "1.2.840.10008.5.1.4.1.1.88.1": SopClass.kTextSRStorageTrial,
+  "1.2.840.10008.5.1.4.1.1.88.2": SopClass.kAudioSRStorageTrial,
+  "1.2.840.10008.5.1.4.1.1.88.3": SopClass.kDetailSRStorageTrial,
+  "1.2.840.10008.5.1.4.1.1.88.4": SopClass.kComprehensiveSRStorageTrial,
   "1.2.840.10008.5.1.4.1.1.88.11": SopClass.kBasicTextSRStorage,
   "1.2.840.10008.5.1.4.1.1.88.22": SopClass.kEnhancedSRStorage,
   "1.2.840.10008.5.1.4.1.1.88.33": SopClass.kComprehensiveSRStorage,
@@ -282,12 +284,13 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.4.1.1.88.50": SopClass.kMammographyCADSRStorage,
   "1.2.840.10008.5.1.4.1.1.88.59": SopClass.kKeyObjectSelectionDocumentStorage,
   "1.2.840.10008.5.1.4.1.1.88.65": SopClass.kChestCADSRStorage,
-  "1.2.840.10008.5.1.4.1.1.88.67": SopClass.kX_RayRadiationDoseSRStorage,
+  "1.2.840.10008.5.1.4.1.1.88.67": SopClass.kXRayRadiationDoseSRStorage,
   "1.2.840.10008.5.1.4.1.1.88.69": SopClass.kColonCADSRStorage,
   "1.2.840.10008.5.1.4.1.1.88.70": SopClass.kImplantationPlanSRStorage,
   "1.2.840.10008.5.1.4.1.1.104.1": SopClass.kEncapsulatedPDFStorage,
   "1.2.840.10008.5.1.4.1.1.104.2": SopClass.kEncapsulatedCDAStorage,
-  "1.2.840.10008.5.1.4.1.1.128": SopClass.kPositronEmissionTomographyImageStorage,
+  "1.2.840.10008.5.1.4.1.1.128":
+      SopClass.kPositronEmissionTomographyImageStorage,
   "1.2.840.10008.5.1.4.1.1.128.1":
       SopClass.kLegacyConvertedEnhancedPETImageStorage,
   "1.2.840.10008.5.1.4.1.1.129": SopClass.kStandalonePETCurveStorage,
@@ -304,9 +307,9 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.4.1.1.481.9": SopClass.kRTIonBeamsTreatmentRecordStorage,
   "1.2.840.10008.5.1.4.1.1.501.1": SopClass.kDICOSCTImageStorage,
   "1.2.840.10008.5.1.4.1.1.501.2.1":
-      SopClass.kDICOSDigitalX_RayImageStorage_ForPresentation,
+      SopClass.kDICOSDigitalXRayImageStorageForPresentation,
   "1.2.840.10008.5.1.4.1.1.501.2.2":
-      SopClass.kDICOSDigitalX_RayImageStorage_ForProcessing,
+      SopClass.kDICOSDigitalXRayImageStorageForProcessing,
   "1.2.840.10008.5.1.4.1.1.501.3": SopClass.kDICOSThreatDetectionReportStorage,
   "1.2.840.10008.5.1.4.1.1.501.4": SopClass.kDICOS2DAITStorage,
   "1.2.840.10008.5.1.4.1.1.501.5": SopClass.kDICOS3DAITStorage,
@@ -314,59 +317,55 @@ const Map<String, WKUid> wellKnownUids = const {
   "1.2.840.10008.5.1.4.1.1.601.1": SopClass.kEddyCurrentImageStorage,
   "1.2.840.10008.5.1.4.1.1.601.2": SopClass.kEddyCurrentMultiFrameImageStorage,
   "1.2.840.10008.5.1.4.1.2.1.1":
-      SopClass.kPatientRootQueryRetrieveInformationModel_FIND,
+      SopClass.kPatientRootQueryRetrieveInformationModelFIND,
   "1.2.840.10008.5.1.4.1.2.1.2":
-      SopClass.kPatientRootQueryRetrieveInformationModel_MOVE,
+      SopClass.kPatientRootQueryRetrieveInformationModelMOVE,
   "1.2.840.10008.5.1.4.1.2.1.3":
-      SopClass.kPatientRootQueryRetrieveInformationModel_GET,
+      SopClass.kPatientRootQueryRetrieveInformationModelGET,
   "1.2.840.10008.5.1.4.1.2.2.1":
-      SopClass.kStudyRootQueryRetrieveInformationModel_FIND,
+      SopClass.kStudyRootQueryRetrieveInformationModelFIND,
   "1.2.840.10008.5.1.4.1.2.2.2":
-      SopClass.kStudyRootQueryRetrieveInformationModel_MOVE,
+      SopClass.kStudyRootQueryRetrieveInformationModelMOVE,
   "1.2.840.10008.5.1.4.1.2.2.3":
-      SopClass.kStudyRootQueryRetrieveInformationModel_GET,
+      SopClass.kStudyRootQueryRetrieveInformationModelGET,
   "1.2.840.10008.5.1.4.1.2.3.1":
-      SopClass.kPatient_StudyOnlyQueryRetrieveInformationModel_FIND,
+      SopClass.kPatientStudyOnlyQueryRetrieveInformationModelFIND,
   "1.2.840.10008.5.1.4.1.2.3.2":
-      SopClass.kPatient_StudyOnlyQueryRetrieveInformationModel_MOVE,
+      SopClass.kPatientStudyOnlyQueryRetrieveInformationModelMOVE,
   "1.2.840.10008.5.1.4.1.2.3.3":
-      SopClass.kPatient_StudyOnlyQueryRetrieveInformationModel_GET,
-  "1.2.840.10008.5.1.4.1.2.4.2": SopClass.kCompositeInstanceRootRetrieve_MOVE,
-  "1.2.840.10008.5.1.4.1.2.4.3": SopClass.kCompositeInstanceRootRetrieve_GET,
+      SopClass.kPatientStudyOnlyQueryRetrieveInformationModelGET,
+  "1.2.840.10008.5.1.4.1.2.4.2": SopClass.kCompositeInstanceRootRetrieveMOVE,
+  "1.2.840.10008.5.1.4.1.2.4.3": SopClass.kCompositeInstanceRootRetrieveGET,
   "1.2.840.10008.5.1.4.1.2.5.3":
-      SopClass.kCompositeInstanceRetrieveWithoutBulkData_GET,
-  "1.2.840.10008.5.1.4.31": SopClass.kModalityWorklistInformationModel_FIND,
+      SopClass.kCompositeInstanceRetrieveWithoutBulkDataGET,
+  "1.2.840.10008.5.1.4.31": SopClass.kModalityWorklistInformationModelFIND,
   "1.2.840.10008.5.1.4.32.1":
-      SopClass.kGeneralPurposeWorklistInformationModel_FIND,
-  "1.2.840.10008.5.1.4.32.2":
-      SopClass.kGeneralPurposeScheduledProcedureStep,
-  "1.2.840.10008.5.1.4.32.3":
-      SopClass.kGeneralPurposePerformedProcedureStep,
-  "1.2.840.10008.5.1.4.32":
-      SopClass.kGeneralPurposeWorklistManagement,
+      SopClass.kGeneralPurposeWorklistInformationModelFIND,
+  "1.2.840.10008.5.1.4.32.2": SopClass.kGeneralPurposeScheduledProcedureStep,
+  "1.2.840.10008.5.1.4.32.3": SopClass.kGeneralPurposePerformedProcedureStep,
+  "1.2.840.10008.5.1.4.32": SopClass.kGeneralPurposeWorklistManagement,
   "1.2.840.10008.5.1.4.33": SopClass.kInstanceAvailabilityNotification,
-  "1.2.840.10008.5.1.4.34.1":
-      SopClass.kRTBeamsDeliveryInstructionStorage_Trial,
-  "1.2.840.10008.5.1.4.34.2":
-      SopClass.kRTConventionalMachineVerification_Trial,
-  "1.2.840.10008.5.1.4.34.3": SopClass.kRTIonMachineVerification_Trial,
+  "1.2.840.10008.5.1.4.34.1": SopClass.kRTBeamsDeliveryInstructionStorageTrial,
+  "1.2.840.10008.5.1.4.34.2": SopClass.kRTConventionalMachineVerificationTrial,
+  "1.2.840.10008.5.1.4.34.3": SopClass.kRTIonMachineVerificationTrial,
   "1.2.840.10008.5.1.4.34.4":
-      WKUid.kUnifiedWorklistAndProcedureStepServiceClass_Trial,
+      WKUid.kUnifiedWorklistAndProcedureStepServiceClassTrial,
   "1.2.840.10008.5.1.4.34.4.1":
-      SopClass.kUnifiedProcedureStep_PushSOPClass_Trial,
+      SopClass.kUnifiedProcedureStepPushSOPClassTrial,
   "1.2.840.10008.5.1.4.34.4.2":
-      SopClass.kUnifiedProcedureStep_WatchSOPClass_Trial,
+      SopClass.kUnifiedProcedureStepWatchSOPClassTrial,
   "1.2.840.10008.5.1.4.34.4.3":
-      SopClass.kUnifiedProcedureStep_PullSOPClass_Trial,
+      SopClass.kUnifiedProcedureStepPullSOPClassTrial,
   "1.2.840.10008.5.1.4.34.4.4":
-      SopClass.kUnifiedProcedureStep_EventSOPClass_Trial,
-  "1.2.840.10008.5.1.4.34.5": WellKnownSopInstance.kUnifiedWorklistAndProcedureStep,
+      SopClass.kUnifiedProcedureStepEventSOPClassTrial,
+  "1.2.840.10008.5.1.4.34.5":
+      WellKnownSopInstance.kUnifiedWorklistAndProcedureStep,
   "1.2.840.10008.5.1.4.34.6":
       WKUid.kUnifiedWorklistAndProcedureStepServiceClass,
-  "1.2.840.10008.5.1.4.34.6.1": SopClass.kUnifiedProcedureStep_Push,
-  "1.2.840.10008.5.1.4.34.6.2": SopClass.kUnifiedProcedureStep_Watch,
-  "1.2.840.10008.5.1.4.34.6.3": SopClass.kUnifiedProcedureStep_Pull,
-  "1.2.840.10008.5.1.4.34.6.4": SopClass.kUnifiedProcedureStep_Event,
+  "1.2.840.10008.5.1.4.34.6.1": SopClass.kUnifiedProcedureStepPush,
+  "1.2.840.10008.5.1.4.34.6.2": SopClass.kUnifiedProcedureStepWatch,
+  "1.2.840.10008.5.1.4.34.6.3": SopClass.kUnifiedProcedureStepPull,
+  "1.2.840.10008.5.1.4.34.6.4": SopClass.kUnifiedProcedureStepEvent,
   "1.2.840.10008.5.1.4.34.7": SopClass.kRTBeamsDeliveryInstructionStorage,
   "1.2.840.10008.5.1.4.34.8": SopClass.kRTConventionalMachineVerification,
   "1.2.840.10008.5.1.4.34.9": SopClass.kRTIonMachineVerification,
@@ -375,32 +374,36 @@ const Map<String, WKUid> wellKnownUids = const {
       SopClass.kBreastImagingRelevantPatientInformationQuery,
   "1.2.840.10008.5.1.4.37.3": SopClass.kCardiacRelevantPatientInformationQuery,
   "1.2.840.10008.5.1.4.38.1": SopClass.kHangingProtocolStorage,
-  "1.2.840.10008.5.1.4.38.2": SopClass.kHangingProtocolInformationModel_FIND,
-  "1.2.840.10008.5.1.4.38.3": SopClass.kHangingProtocolInformationModel_MOVE,
-  "1.2.840.10008.5.1.4.38.4": SopClass.kHangingProtocolInformationModel_GET,
+  "1.2.840.10008.5.1.4.38.2": SopClass.kHangingProtocolInformationModelFIND,
+  "1.2.840.10008.5.1.4.38.3": SopClass.kHangingProtocolInformationModelMOVE,
+  "1.2.840.10008.5.1.4.38.4": SopClass.kHangingProtocolInformationModelGET,
   "1.2.840.10008.5.1.4.39.1": SopClass.kColorPaletteStorage,
-  "1.2.840.10008.5.1.4.39.2": SopClass.kColorPaletteInformationModel_FIND,
-  "1.2.840.10008.5.1.4.39.3": SopClass.kColorPaletteInformationModel_MOVE,
-  "1.2.840.10008.5.1.4.39.4": SopClass.kColorPaletteInformationModel_GET,
+  "1.2.840.10008.5.1.4.39.2": SopClass.kColorPaletteInformationModelFIND,
+  "1.2.840.10008.5.1.4.39.3": SopClass.kColorPaletteInformationModelMOVE,
+  "1.2.840.10008.5.1.4.39.4": SopClass.kColorPaletteInformationModelGET,
   "1.2.840.10008.5.1.4.41": SopClass.kProductCharacteristicsQuery,
   "1.2.840.10008.5.1.4.42": SopClass.kSubstanceApprovalQuery,
   "1.2.840.10008.5.1.4.43.1": SopClass.kGenericImplantTemplateStorage,
   "1.2.840.10008.5.1.4.43.2":
-      SopClass.kGenericImplantTemplateInformationModel_FIND,
+      SopClass.kGenericImplantTemplateInformationModelFIND,
   "1.2.840.10008.5.1.4.43.3":
-      SopClass.kGenericImplantTemplateInformationModel_MOVE,
-  "1.2.840.10008.5.1.4.43.4": SopClass.kGenericImplantTemplateInformationModel_GET,
+      SopClass.kGenericImplantTemplateInformationModelMOVE,
+  "1.2.840.10008.5.1.4.43.4":
+      SopClass.kGenericImplantTemplateInformationModelGET,
   "1.2.840.10008.5.1.4.44.1": SopClass.kImplantAssemblyTemplateStorage,
   "1.2.840.10008.5.1.4.44.2":
-      SopClass.kImplantAssemblyTemplateInformationModel_FIND,
+      SopClass.kImplantAssemblyTemplateInformationModelFIND,
   "1.2.840.10008.5.1.4.44.3":
-      SopClass.kImplantAssemblyTemplateInformationModel_MOVE,
+      SopClass.kImplantAssemblyTemplateInformationModelMOVE,
   "1.2.840.10008.5.1.4.44.4":
-      SopClass.kImplantAssemblyTemplateInformationModel_GET,
+      SopClass.kImplantAssemblyTemplateInformationModelGET,
   "1.2.840.10008.5.1.4.45.1": SopClass.kImplantTemplateGroupStorage,
-  "1.2.840.10008.5.1.4.45.2": SopClass.kImplantTemplateGroupInformationModel_FIND,
-  "1.2.840.10008.5.1.4.45.3": SopClass.kImplantTemplateGroupInformationModel_MOVE,
-  "1.2.840.10008.5.1.4.45.4": SopClass.kImplantTemplateGroupInformationModel_GET,
+  "1.2.840.10008.5.1.4.45.2":
+      SopClass.kImplantTemplateGroupInformationModelFIND,
+  "1.2.840.10008.5.1.4.45.3":
+      SopClass.kImplantTemplateGroupInformationModelMOVE,
+  "1.2.840.10008.5.1.4.45.4":
+      SopClass.kImplantTemplateGroupInformationModelGET,
   "1.2.840.10008.7.1.1": WKUid.kNativeDicomModel,
   "1.2.840.10008.7.1.2": WKUid.kAbstractMultiDimensionalImageModel,
   "1.2.840.10008.15.0.3.1": LdapOid.kDicomDeviceName,

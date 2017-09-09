@@ -68,11 +68,11 @@ void uidTest() {
       expect(uid.asString, equals(WKUids[2]));
 
       uid = Uid.parse(WKUids[3]);
-      expect(uid == TransferSyntax.kJPEG_LSLossyImageCompression, true);
+      expect(uid == TransferSyntax.kJpegLSLossyImageCompression, true);
       expect(uid.asString, equals(WKUids[3]));
 
       uid = Uid.parse(WKUids[4]);
-      expect(uid == TransferSyntax.kJPEG2000ImageCompression, true);
+      expect(uid == TransferSyntax.kJpeg2000ImageCompression, true);
       expect(uid.asString, equals(WKUids[4]));
 
       uid = Uid.parse(WKUids[5]);
