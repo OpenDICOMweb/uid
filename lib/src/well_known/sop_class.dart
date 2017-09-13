@@ -25,7 +25,8 @@ class SopClass extends WKUid {
 
   //TODO: when other classes are implemented convert to lookup the uidString
   //in each class.
-  static SopClass lookup(String uidString) => members[uidString];
+  static SopClass lookup(String s) => map[s];
+
 
   //TODO: verify that all SOPClass Definitions are present
   static const SopClass kVerification = const SopClass(
@@ -1505,7 +1506,7 @@ class SopClass extends WKUid {
 
 //TODO: finish Map
 
-  static const Map<String, SopClass> members = const <String, SopClass>{};
+  static const List<SopClass> members = const <SopClass>[];
 
   static const Map<String, SopClass> map = const <String, SopClass>{};
 }

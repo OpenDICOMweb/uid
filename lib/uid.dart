@@ -9,4 +9,6 @@ export 'package:uid/src/errors.dart';
 export 'package:uid/src/uid.dart';
 export 'package:uid/src/uid_type.dart';
 export 'package:uid/src/well_known_uids.dart';
+export 'package:uid/src/well_known/sop_class_list.dart';
+export 'package:uid/src/well_known/sop_class_map.dart';
 
