@@ -1,6 +1,6 @@
 name: uid
 description: DICOM UIDs
-version: 0.6.1
+version: 0.6.3
 author: Jim Philbin <mailto:jfphilbin@gmail.com>
 
 homepage: https://github.com/OpenDICOMweb/uid
