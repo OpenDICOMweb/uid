@@ -9,11 +9,13 @@ environment:
   sdk: ^1.24.2
 
 dependencies:
-# uses only string/ascii.dart
+  bignum: ^0.1.0
+  string:
+    path: C:/odw/sdk/string
+    version: ^0.6.3
   system:
     path: C:/odw/sdk/system
     version: ^0.6.3
-  bignum: ^0.1.0
   uuid:
     path: C:/odw/sdk/uuid
     version: ^0.6.3

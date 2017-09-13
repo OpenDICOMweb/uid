@@ -7,10 +7,10 @@
 import 'dart:typed_data';
 
 import 'package:bignum/bignum.dart';
+import 'package:string/parse.dart';
 import 'package:uuid/uuid.dart';
 
 import 'errors.dart';
-import 'uid_utils.dart';
 import 'well_known_uids.dart';
 
 //TODO: add link in next line
