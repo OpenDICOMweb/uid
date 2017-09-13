@@ -114,7 +114,7 @@ class Uid {
   /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
   static String check(String s) => isValidString(s) ? s : null;
 
-  static String test(String s) => isValidString(s) ? s : throw "Invalid Uid String: $s";
+//  static String test(String s) => isValidString(s) ? s : throw "Invalid Uid String: $s";
 
   /// Returns a [String] containing the name of the organization associated
   /// with the root.
