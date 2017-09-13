@@ -10,12 +10,13 @@ import 'package:bignum/bignum.dart';
 import 'package:uuid/uuid.dart';
 
 import 'errors.dart';
-import 'uid_type.dart';
 import 'uid_utils.dart';
 import 'well_known_uids.dart';
 
 //TODO: add link in next line
 
+typedef String _Generator();
+typedef Uid OnUidParseError(String s);
 /// A class that implements *DICOM Unique Identifiers* (UID) <*add link*>,
 /// also known as OSI *Object Identifiers* (OID), in accordance with
 /// Rec. ITU-T X.667 | ISO/IEC 9834-8. See <http://www.oid-info.com/get/2.25>
@@ -30,7 +31,7 @@ import 'well_known_uids.dart';
 class Uid {
   // A generator function for random [Uid]s. This should be
   // set to either [
-  static String Function() _generator = generateSecureUidString;
+  static _Generator _generator = generateSecureUidString;
   final String value;
 
   //Urgent: test that validation is working
@@ -63,7 +64,6 @@ class Uid {
   String get info => '$runtimeType: $asString';
 
   /// Returns the [Uid] [String].
-  @override
   String get asString => value;
 
   /// Returns the [Uid] [String].
@@ -140,7 +140,7 @@ class Uid {
   ///
   /// The onError handler can be chosen to return null. This is preferable
   /// to to throwing and then immediately catching the FormatException.
-  static Uid parse(String s, {Uid Function(String) onError}) {
+  static Uid parse(String s, {OnUidParseError onError}) {
     var v = s.trim();
     if (!Uid.isValidString(v)) {
       if (onError != null) {
@@ -159,10 +159,10 @@ class Uid {
   /// If any member of [sList] is not valid, [onError] is called and
   /// its values is stored in the  result. If no [OnError] is provided,
   /// an [InvalidUidStringError] is thrown.
-  static List<Uid> parseList(List<String> sList, {Uid Function(String) onError}) {
-    List<Uid> uids = new List<Uid>(values.length);
-    for (int i = 0; i < values.length; i++)
-      uids[i] = Uid.parse(values[i], onError: onError);
+  static List<Uid> parseList(List<String> sList, {OnUidParseError onError}) {
+    List<Uid> uids = new List<Uid>(sList.length);
+    for (int i = 0; i < sList.length; i++)
+      uids[i] = Uid.parse(sList[i], onError: onError);
     return uids;
   }
 
@@ -172,7 +172,7 @@ class Uid {
   /// Returns a [list] of [Uid] generated from random [Uuid]s.
   static List<Uid> randomList(int length) {
     List<Uid> uList = new List<Uid>(length);
-    for (int i = 0; i < length; i++) uList[i] = new UidRandom._();
+    for (int i = 0; i < length; i++) uList[i] = new Uid();
     return uList;
   }
 
