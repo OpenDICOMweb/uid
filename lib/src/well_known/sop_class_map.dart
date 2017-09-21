@@ -4,16 +4,7 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu>
 // See the AUTHORS file for other contributors.
 
-import 'package:uid/src/well_known/frame_of_reference.dart';
-import 'package:uid/src/well_known/ldap_oid.dart';
-import 'package:uid/src/well_known/meta_sop_class.dart';
 import 'package:uid/src/well_known/sop_class.dart';
-import 'package:uid/src/well_known/sop_instance.dart';
-import 'package:uid/src/well_known/transfer_syntax.dart';
-
-//import 'package:uid/src/well_known/.dart';
-
-import 'package:uid/src/well_known/wk_uid.dart';
 
 //TODO: doc
 //TODO: before V0.9.1 change entries to proper type
