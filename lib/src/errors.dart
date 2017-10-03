@@ -9,8 +9,7 @@ import 'package:uid/uid.dart';
 //TODO: before V0.9.1 decide if all three Errors are necessary
 
 /// Invalid UID String Error - thrown when a [Uid] [String] does not
-/// have the correct format. Note: [this] should only be called from
-/// [invalidUidStringError] below.  It not be called directly
+/// have the correct format.
 class InvalidUidStringError extends Error {
   String s;
   String msg;
@@ -26,8 +25,6 @@ class InvalidUidStringError extends Error {
 
 /// Invalid UID Error - thrown when a [Uid] [String] does not
 /// have the correct format.
-/// Note: [this] should only be called from [invalidUidError] below.
-/// It not be called directly
 class InvalidUidError extends Error {
   Uid uid;
   /// Note: [tag] is [Type] [Object] so Tag doesn't have to be imported.
@@ -45,8 +42,6 @@ class InvalidUidError extends Error {
 
 /// Invalid UID List Error - thrown when one or more of the [Uid]s in
 /// [List<Uid>] do not have the correct format.
-/// Note: [this] should only be called from [invalidUidError] below.
-/// It not be called directly
 class InvalidUidListError extends Error {
   List<Uid> uids;
   Object tag;

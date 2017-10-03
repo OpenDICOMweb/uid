@@ -44,7 +44,7 @@ List<String> badUids = const <String>[
 ];
 
 // well known Uids
-List<String> WKUids = const <String>[
+List<String> wkUids = const <String>[
   "1.2.840.10008.1.2",
   "1.2.840.10008.1.2.1",
   "1.2.840.10008.1.2.1.99",
@@ -61,23 +61,23 @@ void uidTest() {
       expect(uid.asString, equals("1.2.840.10008.1.2"));
       uid = Uid.parse("1.2.840.10008.1.2.1");
       expect(uid == TransferSyntax.kExplicitVRLittleEndian, true);
-      expect(uid.asString, equals(WKUids[1]));
+      expect(uid.asString, equals(wkUids[1]));
 
-      uid = Uid.parse(WKUids[2]);
+      uid = Uid.parse(wkUids[2]);
       expect(uid == TransferSyntax.kDeflatedExplicitVRLittleEndian, true);
-      expect(uid.asString, equals(WKUids[2]));
+      expect(uid.asString, equals(wkUids[2]));
 
-      uid = Uid.parse(WKUids[3]);
+      uid = Uid.parse(wkUids[3]);
       expect(uid == TransferSyntax.kJpegLSLossyImageCompression, true);
-      expect(uid.asString, equals(WKUids[3]));
+      expect(uid.asString, equals(wkUids[3]));
 
-      uid = Uid.parse(WKUids[4]);
+      uid = Uid.parse(wkUids[4]);
       expect(uid == TransferSyntax.kJpeg2000ImageCompression, true);
-      expect(uid.asString, equals(WKUids[4]));
+      expect(uid.asString, equals(wkUids[4]));
 
-      uid = Uid.parse(WKUids[5]);
+      uid = Uid.parse(wkUids[5]);
       expect(uid == TransferSyntax.kJPIPReferenced, true);
-      expect(uid.asString, equals(WKUids[5]));
+      expect(uid.asString, equals(wkUids[5]));
     });
 
     test('Good UIDs', () {

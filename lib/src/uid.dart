@@ -45,6 +45,7 @@ class Uid {
   @override
   bool operator ==(Object other) => (other is Uid) && (asString == other.asString);
 
+  @override
   int get hashCode => value.hashCode;
 
   //TODO: determine the correct number
@@ -101,7 +102,7 @@ class Uid {
   /// Returns a [Uid] created from a pseudo random [Uuid].
   static String generatePseudoUidString() => _convertBigIntToUid(V4Generator.pseudo.next);
 
-  static _convertBigIntToUid(Uint8List uuid) {
+  static String _convertBigIntToUid(Uint8List uuid) {
     BigInteger n = new BigInteger.fromBytes(1, uuid);
     return '2.25.$n';
   }
@@ -136,7 +137,7 @@ class Uid {
   ///
   /// If [s] is not a valid [Uid] [String], [onError] is called with [s] as
   /// its argument, and its value is returned as the value of the [parse]
-  /// expression. If no [OnError] is provided, an [InvalidUidStringError] is thrown.
+  /// expression. If no [onError] is provided, an [InvalidUidStringError] is thrown.
   ///
   /// The onError handler can be chosen to return null. This is preferable
   /// to to throwing and then immediately catching the FormatException.
@@ -157,7 +158,7 @@ class Uid {
   /// [List] containing the corresponding [Uid]s.
   ///
   /// If any member of [sList] is not valid, [onError] is called and
-  /// its values is stored in the  result. If no [OnError] is provided,
+  /// its values is stored in the  result. If no [onError] is provided,
   /// an [InvalidUidStringError] is thrown.
   static List<Uid> parseList(List<String> sList, {OnUidParseError onError}) {
     List<Uid> uids = new List<Uid>(sList.length);
@@ -169,13 +170,13 @@ class Uid {
   /// Return the first character of the [Uid] [String].
   static String uidRootType(String uidString) => kUidRootType[uidString.codeUnitAt(0)];
 
-  /// Returns a [list] of [Uid] generated from random [Uuid]s.
+  /// Returns a [list<Uid>] of [Uid] generated from random [Uuid]s.
   static List<Uid> randomList(int length) {
     List<Uid> uList = new List<Uid>(length);
     for (int i = 0; i < length; i++) uList[i] = new Uid();
     return uList;
   }
 
-  /// Returns a [list] of [Uid] generated from random [Uuid]s.
+  /// Returns a [Uid] [String] generated from random [Uuid]s.
   static String randomString() => generateSecureUidString();
 }

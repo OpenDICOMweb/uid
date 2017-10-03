@@ -9,7 +9,7 @@ import 'package:system/server.dart';
 import 'package:test/test.dart';
 
 // TODO: enhance these tests.
-main() {
+void main() {
   Server.initialize(name: 'random_uid_test', level: Level.info0);
   group('Random Uid Tests', () {
 
