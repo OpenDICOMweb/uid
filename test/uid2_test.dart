@@ -11,49 +11,49 @@ import 'package:test/test.dart';
 void main() {
   Server.initialize(name: 'uid2_test', level: Level.info0);
 
-  var goodUids = [
-    "0.20.3000",
-    "1.20.3000",
-    "2.20.3000",
-    "0.3.0.812345",
-    "1.2.840.10008.1.2.4.58",
-    "1.2.840.10008.1.2.4.61"
+  const goodUids = const <String>[
+    '0.20.3000',
+    '1.20.3000',
+    '2.20.3000',
+    '0.3.0.812345',
+    '1.2.840.10008.1.2.4.58',
+    '1.2.840.10008.1.2.4.61'
   ];
 
   group('Good Uids Test', () {
     test('Good UID', () {
-      for (String s in goodUids) {
-        var v = Uid.isValidString(s);
+      for (var s in goodUids) {
+        final v = Uid.isValidString(s);
         log.debug('$v: $s');
         expect(Uid.isValidString(s), true);
       }
     });
   });
 
-  var badUids = [
+  const badUids = const <String>[
     // Bad root
-    "3.20.3000",
+    '3.20.3000',
     // Bad root
-    "4.A0.3000",
+    '4.A0.3000',
     // '.0' must be followed by '.'
-    "2.01.3000",
+    '2.01.3000',
     // Invalid char 'g
-    "0.A0.0.abcdeg",
+    '0.A0.0.abcdeg',
     // Invalid char '_'
-    "2.C0.-bcdef",
+    '2.C0.-bcdef',
     // Can't end in '.'
-    "1.B0.abcde.",
+    '1.B0.abcde.',
     // length too short
-    "1.25",
+    '1.25',
     // Length too long
-    "1.25.111111111111111111111111111111111111111111111111111111111111111111111"
+    '1.25.111111111111111111111111111111111111111111111111111111111111111111111'
   ];
 
   group('Bad Uids Test', () {
     test('Bad UID', () {
-      for (String s in badUids) {
+      for (var s in badUids) {
         log.debug('"$s":');
-        var v = Uid.isValidString(s);
+        final v = Uid.isValidString(s);
         log.debug('"$s": $v');
         expect(Uid.isValidString(s), false);
       }

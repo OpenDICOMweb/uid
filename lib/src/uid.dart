@@ -31,7 +31,7 @@ typedef Uid OnUidParseError(String s);
 class Uid {
   // A generator function for random [Uid]s. This should be
   // set to either [
-  static _Generator _generator = generateSecureUidString;
+  static final _Generator _generator = generateSecureUidString;
   final String value;
 
   //Urgent: test that validation is working
@@ -41,6 +41,18 @@ class Uid {
   Uid._(this.value);
 
   const Uid.wellKnown(this.value);
+
+  /// Returns a [String] containing a random UID as per the
+  /// See Dart sdk/math/Random.
+  factory Uid.seededPseudo() => new Uid._(generateSeededPseudoUidString());
+
+  /// Returns a [String] containing a random UID as per the
+  /// See Dart sdk/math/Random.
+  factory Uid.pseudo() => new Uid._(generatePseudoUidString());
+
+  /// Returns a [String] containing a _secure_ random UID.
+  /// See Dart sdk/math/Random.
+  factory Uid.secure() => new Uid._(generateSecureUidString());
 
   @override
   bool operator ==(Object other) => (other is Uid) && (asString == other.asString);
@@ -76,20 +88,8 @@ class Uid {
   /// ASCII constants for '0', '1', and '2'. No other roots are valid.
   static const List<String> uidRoots = kUidRoots;
 
-  /// Returns a [String] containing a random UID as per the
-  /// See Dart sdk/math/Random.
-  static Uid get seededPseudo => new Uid._(generateSeededPseudoUidString());
-
-  /// Returns a [String] containing a random UID as per the
-  /// See Dart sdk/math/Random.
-  static Uid get pseudo => new Uid._(generatePseudoUidString());
-
-  /// Returns a [String] containing a _secure_ random UID.
-  /// See Dart sdk/math/Random.
-  static Uid get secure => new Uid._(generateSecureUidString());
-
   /// Returns the DICOM UID root [String]
-  static String get dicomRoot => "1.2.840.10008";
+  static String get dicomRoot => '1.2.840.10008';
 
   /// Returns the Well Known (DICOM) [Uid] corresponding to [s],
   /// or [null] if none.
@@ -103,7 +103,7 @@ class Uid {
   static String generatePseudoUidString() => _convertBigIntToUid(V4Generator.pseudo.next);
 
   static String _convertBigIntToUid(Uint8List uuid) {
-    BigInteger n = new BigInteger.fromBytes(1, uuid);
+    final n = new BigInteger.fromBytes(1, uuid);
     return '2.25.$n';
   }
 
@@ -115,7 +115,7 @@ class Uid {
   /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
   static String check(String s) => isValidString(s) ? s : null;
 
-//  static String test(String s) => isValidString(s) ? s : throw "Invalid Uid String: $s";
+//  static String test(String s) => isValidString(s) ? s : throw 'Invalid Uid String: $s';
 
   /// Returns a [String] containing the name of the organization associated
   /// with the root.
@@ -127,7 +127,7 @@ class Uid {
   /// Returns [true] if [sList] is empty, i.e. [sList].length == 0, or if each
   /// [String] in the [List] is a valid [Uid].
   static bool isValidStringList(List<String> sList) =>
-      sList != null && (sList.length == 0 || isValidUidStringList(sList));
+      sList != null && (sList.isEmpty || isValidUidStringList(sList));
 
   /// Parse [s] as [Uid] and return its value.
   ///
@@ -142,7 +142,7 @@ class Uid {
   /// The onError handler can be chosen to return null. This is preferable
   /// to to throwing and then immediately catching the FormatException.
   static Uid parse(String s, {OnUidParseError onError}) {
-    var v = s.trim();
+    final v = s.trim();
     if (!Uid.isValidString(v)) {
       if (onError != null) {
         return onError(s);
@@ -150,7 +150,7 @@ class Uid {
         throw new InvalidUidStringError(s);
       }
     }
-    WKUid wk = wellKnownUids[s];
+    final wk = wellKnownUids[s];
     return (wk != null) ? wk : new Uid(s);
   }
 
@@ -161,8 +161,8 @@ class Uid {
   /// its values is stored in the  result. If no [onError] is provided,
   /// an [InvalidUidStringError] is thrown.
   static List<Uid> parseList(List<String> sList, {OnUidParseError onError}) {
-    List<Uid> uids = new List<Uid>(sList.length);
-    for (int i = 0; i < sList.length; i++)
+    final uids = new List<Uid>(sList.length);
+    for (var i = 0; i < sList.length; i++)
       uids[i] = Uid.parse(sList[i], onError: onError);
     return uids;
   }
@@ -172,8 +172,8 @@ class Uid {
 
   /// Returns a [list<Uid>] of [Uid] generated from random [Uuid]s.
   static List<Uid> randomList(int length) {
-    List<Uid> uList = new List<Uid>(length);
-    for (int i = 0; i < length; i++) uList[i] = new Uid();
+  	final uList = new List<Uid>(length);
+    for (var i = 0; i < length; i++) uList[i] = new Uid();
     return uList;
   }
 

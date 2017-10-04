@@ -11,8 +11,9 @@ import 'package:uid/src/well_known/wk_uid.dart';
 
 class SynchronizationFrameOfReference extends WKUid {
   const SynchronizationFrameOfReference(
-      String uid, String keyword, UidType type, bool isRetired, String name)
-      : super(uid, keyword, type, isRetired, name);
+      String uid, String keyword, UidType type, String name,
+      {bool isRetired = false})
+      : super(uid, keyword, type, name, isRetired: isRetired);
 
   //TODO: create UidType class
   bool get isSopClass => true;
@@ -28,17 +29,16 @@ class SynchronizationFrameOfReference extends WKUid {
   static SynchronizationFrameOfReference lookup(String s) => map[s];
 
   static const WKUid kUniversalCoordinatedTime = const WKUid(
-      "1.2.840.10008.15.1.1",
-      "UniversalCoordinatedTime",
+      '1.2.840.10008.15.1.1',
+      'UniversalCoordinatedTime',
       UidType.kSynchronizationFrameOfReference,
-      false,
-      "Universal Coordinated Time");
-  static const List<SynchronizationFrameOfReference> members = const <SynchronizationFrameOfReference>[
-    kUniversalCoordinatedTime
-  ];
+      'Universal Coordinated Time');
+
+  static const List<SynchronizationFrameOfReference> members =
+      const <SynchronizationFrameOfReference>[kUniversalCoordinatedTime];
 
   static const Map<String, SynchronizationFrameOfReference> map =
       const <String, SynchronizationFrameOfReference>{
-  "1.2.840.10008.15.1.1": kUniversalCoordinatedTime
+    '1.2.840.10008.15.1.1': kUniversalCoordinatedTime
   };
 }

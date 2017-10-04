@@ -15,16 +15,16 @@ void main() {
 void transferSyntaxTest() {
   group('Transfer Syntax Tests', () {
     test('String to UID', () {
-      Uid uid = Uid.lookup("1.2.840.10008.1.2");
+      Uid uid = Uid.lookup('1.2.840.10008.1.2');
       expect(uid == TransferSyntax.kImplicitVRLittleEndian, true);
-      uid = Uid.lookup("1.2.840.10008.1.2.1");
+      uid = Uid.lookup('1.2.840.10008.1.2.1');
       expect(uid == TransferSyntax.kExplicitVRLittleEndian, true);
     });
 
     test('String to TransferSyntax', () {
-      Uid uid = TransferSyntax.lookup("1.2.840.10008.1.2");
+      Uid uid = TransferSyntax.lookup('1.2.840.10008.1.2');
       expect(uid == TransferSyntax.kImplicitVRLittleEndian, true);
-      uid = TransferSyntax.lookup("1.2.840.10008.1.2.1");
+      uid = TransferSyntax.lookup('1.2.840.10008.1.2.1');
       expect(uid == TransferSyntax.kExplicitVRLittleEndian, true);
     });
   });

@@ -14,34 +14,27 @@ import 'package:uuid/uuid.dart';
 
 
 void main() {
-  Uint8List b0 = V4Generator.pseudo.next;
-  String s = Uid.generatePseudoUidString();
+  final b0 = V4Generator.pseudo.next;
+  final s = Uid.generatePseudoUidString();
   print('s[${s.length}]: "$s"');
   print('b0[${b0.length}]: $b0');
-  BigInteger i0 = new BigInteger.fromBytes(1, b0);
+  final i0 = new BigInteger.fromBytes(1, b0);
   print('i0: $i0');
-  String s0 = i0.toString();
+  final s0 = i0.toString();
   print('s0[${s0.length}]: $s0');
-  Uint8List b1 = ASCII.encode(s0);
+  final b1 = ASCII.encode(s0);
   print('b1[${b1.length}]: $b1');
-  BigInteger i1 = new BigInteger.fromBytes(1, b1);
+  final i1 = new BigInteger.fromBytes(1, b1);
   print('i1: $i1');
-  String s1 = i0.toString();
+  final s1 = i0.toString();
   print('s1[${s1.length}]: $s1');
 }
 
-const String radixDigits = '0123456789ABCDEF';
-
-String intToString(int n, int base) => _intToString(n, base);
-
-String _intToString(int n, int base) =>
-    (n < base) ? radixDigits[n] : _intToString(n ~/ base, base) + radixDigits[n % base];
-
 String bytesToDecimal(Uint8List bytes) {
-  Uint8List digits = ASCII.encode("0123456789");
-  Uint8List output = new Uint8List(bytes.length * 4);
-  for (int j = 0; j < bytes.length; j++) {
-    int v = bytes[j] & 0xFF;
+  final digits = ASCII.encode('0123456789');
+  final output = new Uint8List(bytes.length * 4);
+  for (var j = 0; j < bytes.length; j++) {
+    final v = bytes[j] & 0xFF;
     output[j * 4] = digits[v ~/ 100];
     output[j * 4 + 1] = digits[(v ~/ 10) % 10];
     output[j * 4 + 2] = digits[v % 10];

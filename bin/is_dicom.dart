@@ -7,7 +7,7 @@
 import 'package:uid/uid.dart';
 
 void main() {
-  var v = Uid.isDicom(TransferSyntax.kDeflatedExplicitVRLittleEndian);
+  final v = Uid.isDicom(TransferSyntax.kDeflatedExplicitVRLittleEndian);
   print('V: $v');
 
 }

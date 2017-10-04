@@ -14,21 +14,21 @@ void main() {
   group('Random Uid Tests', () {
 
     test('Seeded Random Tests', (){
-      Uid uid = Uid.seededPseudo;
+      final uid = new Uid.seededPseudo();
       expect(uid.asString.indexOf('2.25.') == 0, true);
       expect(uid.asString.length > 30, true);
       expect(uid.asString.length <= 44, true);
     });
 
     test('Pseudo Random Tests', (){
-      Uid uid = Uid.pseudo;
+      final uid = new Uid.pseudo();
       expect(uid.asString.indexOf('2.25.') == 0, true);
       expect(uid.asString.length > 30, true);
       expect(uid.asString.length <= 44, true);
     });
 
     test('Secure Random Tests', (){
-      Uid uid = Uid.secure;
+      final uid = new Uid.secure();
       expect(uid.asString.indexOf('2.25.') == 0, true);
       expect(uid.asString.length > 30, true);
       expect(uid.asString.length <= 44, true);

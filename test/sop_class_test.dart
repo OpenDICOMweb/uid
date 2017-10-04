@@ -16,18 +16,18 @@ void main() {
 
   group('SopClass Tests', () {
     test('SopClassUids', () {
-      for (String s in sopClassMap.keys) {
+      for (var s in sopClassMap.keys) {
         expect(isValidUidString(s), true);
       }
 
-      for (String s in sopClassMap.keys) {
-	      Uid uid = Uid.parse(s);
-        var v = uid is SopClass;
+      for (var s in sopClassMap.keys) {
+	      final uid = Uid.parse(s);
+        final v = uid is SopClass;
         if (!v) log.debug('Bad SopClass: $uid');
         expect(uid is SopClass, true);
       }
 
-      for (SopClass c in sopClassList) {
+      for (var c in sopClassList) {
         expect(c is SopClass, true);
       }
     });

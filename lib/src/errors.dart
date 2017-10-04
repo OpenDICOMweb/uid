@@ -14,12 +14,12 @@ class InvalidUidStringError extends Error {
   String s;
   String msg;
 
-  InvalidUidStringError(this.s, {this.msg = ""});
+  InvalidUidStringError(this.s, {this.msg = ''});
 
   @override
   String toString() => message(s, msg: msg);
 
-  static String message(String s, {String msg = ""}) =>
+  static String message(String s, {String msg = ''}) =>
       'InvalidUidError $s $msg';
 }
 
@@ -31,12 +31,12 @@ class InvalidUidError extends Error {
   Object tag;
   String msg;
 
-  InvalidUidError(this.uid, {this.tag, this.msg = ""});
+  InvalidUidError(this.uid, {this.tag, this.msg = ''});
 
   @override
   String toString() => message(uid, tag: tag, msg: msg);
 
-  static String message(Uid uid, {Object tag, String msg = ""}) =>
+  static String message(Uid uid, {Object tag, String msg = ''}) =>
       'InvalidUidError $uid $tag, $msg';
 }
 
@@ -47,12 +47,12 @@ class InvalidUidListError extends Error {
   Object tag;
   String msg;
 
-  InvalidUidListError(this.uids, {this.tag, this.msg = ""});
+  InvalidUidListError(this.uids, {this.tag, this.msg = ''});
 
   @override
   String toString() => message(uids, tag: tag, msg: msg);
 
-  static String message(List<Uid> uid, {Object tag, String msg = ""}) => (tag ==
+  static String message(List<Uid> uid, {Object tag, String msg = ''}) => (tag ==
       null)
       ? 'InvalidUidListError $uid $msg'
       : 'InvalidUidListError $uid from Tag: $tag $msg';
