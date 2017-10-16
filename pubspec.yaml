@@ -1,24 +1,24 @@
 name: uid
 description: DICOM UIDs
-version: 0.6.3
+version: 0.6.5
 author: Jim Philbin <mailto:jfphilbin@gmail.com>
 
 homepage: https://github.com/OpenDICOMweb/uid
 
 environment:
-  sdk: '>=2.0.0-dev.2.0'
+  sdk: '>=1.24.2 <2.1.0'
 
 dependencies:
   bignum: ^0.1.0
   string:
     path: C:/odw/sdk/string
-    version: ^0.6.3
+    version: ^0.6.5
   system:
     path: C:/odw/sdk/system
-    version: ^0.6.3
+    version: ^0.6.5
   uuid:
     path: C:/odw/sdk/uuid
-    version: ^0.6.3
+    version: ^0.6.5
 
 dev_dependencies:
   test: ^0.12.0
