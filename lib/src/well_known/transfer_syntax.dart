@@ -27,10 +27,10 @@ class TransferSyntax extends WKUid {
   bool get isTransferSyntax => true;
 
   /// [true] if [this] is an Implicit VR Transfer Syntax.
-  bool get isIVR => this == TransferSyntax.kImplicitVRLittleEndian;
+  bool get isIvr => this == TransferSyntax.kImplicitVRLittleEndian;
 
   /// [true] if [this] is an Explicit VR Transfer Syntax.
-  bool get isEVR => !isIVR;
+  bool get isEvr => !isIvr;
 
   bool get isNativeFormat => !isEncapsulated;
 
