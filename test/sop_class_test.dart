@@ -8,6 +8,7 @@ import 'package:string/string.dart';
 import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
+import 'package:uid/src/well_known/ldap_oid.dart';
 
 // TODO: add tests for all three errors in errors.dart.
 
@@ -30,6 +31,36 @@ void main() {
       for (var c in sopClassList) {
         expect(c is SopClass, true);
       }
+    });
+  });
+
+   final badUids = const <String>[
+    '1.2.3', // Invalid Length : length less than 6
+    '3.2.840.10008.1.2.0', // '3.': not valid root
+    '1.02.840.10008.1.2', // '.02': '0' can only be followed by '.'
+    '1.2.840.10008.0.1.2.', // '.2.': uid can't end with dot
+    '.2.840.10008.0.1.2', // '.2.': uid can't start with dot
+    '1.).840.10008.0.*.2.', // Special characters
+    '1.2.840.10008.1.2.-4.64', // '-': uid can't have a negative number
+    // Invalid Length : length greater than 64
+    '1.4.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64',
+    '0.0.000.00000.0.0.00',
+    '1.2.a840.1b0008.1.2.4.64', // Uid can't have letters
+    '1.2.840.10a08.0.1.2'  // letters can't be used
+  ];
+
+  group('Error', () {
+    test('parse InvalidUidStringError', () {
+     // final s0 = '1.2.8z0.10008.1.2';
+      for(var s in badUids) {
+        expect(() => Uid.parse(s, onError: null),
+            throwsA(const isInstanceOf<InvalidUidStringError>()));
+      }
+    });
+    test('parseList InvalidUidStringError', () {
+        expect(() => Uid.parseList(badUids, onError: null),
+            throwsA(const isInstanceOf<InvalidUidStringError>()));
+
     });
   });
 }
