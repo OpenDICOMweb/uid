@@ -7,7 +7,6 @@
 import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uid.dart';
 
-//TODO: Unit test.
 
 class MetaSopClass extends WKUid {
   const MetaSopClass(String uid, String keyword, UidType type, String name,

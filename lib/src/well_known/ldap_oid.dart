@@ -7,7 +7,6 @@
 import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uid.dart';
 
-//TODO: Unit test.
 
 class LdapOid extends WKUid {
   const LdapOid(String uid, String keyword, UidType type, String name,
@@ -27,140 +26,221 @@ class LdapOid extends WKUid {
   //in each class.
   static LdapOid lookup(String s) => map[s];
 
-  static const WKUid kDicomDeviceName = const WKUid(
-      '1.2.840.10008.15.0.3.1', 'dicomDeviceName', UidType.kLdapOid, 'dicomDeviceName');
+  static const LdapOid kDicomDeviceName = const LdapOid(
+      '1.2.840.10008.15.0.3.1',
+      'dicomDeviceName',
+      UidType.kLdapOid,
+      'dicomDeviceName');
 
-  static const WKUid kDicomDescription = const WKUid(
-      '1.2.840.10008.15.0.3.2', 'dicomDescription', UidType.kLdapOid, 'dicomDescription');
+  static const LdapOid kDicomDescription = const LdapOid(
+      '1.2.840.10008.15.0.3.2',
+      'dicomDescription',
+      UidType.kLdapOid,
+      'dicomDescription');
 
-  static const WKUid kDicomManufacturer = const WKUid('1.2.840.10008.15.0.3.3',
-      'dicomManufacturer', UidType.kLdapOid, 'dicomManufacturer');
+  static const LdapOid kDicomManufacturer = const LdapOid(
+      '1.2.840.10008.15.0.3.3',
+      'dicomManufacturer',
+      UidType.kLdapOid,
+      'dicomManufacturer');
 
-  static const WKUid kDicomManufacturerModelName = const WKUid('1.2.840.10008.15.0.3.4',
-      'dicomManufacturerModelName', UidType.kLdapOid, 'dicomManufacturerModelName');
+  static const LdapOid kDicomManufacturerModelName = const LdapOid(
+      '1.2.840.10008.15.0.3.4',
+      'dicomManufacturerModelName',
+      UidType.kLdapOid,
+      'dicomManufacturerModelName');
 
-  static const WKUid kDicomSoftwareVersion = const WKUid('1.2.840.10008.15.0.3.5',
-      'dicomSoftwareVersion', UidType.kLdapOid, 'dicomSoftwareVersion');
+  static const LdapOid kDicomSoftwareVersion = const LdapOid(
+      '1.2.840.10008.15.0.3.5',
+      'dicomSoftwareVersion',
+      UidType.kLdapOid,
+      'dicomSoftwareVersion');
 
-  static const WKUid kDicomVendorData = const WKUid(
-      '1.2.840.10008.15.0.3.6', 'dicomVendorData', UidType.kLdapOid, 'dicomVendorData');
+  static const LdapOid kDicomVendorData = const LdapOid(
+      '1.2.840.10008.15.0.3.6',
+      'dicomVendorData',
+      UidType.kLdapOid,
+      'dicomVendorData');
 
-  static const WKUid kDicomAETitle = const WKUid(
-      '1.2.840.10008.15.0.3.7', 'dicomAETitle', UidType.kLdapOid, 'dicomAETitle');
+  static const LdapOid kDicomAETitle = const LdapOid('1.2.840.10008.15.0.3.7',
+      'dicomAETitle', UidType.kLdapOid, 'dicomAETitle');
 
-  static const WKUid kDicomNetworkConnectionReference = const WKUid(
+  static const LdapOid kDicomNetworkConnectionReference = const LdapOid(
       '1.2.840.10008.15.0.3.8',
       'dicomNetworkConnectionReference',
       UidType.kLdapOid,
       'dicomNetworkConnectionReference');
 
-  static const WKUid kDicomApplicationCluster = const WKUid('1.2.840.10008.15.0.3.9',
-      'dicomApplicationCluster', UidType.kLdapOid, 'dicomApplicationCluster');
+  static const LdapOid kDicomApplicationCluster = const LdapOid(
+      '1.2.840.10008.15.0.3.9',
+      'dicomApplicationCluster',
+      UidType.kLdapOid,
+      'dicomApplicationCluster');
 
-  static const WKUid kDicomAssociationInitiator = const WKUid('1.2.840.10008.15.0.3.10',
-      'dicomAssociationInitiator', UidType.kLdapOid, 'dicomAssociationInitiator');
+  static const LdapOid kDicomAssociationInitiator = const LdapOid(
+      '1.2.840.10008.15.0.3.10',
+      'dicomAssociationInitiator',
+      UidType.kLdapOid,
+      'dicomAssociationInitiator');
 
-  static const WKUid kDicomAssociationAcceptor = const WKUid('1.2.840.10008.15.0.3.11',
-      'dicomAssociationAcceptor', UidType.kLdapOid, 'dicomAssociationAcceptor');
+  static const LdapOid kDicomAssociationAcceptor = const LdapOid(
+      '1.2.840.10008.15.0.3.11',
+      'dicomAssociationAcceptor',
+      UidType.kLdapOid,
+      'dicomAssociationAcceptor');
 
-  static const WKUid kDicomHostname = const WKUid(
-      '1.2.840.10008.15.0.3.12', 'dicomHostname', UidType.kLdapOid, 'dicomHostname');
+  static const LdapOid kDicomHostname = const LdapOid('1.2.840.10008.15.0.3.12',
+      'dicomHostname', UidType.kLdapOid, 'dicomHostname');
 
-  static const WKUid kDicomPort =
-      const WKUid('1.2.840.10008.15.0.3.13', 'dicomPort', UidType.kLdapOid, 'dicomPort');
+  static const LdapOid kDicomPort = const LdapOid(
+      '1.2.840.10008.15.0.3.13', 'dicomPort', UidType.kLdapOid, 'dicomPort');
 
-  static const WKUid kDicomSOPClass = const WKUid(
-      '1.2.840.10008.15.0.3.14', 'dicomSOPClass', UidType.kLdapOid, 'dicomSOPClass');
+  static const LdapOid kDicomSOPClass = const LdapOid('1.2.840.10008.15.0.3.14',
+      'dicomSOPClass', UidType.kLdapOid, 'dicomSOPClass');
 
-  static const WKUid kDicomTransferRole = const WKUid('1.2.840.10008.15.0.3.15',
-      'dicomTransferRole', UidType.kLdapOid, 'dicomTransferRole');
+  static const LdapOid kDicomTransferRole = const LdapOid(
+      '1.2.840.10008.15.0.3.15',
+      'dicomTransferRole',
+      UidType.kLdapOid,
+      'dicomTransferRole');
 
-  static const WKUid kDicomTransferSyntax = const WKUid('1.2.840.10008.15.0.3.16',
-      'dicomTransferSyntax', UidType.kLdapOid, 'dicomTransferSyntax');
+  static const LdapOid kDicomTransferSyntax = const LdapOid(
+      '1.2.840.10008.15.0.3.16',
+      'dicomTransferSyntax',
+      UidType.kLdapOid,
+      'dicomTransferSyntax');
 
-  static const WKUid kDicomPrimaryDeviceType = const WKUid('1.2.840.10008.15.0.3.17',
-      'dicomPrimaryDeviceType', UidType.kLdapOid, 'dicomPrimaryDeviceType');
+  static const LdapOid kDicomPrimaryDeviceType = const LdapOid(
+      '1.2.840.10008.15.0.3.17',
+      'dicomPrimaryDeviceType',
+      UidType.kLdapOid,
+      'dicomPrimaryDeviceType');
 
-  static const WKUid kDicomRelatedDeviceReference = const WKUid('1.2.840.10008.15.0.3.18',
-      'dicomRelatedDeviceReference', UidType.kLdapOid, 'dicomRelatedDeviceReference');
+  static const LdapOid kDicomRelatedDeviceReference = const LdapOid(
+      '1.2.840.10008.15.0.3.18',
+      'dicomRelatedDeviceReference',
+      UidType.kLdapOid,
+      'dicomRelatedDeviceReference');
 
-  static const WKUid kDicomPreferredCalledAETitle = const WKUid('1.2.840.10008.15.0.3.19',
-      'dicomPreferredCalledAETitle', UidType.kLdapOid, 'dicomPreferredCalledAETitle');
+  static const LdapOid kDicomPreferredCalledAETitle = const LdapOid(
+      '1.2.840.10008.15.0.3.19',
+      'dicomPreferredCalledAETitle',
+      UidType.kLdapOid,
+      'dicomPreferredCalledAETitle');
 
-  static const WKUid kDicomTLSCyphersuite = const WKUid('1.2.840.10008.15.0.3.20',
-      'dicomTLSCyphersuite', UidType.kLdapOid, 'dicomTLSCyphersuite');
+  static const LdapOid kDicomTLSCyphersuite = const LdapOid(
+      '1.2.840.10008.15.0.3.20',
+      'dicomTLSCyphersuite',
+      UidType.kLdapOid,
+      'dicomTLSCyphersuite');
 
-  static const WKUid kDicomAuthorizedNodeCertificateReference = const WKUid(
+  static const LdapOid kDicomAuthorizedNodeCertificateReference = const LdapOid(
       '1.2.840.10008.15.0.3.21',
       'dicomAuthorizedNodeCertificateReference',
       UidType.kLdapOid,
       'dicomAuthorizedNodeCertificateReference');
 
-  static const WKUid kDicomThisNodeCertificateReference = const WKUid(
+  static const LdapOid kDicomThisNodeCertificateReference = const LdapOid(
       '1.2.840.10008.15.0.3.22',
       'dicomThisNodeCertificateReference',
       UidType.kLdapOid,
       'dicomThisNodeCertificateReference');
 
-  static const WKUid kDicomInstalled = const WKUid(
-      '1.2.840.10008.15.0.3.23', 'dicomInstalled', UidType.kLdapOid, 'dicomInstalled');
+  static const LdapOid kDicomInstalled = const LdapOid(
+      '1.2.840.10008.15.0.3.23',
+      'dicomInstalled',
+      UidType.kLdapOid,
+      'dicomInstalled');
 
-  static const WKUid kDicomStationName = const WKUid('1.2.840.10008.15.0.3.24',
-      'dicomStationName', UidType.kLdapOid, 'dicomStationName');
+  static const LdapOid kDicomStationName = const LdapOid(
+      '1.2.840.10008.15.0.3.24',
+      'dicomStationName',
+      UidType.kLdapOid,
+      'dicomStationName');
 
-  static const WKUid kDicomDeviceSerialNumber = const WKUid('1.2.840.10008.15.0.3.25',
-      'dicomDeviceSerialNumber', UidType.kLdapOid, 'dicomDeviceSerialNumber');
+  static const LdapOid kDicomDeviceSerialNumber = const LdapOid(
+      '1.2.840.10008.15.0.3.25',
+      'dicomDeviceSerialNumber',
+      UidType.kLdapOid,
+      'dicomDeviceSerialNumber');
 
-  static const WKUid kDicomInstitutionName = const WKUid('1.2.840.10008.15.0.3.26',
-      'dicomInstitutionName', UidType.kLdapOid, 'dicomInstitutionName');
+  static const LdapOid kDicomInstitutionName = const LdapOid(
+      '1.2.840.10008.15.0.3.26',
+      'dicomInstitutionName',
+      UidType.kLdapOid,
+      'dicomInstitutionName');
 
-  static const WKUid kDicomInstitutionAddress = const WKUid('1.2.840.10008.15.0.3.27',
-      'dicomInstitutionAddress', UidType.kLdapOid, 'dicomInstitutionAddress');
+  static const LdapOid kDicomInstitutionAddress = const LdapOid(
+      '1.2.840.10008.15.0.3.27',
+      'dicomInstitutionAddress',
+      UidType.kLdapOid,
+      'dicomInstitutionAddress');
 
-  static const WKUid kDicomInstitutionDepartmentName = const WKUid(
+  static const LdapOid kDicomInstitutionDepartmentName = const LdapOid(
       '1.2.840.10008.15.0.3.28',
       'dicomInstitutionDepartmentName',
       UidType.kLdapOid,
       'dicomInstitutionDepartmentName');
 
-  static const WKUid kDicomIssuerOfPatientID = const WKUid('1.2.840.10008.15.0.3.29',
-      'dicomIssuerOfPatientID', UidType.kLdapOid, 'dicomIssuerOfPatientID');
+  static const LdapOid kDicomIssuerOfPatientID = const LdapOid(
+      '1.2.840.10008.15.0.3.29',
+      'dicomIssuerOfPatientID',
+      UidType.kLdapOid,
+      'dicomIssuerOfPatientID');
 
-  static const WKUid kDicomPreferredCallingAETitle = const WKUid(
+  static const LdapOid kDicomPreferredCallingAETitle = const LdapOid(
       '1.2.840.10008.15.0.3.30',
       'dicomPreferredCallingAETitle',
       UidType.kLdapOid,
       'dicomPreferredCallingAETitle');
 
-  static const WKUid kDicomSupportedCharacterSet = const WKUid('1.2.840.10008.15.0.3.31',
-      'dicomSupportedCharacterSet', UidType.kLdapOid, 'dicomSupportedCharacterSet');
+  static const LdapOid kDicomSupportedCharacterSet = const LdapOid(
+      '1.2.840.10008.15.0.3.31',
+      'dicomSupportedCharacterSet',
+      UidType.kLdapOid,
+      'dicomSupportedCharacterSet');
 
-  static const WKUid kDicomConfigurationRoot = const WKUid('1.2.840.10008.15.0.4.1',
-      'dicomConfigurationRoot', UidType.kLdapOid, 'dicomConfigurationRoot');
+  static const LdapOid kDicomConfigurationRoot = const LdapOid(
+      '1.2.840.10008.15.0.4.1',
+      'dicomConfigurationRoot',
+      UidType.kLdapOid,
+      'dicomConfigurationRoot');
 
-  static const WKUid kDicomDevicesRoot = const WKUid(
-      '1.2.840.10008.15.0.4.2', 'dicomDevicesRoot', UidType.kLdapOid, 'dicomDevicesRoot');
+  static const LdapOid kDicomDevicesRoot = const LdapOid(
+      '1.2.840.10008.15.0.4.2',
+      'dicomDevicesRoot',
+      UidType.kLdapOid,
+      'dicomDevicesRoot');
 
-  static const WKUid kDicomUniqueAETitlesRegistryRoot = const WKUid(
+  static const LdapOid kDicomUniqueAETitlesRegistryRoot = const LdapOid(
       '1.2.840.10008.15.0.4.3',
       'dicomUniqueAETitlesRegistryRoot',
       UidType.kLdapOid,
       'dicomUniqueAETitlesRegistryRoot');
 
-  static const WKUid kDicomDevice = const WKUid(
+  static const LdapOid kDicomDevice = const LdapOid(
       '1.2.840.10008.15.0.4.4', 'dicomDevice', UidType.kLdapOid, 'dicomDevice');
 
-  static const WKUid kDicomNetworkAE = const WKUid(
-      '1.2.840.10008.15.0.4.5', 'dicomNetworkAE', UidType.kLdapOid, 'dicomNetworkAE');
+  static const LdapOid kDicomNetworkAE = const LdapOid('1.2.840.10008.15.0.4.5',
+      'dicomNetworkAE', UidType.kLdapOid, 'dicomNetworkAE');
 
-  static const WKUid kDicomNetworkConnection = const WKUid('1.2.840.10008.15.0.4.6',
-      'dicomNetworkConnection', UidType.kLdapOid, 'dicomNetworkConnection');
+  static const LdapOid kDicomNetworkConnection = const LdapOid(
+      '1.2.840.10008.15.0.4.6',
+      'dicomNetworkConnection',
+      UidType.kLdapOid,
+      'dicomNetworkConnection');
 
-  static const WKUid kDicomUniqueAETitle = const WKUid('1.2.840.10008.15.0.4.7',
-      'dicomUniqueAETitle', UidType.kLdapOid, 'dicomUniqueAETitle');
+  static const LdapOid kDicomUniqueAETitle = const LdapOid(
+      '1.2.840.10008.15.0.4.7',
+      'dicomUniqueAETitle',
+      UidType.kLdapOid,
+      'dicomUniqueAETitle');
 
-  static const WKUid kDicomTransferCapability = const WKUid('1.2.840.10008.15.0.4.8',
-      'dicomTransferCapability', UidType.kLdapOid, 'dicomTransferCapability');
+  static const LdapOid kDicomTransferCapability = const LdapOid(
+      '1.2.840.10008.15.0.4.8',
+      'dicomTransferCapability',
+      UidType.kLdapOid,
+      'dicomTransferCapability');
 
   static const List<LdapOid> members = const <LdapOid>[
     kDicomDeviceName,
@@ -205,5 +285,43 @@ class LdapOid extends WKUid {
 
   static const Map<String, LdapOid> map = const <String, LdapOid>{
     //   '': ,
+    '1.2.840.10008.15.0.3.1': kDicomDeviceName,
+    '1.2.840.10008.15.0.3.2': kDicomDescription,
+    '1.2.840.10008.15.0.3.3': kDicomManufacturer,
+    '1.2.840.10008.15.0.3.4': kDicomManufacturerModelName,
+    '1.2.840.10008.15.0.3.5': kDicomSoftwareVersion,
+    '1.2.840.10008.15.0.3.6': kDicomVendorData,
+    '1.2.840.10008.15.0.3.8': kDicomNetworkConnectionReference,
+    '1.2.840.10008.15.0.3.9': kDicomApplicationCluster,
+    '1.2.840.10008.15.0.3.10': kDicomAssociationInitiator,
+    '1.2.840.10008.15.0.3.11': kDicomAssociationAcceptor,
+    '1.2.840.10008.15.0.3.12': kDicomHostname,
+    '1.2.840.10008.15.0.3.13': kDicomPort,
+    '1.2.840.10008.15.0.3.14': kDicomSOPClass,
+    '1.2.840.10008.15.0.3.15': kDicomTransferRole,
+    '1.2.840.10008.15.0.3.16': kDicomTransferSyntax,
+    '1.2.840.10008.15.0.3.17': kDicomPrimaryDeviceType,
+    '1.2.840.10008.15.0.3.18': kDicomRelatedDeviceReference,
+    '1.2.840.10008.15.0.3.19': kDicomPreferredCalledAETitle,
+    '1.2.840.10008.15.0.3.20': kDicomTLSCyphersuite,
+    '1.2.840.10008.15.0.3.21': kDicomAuthorizedNodeCertificateReference,
+    '1.2.840.10008.15.0.3.22': kDicomThisNodeCertificateReference,
+    '1.2.840.10008.15.0.3.23': kDicomInstalled,
+    '1.2.840.10008.15.0.3.24': kDicomStationName,
+    '1.2.840.10008.15.0.3.25': kDicomDeviceSerialNumber,
+    '1.2.840.10008.15.0.3.26': kDicomInstitutionName,
+    '1.2.840.10008.15.0.3.27': kDicomInstitutionAddress,
+    '1.2.840.10008.15.0.3.28': kDicomInstitutionDepartmentName,
+    '1.2.840.10008.15.0.3.29': kDicomIssuerOfPatientID,
+    '1.2.840.10008.15.0.3.30': kDicomPreferredCallingAETitle,
+    '1.2.840.10008.15.0.3.31': kDicomSupportedCharacterSet,
+    '1.2.840.10008.15.0.4.1': kDicomConfigurationRoot,
+    '1.2.840.10008.15.0.4.2': kDicomDevicesRoot,
+    '1.2.840.10008.15.0.4.3': kDicomUniqueAETitlesRegistryRoot,
+    '1.2.840.10008.15.0.4.4': kDicomDevice,
+    '1.2.840.10008.15.0.4.5': kDicomNetworkAE,
+    '1.2.840.10008.15.0.4.6': kDicomNetworkConnection,
+    '1.2.840.10008.15.0.4.7': kDicomUniqueAETitle,
+    '1.2.840.10008.15.0.4.8': kDicomTransferCapability,
   };
 }
