@@ -7,7 +7,6 @@
 import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uid.dart';
 
-//TODO: Unit test.
 
 class SynchronizationFrameOfReference extends WKUid {
   const SynchronizationFrameOfReference(
@@ -28,11 +27,12 @@ class SynchronizationFrameOfReference extends WKUid {
   //in each class.
   static SynchronizationFrameOfReference lookup(String s) => map[s];
 
-  static const WKUid kUniversalCoordinatedTime = const WKUid(
-      '1.2.840.10008.15.1.1',
-      'UniversalCoordinatedTime',
-      UidType.kSynchronizationFrameOfReference,
-      'Universal Coordinated Time');
+  static const SynchronizationFrameOfReference kUniversalCoordinatedTime =
+      const SynchronizationFrameOfReference(
+          '1.2.840.10008.15.1.1',
+          'UniversalCoordinatedTime',
+          UidType.kSynchronizationFrameOfReference,
+          'Universal Coordinated Time');
 
   static const List<SynchronizationFrameOfReference> members =
       const <SynchronizationFrameOfReference>[kUniversalCoordinatedTime];

@@ -22,7 +22,7 @@ void main() {
       }
 
       for (var s in sopClassMap.keys) {
-	      final uid = Uid.parse(s);
+        final uid = Uid.parse(s);
         final v = uid is SopClass;
         if (!v) log.debug('Bad SopClass: $uid');
         expect(uid is SopClass, true);
@@ -34,7 +34,7 @@ void main() {
     });
   });
 
-   final badUids = const <String>[
+  final badUids = const <String>[
     '1.2.3', // Invalid Length : length less than 6
     '3.2.840.10008.1.2.0', // '3.': not valid root
     '1.02.840.10008.1.2', // '.02': '0' can only be followed by '.'
@@ -46,21 +46,70 @@ void main() {
     '1.4.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64.1.2.840.10008.1.2.4.64',
     '0.0.000.00000.0.0.00',
     '1.2.a840.1b0008.1.2.4.64', // Uid can't have letters
-    '1.2.840.10a08.0.1.2'  // letters can't be used
+    '1.2.840.10a08.0.1.2' // letters can't be used
   ];
 
   group('Error', () {
     test('parse InvalidUidStringError', () {
-     // final s0 = '1.2.8z0.10008.1.2';
-      for(var s in badUids) {
+      // final s0 = '1.2.8z0.10008.1.2';
+      for (var s in badUids) {
         expect(() => Uid.parse(s, onError: null),
             throwsA(const isInstanceOf<InvalidUidStringError>()));
       }
     });
     test('parseList InvalidUidStringError', () {
-        expect(() => Uid.parseList(badUids, onError: null),
-            throwsA(const isInstanceOf<InvalidUidStringError>()));
+      expect(() => Uid.parseList(badUids, onError: null),
+          throwsA(const isInstanceOf<InvalidUidStringError>()));
+    });
+  });
 
+  group('SopClass', () {
+    test('String to UID', () {
+      Uid uid = Uid.lookup('1.2.840.10008.1.1');
+      expect(uid == SopClass.kVerification, true);
+
+      uid = Uid.lookup('1.2.840.10008.1.3.10');
+      expect(uid == SopClass.kMediaStorageDirectoryStorage, true);
+
+      uid = Uid.lookup('1.2.840.10008.15.0.3.1');
+      expect(uid == SopClass.kMediaStorageDirectoryStorage, false);
+    });
+
+    test('String to SopClass', () {
+      Uid uid = SopClass.lookup('1.2.840.10008.1.1');
+      expect(uid == SopClass.kVerification, true);
+
+      uid = SopClass.lookup('1.2.840.10008.1.3.10');
+      expect(uid == SopClass.kMediaStorageDirectoryStorage, true);
+    });
+
+    test('Create SopClass', () {
+      final sop0 = new SopClass('1.2.840.10008.1.1', 'VerificationSOPClass',
+          UidType.kSOPClass, 'Verification SOP Class');
+
+      final sop1 = new SopClass('1.2.840.10008.1.1', 'VerificationSOPClass',
+          UidType.kSOPClass, 'Verification SOP Class');
+
+      final sop2 = new SopClass(
+          '1.2.840.10008.1.3.10',
+          'MediaStorageDirectoryStorage',
+          UidType.kSOPClass,
+          'Media Storage Directory Storage');
+
+      expect(sop0.hashCode == sop1.hashCode, true);
+      expect(sop0.hashCode == sop2.hashCode, false);
+
+      expect(sop0.value == sop1.value, true);
+      expect(sop0.value == sop2.value, false);
+
+      expect(sop0.keyword == 'VerificationSOPClass', true);
+      expect(sop0.name == 'Verification SOP Class', true);
+      expect(sop0.value == '1.2.840.10008.1.1', true);
+      expect(sop0.type == UidType.kSOPClass, true);
+      expect(sop0.isSopClass, true);
+      expect(sop0.maxLength == 64, true);
+      expect(sop0.minLength == 6, true);
+      expect(sop0.maxRootLength == 24, true);
     });
   });
 }

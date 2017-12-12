@@ -11,4 +11,8 @@ export 'package:uid/src/uid_type.dart';
 export 'package:uid/src/well_known_uids.dart';
 export 'package:uid/src/well_known/sop_class_list.dart';
 export 'package:uid/src/well_known/sop_class_map.dart';
-
+export 'package:uid/src/well_known/ldap_oid.dart';
+export 'package:uid/src/well_known/meta_sop_class.dart';
+export 'package:uid/src/well_known/synchronization_frame_of_reference.dart';
+export 'package:uid/src/well_known/sop_class.dart';
+export 'package:uid/src/well_known/sop_instance.dart';
