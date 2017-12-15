@@ -13,10 +13,9 @@ import 'package:uuid/uuid.dart';
 import 'errors.dart';
 import 'well_known_uids.dart';
 
-//TODO: add link in next line
-
 typedef String _Generator();
 typedef Uid OnUidParseError(String s);
+
 /// A class that implements *DICOM Unique Identifiers* (UID) <*add link*>,
 /// also known as OSI *Object Identifiers* (OID), in accordance with
 /// Rec. ITU-T X.667 | ISO/IEC 9834-8. See <http://www.oid-info.com/get/2.25>
@@ -60,17 +59,15 @@ class Uid {
   @override
   int get hashCode => value.hashCode;
 
-  //TODO: determine the correct number
   int get minLength => kUidMinLength;
   int get maxLength => kUidMaxLength;
 
-  //TODO: determine the correct number
   int get maxRootLength => kUidMaxRootLength;
 
-  /// Returns [true] if [this] is an encapsulated [TransferSyntax].
+  /// Returns _true_ if _this_ is an encapsulated [TransferSyntax].
   bool get isEncapsulated => false;
 
-  /// Returns [true] if [this] is a [Uid] defined by the DICOM Standard.
+  /// Returns _true_ if _this_ is a [Uid] defined by the DICOM Standard.
   bool get isWellKnown => false;
 
   /// Return a [String] that includes the [runtimeType].
@@ -85,6 +82,12 @@ class Uid {
 
   // **** Static Getters and Methods
 
+  //TODO: is this the correct number
+  static const int kUidMinLength = 6;
+  static const int kUidMaxLength = 64;
+  //TODO: is this the correct number
+  static  int kUidMaxRootLength = 24;
+
   /// ASCII constants for '0', '1', and '2'. No other roots are valid.
   static const List<String> uidRoots = kUidRoots;
 
@@ -92,7 +95,7 @@ class Uid {
   static String get dicomRoot => '1.2.840.10008';
 
   /// Returns the Well Known (DICOM) [Uid] corresponding to [s],
-  /// or [null] if none.
+  /// or _null_ if none.
   static WKUid lookup(String s) => wellKnownUids[s];
 
   /// Returns a [Uid] created from a pseudo random [Uuid].
@@ -112,7 +115,7 @@ class Uid {
 
   static bool isDicom(Uid uid) => uid.asString.indexOf(dicomRoot) == 0;
 
-  /// Returns [s] if it is a valid [Uid] [String]; otherwise, [null].
+  /// Returns [s] if it is a valid [Uid] [String]; otherwise, _null_.
   static String check(String s) => isValidString(s) ? s : null;
 
 //  static String test(String s) => isValidString(s) ? s : throw 'Invalid Uid String: $s';
@@ -124,7 +127,7 @@ class Uid {
   /// Returns
   static bool isValidString(String s) => isValidUidString(s);
 
-  /// Returns [true] if [sList] is empty, i.e. [sList].length == 0, or if each
+  /// Returns _true_ if [sList] is empty, i.e. [sList].length == 0, or if each
   /// [String] in the [List] is a valid [Uid].
   static bool isValidStringList(List<String> sList) =>
       sList != null && (sList.isEmpty || isValidUidStringList(sList));

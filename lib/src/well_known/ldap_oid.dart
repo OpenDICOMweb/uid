@@ -13,17 +13,16 @@ class LdapOid extends WKUid {
       {bool isRetired = false})
       : super(uid, keyword, type, name, isRetired: isRetired);
 
-  //TODO: create UidType class
-  bool get isSopClass => true;
-
   @override
   String get info => '$runtimeType($asString)';
 
   @override
   String toString() => asString;
 
-  //TODO: when other classes are implemented convert to lookup the uidString
-  //in each class.
+
+  //Urgent: verify that all SOPClass Definitions from PS3.6 are present
+  static const String kName = 'LDAP OID';
+
   static LdapOid lookup(String s) => map[s];
 
   static const LdapOid kDicomDeviceName = const LdapOid(

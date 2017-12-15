@@ -7,8 +7,9 @@
 import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uid.dart';
 
-//TODO: Move all definitions from PS3.6 Table A-2 Well Known Frames of Reference
+//Urgent: Move all definitions from PS3.6 Table A-2 Well Known Frames of Reference
 
+//Urgent: unit test
 class FrameOfReference extends WKUid {
   const FrameOfReference(String uid, String keyword, UidType type, String name,
       {bool isRetired: false})

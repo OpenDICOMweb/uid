@@ -8,7 +8,6 @@ import 'package:uid/uid.dart';
 import 'package:system/server.dart';
 import 'package:test/test.dart';
 
-// TODO: enhance these tests.
 void main() {
   Server.initialize(name: 'random_uid_test', level: Level.info0);
   group('Random Uid Tests', () {
@@ -194,6 +193,7 @@ void main() {
 
     test('rootType', () {
       print(goodUids[0].codeUnitAt(0));
+      //Urgent finish test
       final rt0 = Uid.rootType('ITU-T');
     });
   });

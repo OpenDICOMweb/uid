@@ -7,15 +7,11 @@
 import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uid.dart';
 
-
 class SynchronizationFrameOfReference extends WKUid {
   const SynchronizationFrameOfReference(
       String uid, String keyword, UidType type, String name,
       {bool isRetired = false})
       : super(uid, keyword, type, name, isRetired: isRetired);
-
-  //TODO: create UidType class
-  bool get isSopClass => true;
 
   @override
   String get info => '$runtimeType($asString)';
@@ -23,8 +19,8 @@ class SynchronizationFrameOfReference extends WKUid {
   @override
   String toString() => asString;
 
-  //TODO: when other classes are implemented convert to lookup the uidString
-  //in each class.
+  static const String kName = 'Synchronization Frame of Reference';
+
   static SynchronizationFrameOfReference lookup(String s) => map[s];
 
   static const SynchronizationFrameOfReference kUniversalCoordinatedTime =

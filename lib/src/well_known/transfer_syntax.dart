@@ -8,7 +8,8 @@ import 'package:uid/src/uid.dart';
 import 'package:uid/src/uid_type.dart';
 import 'package:uid/src/well_known/wk_uid.dart';
 
-//TODO: document
+//Urgent: verify that all SOPClass Definitions from PS3.6 are present
+
 class TransferSyntax extends WKUid {
   static const UidType uidType = UidType.kTransferSyntax;
   final String mediaType;
@@ -22,14 +23,14 @@ class TransferSyntax extends WKUid {
       {bool isRetired = false, this.isEncapsulated = true, this.mayHaveFragments = true})
       : super(uid, keyword, UidType.kTransferSyntax, name, isRetired: isRetired);
 
-  /// Returns [true] if the [TransferSyntax] exists and has not been retired.
+  /// Returns _true_ if the [TransferSyntax] exists and has not been retired.
   @override
   bool get isTransferSyntax => true;
 
-  /// [true] if [this] is an Implicit VR Transfer Syntax.
+  /// _true_ if _this_ is an Implicit VR Transfer Syntax.
   bool get isIvr => this == TransferSyntax.kImplicitVRLittleEndian;
 
-  /// [true] if [this] is an Explicit VR Transfer Syntax.
+  /// _true_ if _this_ is an Explicit VR Transfer Syntax.
   bool get isEvr => !isIvr;
 
   bool get isNativeFormat => !isEncapsulated;
@@ -40,7 +41,7 @@ class TransferSyntax extends WKUid {
 
   bool get isValidForDICOMweb => !(isImplicitLittleEndian || isBigEndian);
 
-  /// Returns [true] if the [TransferSyntax] exists, but has been retired.
+  /// Returns _true_ if the [TransferSyntax] exists, but has been retired.
   bool get isRetiredTransferSyntax => isRetired;
 
   bool get isValidForRS =>
@@ -60,6 +61,8 @@ class TransferSyntax extends WKUid {
   String toString() => 'TransferSyntax($asString): $name';
 
   //*****   Constant Values   *****
+
+  static const String kName = 'Transfer Syntax';
 
   static const TransferSyntax kImplicitVRLittleEndian = const TransferSyntax(
     '1.2.840.10008.1.2',

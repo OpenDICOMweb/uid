@@ -13,20 +13,17 @@ class SopClass extends WKUid {
       {bool isRetired = false})
       : super(uid, keyword, type, name, isRetired: isRetired);
 
-  //TODO: create UidType class
-  bool get isSopClass => true;
-
   @override
   String get info => '$runtimeType($asString)';
 
   @override
   String toString() => asString;
 
-  //TODO: when other classes are implemented convert to lookup the uidString
-  //in each class.
+  static const String kName = 'SOP Class';
+
   static SopClass lookup(String s) => map[s];
 
-  //TODO: verify that all SOPClass Definitions are present
+  //Urgent: verify that all SOPClass Definitions from PS3.6 are present
   static const SopClass kVerification = const SopClass('1.2.840.10008.1.1',
       'VerificationSOPClass', UidType.kSOPClass, 'Verification SOP Class');
 

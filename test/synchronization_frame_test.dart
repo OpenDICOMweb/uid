@@ -64,7 +64,7 @@ void main() {
       expect(sfr0.keyword == 'UniversalCoordinatedTime', true);
       expect(sfr0.value == '1.2.840.10008.15.1.1', true);
       expect(sfr0.type == UidType.kSynchronizationFrameOfReference, true);
-      expect(sfr0.isSopClass, true);
+      expect(sfr0 is SynchronizationFrameOfReference, true);
       expect(sfr0.maxLength == 64, true);
       expect(sfr0.minLength == 6, true);
       expect(sfr0.maxRootLength == 24, true);

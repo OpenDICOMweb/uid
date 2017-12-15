@@ -8,9 +8,8 @@ import 'package:string/string.dart';
 import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
-import 'package:uid/src/well_known/ldap_oid.dart';
 
-// TODO: add tests for all three errors in errors.dart.
+// Urgent: add tests for all three errors in errors.dart.
 
 void main() {
   Server.initialize(name: 'uid_test', level: Level.debug);
@@ -106,7 +105,6 @@ void main() {
       expect(sop0.name == 'Verification SOP Class', true);
       expect(sop0.value == '1.2.840.10008.1.1', true);
       expect(sop0.type == UidType.kSOPClass, true);
-      expect(sop0.isSopClass, true);
       expect(sop0.maxLength == 64, true);
       expect(sop0.minLength == 6, true);
       expect(sop0.maxRootLength == 24, true);

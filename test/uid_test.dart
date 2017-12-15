@@ -9,7 +9,7 @@ import 'package:test/test.dart';
 import 'package:uid/uid.dart';
 
 
-// TODO: add tests for all three errors in errors.dart.
+// Urgent: add tests for all three errors in errors.dart.
 
 void main() {
   Server.initialize(name: 'uid_test', level: Level.info0);
@@ -95,7 +95,6 @@ void uidTest() {
       var uid = Uid.parse(s0, onError: (s) => null);
       log.debug('uid: $uid');
       expect(uid == null, true);
-      //TODO: this should return null or
       final s1 = '4.2.840.10008.1.2';
       uid = Uid.parse(s1, onError: (s) => null);
       log.debug('uid: $uid');
