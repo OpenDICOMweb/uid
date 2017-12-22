@@ -8,9 +8,10 @@ import 'dart:typed_data';
 
 import 'package:bignum/bignum.dart';
 import 'package:string/parse.dart';
+import 'package:system/core.dart';
 import 'package:uuid/uuid.dart';
 
-import 'errors.dart';
+
 import 'well_known_uids.dart';
 
 typedef String _Generator();
@@ -140,7 +141,7 @@ class Uid {
   ///
   /// If [s] is not a valid [Uid] [String], [onError] is called with [s] as
   /// its argument, and its value is returned as the value of the [parse]
-  /// expression. If no [onError] is provided, an [InvalidUidStringError] is thrown.
+  /// expression. If no [onError] is provided, an [InvalidUidError] is thrown.
   ///
   /// The onError handler can be chosen to return null. This is preferable
   /// to to throwing and then immediately catching the FormatException.
@@ -150,7 +151,7 @@ class Uid {
       if (onError != null) {
         return onError(s);
       } else {
-        throw new InvalidUidStringError(s);
+        return invalidUidString(s);
       }
     }
     final wk = wellKnownUids[s];
@@ -162,7 +163,7 @@ class Uid {
   ///
   /// If any member of [sList] is not valid, [onError] is called and
   /// its values is stored in the  result. If no [onError] is provided,
-  /// an [InvalidUidStringError] is thrown.
+  /// an [InvalidUidError] is thrown.
   static List<Uid> parseList(List<String> sList, {OnUidParseError onError}) {
     final uids = new List<Uid>(sList.length);
     for (var i = 0; i < sList.length; i++)

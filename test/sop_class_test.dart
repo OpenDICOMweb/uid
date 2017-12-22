@@ -9,7 +9,7 @@ import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
 
-// Urgent: add tests for all three errors in errors.dart.
+// Urgent: add tests for all three errors in system/src/uid/uid_errors.dart.
 
 void main() {
   Server.initialize(name: 'uid_test', level: Level.debug);
@@ -49,16 +49,17 @@ void main() {
   ];
 
   group('Error', () {
+    system.throwOnError = true;
+
     test('parse InvalidUidStringError', () {
-      // final s0 = '1.2.8z0.10008.1.2';
       for (var s in badUids) {
         expect(() => Uid.parse(s, onError: null),
-            throwsA(const isInstanceOf<InvalidUidStringError>()));
+            throwsA(const isInstanceOf<InvalidUidError>()));
       }
     });
     test('parseList InvalidUidStringError', () {
       expect(() => Uid.parseList(badUids, onError: null),
-          throwsA(const isInstanceOf<InvalidUidStringError>()));
+          throwsA(const isInstanceOf<InvalidUidError>()));
     });
   });
 
