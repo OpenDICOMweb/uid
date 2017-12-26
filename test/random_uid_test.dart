@@ -191,11 +191,7 @@ void main() {
       expect(rs0, isNotNull);
     });
 
-    test('rootType', () {
-      print(goodUids[0].codeUnitAt(0));
-      //Urgent Sharath finish test
-      final rt0 = Uid.rootType('ITU-T');
-    });
+
   });
 }
 
