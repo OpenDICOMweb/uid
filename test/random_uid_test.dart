@@ -5,11 +5,11 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:uid/uid.dart';
-import 'package:system/server.dart';
+//import 'package:system/server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  Server.initialize(name: 'random_uid_test', level: Level.info0);
+ // Server.initialize(name: 'random_uid_test', level: Level.info0);
   group('Random Uid Tests', () {
 
     test('Seeded Random Tests', (){
@@ -92,7 +92,6 @@ void main() {
     test('randomList', () {
       final uid = new Uid.secure();
       final uidRootType0 = Uid.randomList(uid.asString.length);
-      log.debug('uidRootType0 : $uidRootType0');
       expect(uidRootType0, isNotNull);
 
       //urgent: can we pass null here?

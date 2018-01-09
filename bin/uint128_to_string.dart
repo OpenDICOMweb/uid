@@ -8,7 +8,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:bignum/bignum.dart';
-import 'package:system/system.dart';
+//import 'package:system/system.dart';
 import 'package:uid/uid.dart';
 import 'package:uuid/uuid.dart';
 
@@ -30,6 +30,8 @@ void main() {
   print('s1[${s1.length}]: $s1');
 }
 
+// ASCII Space code
+const int kSpace = 32;
 String bytesToDecimal(Uint8List bytes) {
   final digits = ASCII.encode('0123456789');
   final output = new Uint8List(bytes.length * 4);

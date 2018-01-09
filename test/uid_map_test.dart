@@ -5,14 +5,14 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:string/string.dart';
-import 'package:system/server.dart';
+//import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
 
 // TODO: add tests for all three errors in system/src/uid/uid_errors.dart.
 
 void main() {
-  Server.initialize(name: 'uid_test', level: Level.debug);
+ // Server.initialize(name: 'uid_test', level: Level.debug);
 
   group('WKUid Map Test', () {
     test('Well known Uid String validation', () {
@@ -22,8 +22,6 @@ void main() {
 
       for (var s in wellKnownUids.keys) {
 	      final uid = Uid.parse(s);
-        final v = uid is WKUid;
-        if (!v) log.debug('Bad SopClass: $uid');
         expect(uid is WKUid, true);
       }
 

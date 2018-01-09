@@ -8,11 +8,11 @@ import 'dart:typed_data';
 
 import 'package:bignum/bignum.dart';
 import 'package:string/parse.dart';
-import 'package:system/core.dart';
+
 import 'package:uuid/uuid.dart';
 
-
-import 'well_known_uids.dart';
+import 'package:uid/src/uid_errors.dart';
+import 'package:uid/src/well_known_uids.dart';
 
 typedef String _Generator();
 typedef Uid OnUidParseError(String s);

@@ -4,12 +4,12 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-import 'package:system/server.dart';
+//import 'package:system/server.dart';
 import 'package:uid/uid.dart';
 import 'package:test/test.dart';
 
 void main() {
-  Server.initialize(name: 'uid2_test', level: Level.info0);
+  //Server.initialize(name: 'uid2_test', level: Level.info0);
 
   const goodUids = const <String>[
     '0.20.3000',
@@ -23,8 +23,6 @@ void main() {
   group('Good Uids Test', () {
     test('Good UID', () {
       for (var s in goodUids) {
-        final v = Uid.isValidString(s);
-        log.debug('$v: $s');
         expect(Uid.isValidString(s), true);
       }
     });
@@ -52,9 +50,7 @@ void main() {
   group('Bad Uids Test', () {
     test('Bad UID', () {
       for (var s in badUids) {
-        log.debug('"$s":');
         final v = Uid.isValidString(s);
-        log.debug('"$s": $v');
         expect(Uid.isValidString(s), false);
       }
     });

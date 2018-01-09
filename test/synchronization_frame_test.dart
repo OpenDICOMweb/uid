@@ -4,11 +4,11 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:uid/uid.dart';
-import 'package:system/server.dart';
+//import 'package:system/server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  Server.initialize(name: 'synchronization_frame_test', level: Level.info0);
+ // Server.initialize(name: 'synchronization_frame_test', level: Level.info0);
 
   group('SynchronizationFrameOfReference', () {
     test('String to UID', () {

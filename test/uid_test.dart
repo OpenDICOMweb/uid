@@ -4,7 +4,7 @@
 // Author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-import 'package:system/server.dart';
+//import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
 
@@ -12,7 +12,7 @@ import 'package:uid/uid.dart';
 // TODO: add tests for all three errors in system/src/uid/uid_errors.dart.
 
 void main() {
-  Server.initialize(name: 'uid_test', level: Level.info0);
+  //Server.initialize(name: 'uid_test', level: Level.info0);
   uidTest();
 }
 
@@ -93,11 +93,11 @@ void uidTest() {
       // Bad letter 'Z'
       final s0 = '1.2.8z0.10008.1.2';
       var uid = Uid.parse(s0, onError: (s) => null);
-      log.debug('uid: $uid');
+//      log.debug('uid: $uid');
       expect(uid == null, true);
       final s1 = '4.2.840.10008.1.2';
       uid = Uid.parse(s1, onError: (s) => null);
-      log.debug('uid: $uid');
+ //     log.debug('uid: $uid');
       expect(uid == null, true);
     });
 
@@ -120,11 +120,11 @@ void uidTest() {
     test('Generate Uid', (){
       for(var s in goodUids){
         final uid0 = new Uid(s);// checks 's' as valid Uid
-        log.debug('uid0:$uid0');
+//        log.debug('uid0:$uid0');
         expect(uid0.value, equals(s));
       }
       final uid1 =  new Uid();// generates new Uid
-      log.debug('uid1:$uid1');
+//      log.debug('uid1:$uid1');
       expect(uid1, isNotNull);
     });
 

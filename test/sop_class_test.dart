@@ -5,14 +5,14 @@
 // See the AUTHORS file for other contributors.
 
 import 'package:string/string.dart';
-import 'package:system/server.dart';
+//import 'package:system/server.dart';
 import 'package:test/test.dart';
 import 'package:uid/uid.dart';
 
 // TODO: add tests for all three errors in system/src/uid/uid_errors.dart.
 
 void main() {
-  Server.initialize(name: 'uid_test', level: Level.debug);
+//  Server.initialize(name: 'uid_test', level: Level.debug);
 
   group('SopClass Tests', () {
     test('SopClassUids', () {
@@ -22,8 +22,6 @@ void main() {
 
       for (var s in sopClassMap.keys) {
         final uid = Uid.parse(s);
-        final v = uid is SopClass;
-        if (!v) log.debug('Bad SopClass: $uid');
         expect(uid is SopClass, true);
       }
 
@@ -49,7 +47,7 @@ void main() {
   ];
 
   group('Error', () {
-    system.throwOnError = true;
+    //system.throwOnError = true;
 
     test('parse InvalidUidStringError', () {
       for (var s in badUids) {
