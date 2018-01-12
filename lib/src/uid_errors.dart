@@ -4,10 +4,9 @@
 // Original author: Jim Philbin <jfphilbin@gmail.edu> -
 // See the AUTHORS file for other contributors.
 
-import 'package:system/src/issues.dart';
-import 'package:system/src/system.dart';
-import 'package:system/src/uid/uid.dart';
+import 'package:system/core.dart';
 
+import 'package:uid/src/uid.dart';
 /// Logs an Error entry, and then if [throwOnError] is _true_ throws an
 /// [InvalidUidError]; otherwise, returns _null_.
 Null invalidUidString(String uid, [Issues issues]) {
